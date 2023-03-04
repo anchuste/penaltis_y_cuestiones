@@ -1,27 +1,36 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import { Square } from './components/Square.jsx'
-import { WinnerModal } from './components/WinnerModal.jsx'
-import { Child } from './components/Child.jsx'
-import './App.css'
+import data from './assets/questions/questions.json';
+import { Question } from './components/Question'
 
 function App() {
 
+  let questions = data;
+  console.log(questions);
 
   let positions = Array(10).fill(null);
 
-  const [message, setMessage] = useState('Hello');
-
-  const chooseMessage = (message) => {
-    setMessage(message);
-  };
+  const [showQuestion, setShowQuestion] = useState(false);
   
+  const updateQuestion = (index, indexCorrectAnswer) => {
+    console.log('update question');
+    console.log('index: ', index);
+    console.log('indexCorrectAnswer: ', indexCorrectAnswer);
+    setShowQuestion(false);
+  };
+
+  const throwQuestion = (index) => {
+    console.log('throw question for index: ', index);
+    setShowQuestion(true);
+  }
 
   return (
     <main className='board'>
         <img src={reactLogo} alt='React Logo' />
         
       <h2 className='title_game'> Penaltis y cuestiones</h2>
+
         <section className='game'>
             {
               positions.map((square, index) => {
@@ -29,20 +38,16 @@ function App() {
                   <Square
                     key={index}
                     index={index}
+                    throwQuestion={throwQuestion}
                   >
                     {index}
                   </Square>
                 )
               })
             }
-          </section>
-          <h1>{message}</h1>
-          <Child chooseMessage={chooseMessage} />
+        </section>
+          {showQuestion && <Question question={questions} updateQuestion={updateQuestion} />}
     </main>
-
-    
-
-
   )
 }
 

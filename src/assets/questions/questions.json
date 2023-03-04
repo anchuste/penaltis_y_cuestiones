@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Ganó el Real Madrid la Champions League en 2014?",
+        "answers": [
+            "Sí",
+            "No"
+        ],            
+        "correctAnswer": 0
+    },
+    {
+        "id": 2,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién fue el máximo goleador de la Liga BBVA 2014/2015?",
+        "answers": [
+            "Cristiano Ronaldo",
+            "Lionel Messi",
+            "Neymar"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 3,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién ganó la Eurocopa 2016?",
+        "answers": [
+            "Francia",
+            "Alemania",
+            "España"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 4,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién ganó la Copa del Rey 2015?",
+        "answers": [
+            "Real Madrid",
+            "Barcelona",
+            "Atlético de Madrid"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 5,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién ganó la Copa América 2016?",
+        "answers": [
+            "Argentina",
+            "Chile",
+            "Brasil"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id":6,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿De qué equipo procedía Ronaldo Nazario cuando fue fichado por el FC Barcelona?",
+        "answers": [
+            "PSV",
+            "Cruzeiro",
+            "Benfica"
+        ],
+        "correctAnswer": 0
+    }
+]
+

@@ -5,5 +5,5 @@ export const Child = ({ chooseMessage}) => {
         <div>
           <button onClick={() => chooseMessage(msg)}>Change Message</button>
         </div>
-      );
-    }
+    );
+}
