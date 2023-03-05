@@ -6,30 +6,29 @@ import { Question } from './components/Question'
 
 function App() {
 
+  console.log('Se renderiza el componente App');
+
   let questions = data;
-  console.log(questions);
+  let initialPositions = Array(10).fill(false);
 
-  let positions = Array(10).fill(null);
-
-  const [showQuestion, setShowQuestion] = useState(false);
+  initialPositions[0] = true;
+  const [positions, setPositions] = useState(initialPositions);
+  const [showQuestion, setShowQuestion] = useState(true);
   
-  const updateQuestion = (index, indexCorrectAnswer) => {
-    console.log('update question');
-    console.log('index: ', index);
-    console.log('indexCorrectAnswer: ', indexCorrectAnswer);
-    setShowQuestion(false);
+  const updateQuestion = () => {
+    // get current true position
+    const currentTruePosition = positions.findIndex((position) => position === true);
+    const newPositions = Array(10).fill(false);
+    newPositions[currentTruePosition+1] = true;
+    setPositions(newPositions);
+    //setShowQuestion(false);
   };
-
-  const throwQuestion = (index) => {
-    console.log('throw question for index: ', index);
-    setShowQuestion(true);
-  }
 
   return (
     <main className='board'>
         <img src={reactLogo} alt='React Logo' />
         
-      <h2 className='title_game'> Penaltis y cuestiones</h2>
+      <h2 className='gameTitle'> Penaltis y cuestiones</h2>
 
         <section className='game'>
             {
@@ -38,7 +37,8 @@ function App() {
                   <Square
                     key={index}
                     index={index}
-                    throwQuestion={throwQuestion}
+                    //throwQuestion={throwQuestion}
+                    isSelected={square}
                   >
                     {index}
                   </Square>

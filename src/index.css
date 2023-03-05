@@ -144,7 +144,8 @@ body {
   color: #222;
 }
 
-.title_game {
+.gameTitle {
+  font-size: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,3 +153,8 @@ body {
   width: fit-content;
 }
 
+.customDiv{
+  width: 400px;
+  text-align: center;
+  margin-top: 20px;
+}

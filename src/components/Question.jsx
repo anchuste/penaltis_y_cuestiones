@@ -9,13 +9,13 @@ export const Question = ({ question, answer, index, updateQuestion }) => {
 
       return (
         <div>
-            <h2>{question[indexQuestion].text}</h2>
+            <h2 className='customDiv'>{question[indexQuestion].text}</h2>
             <section>
             <ol>
             {
               question[indexQuestion].answers.map((answer, index) => {
                 return (
-                  <li className='answers' key={index} onClick={() => updateQuestion(index, correctAnswer)}
+                  <li className='answers' key={index} onClick={() => updateQuestion()}
                   >
                     {answer}
                   </li>

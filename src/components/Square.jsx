@@ -1,6 +1,13 @@
 export const Square = ({ children, isSelected, throwQuestion, index }) => {
-    const className = `square ${isSelected ? 'is-selected' : ''}`
-  
+
+    console.log('Se renderiza el componente Square, isSelected: ', isSelected);
+
+    let className = `square`;
+
+    if (isSelected === true) {
+      className = `square is-selected`;
+    }
+    
     const handleClick = () => {
       throwQuestion(index);
     }
