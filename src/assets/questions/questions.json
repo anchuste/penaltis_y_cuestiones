@@ -69,6 +69,53 @@
             "Benfica"
         ],
         "correctAnswer": 0
+    },
+    {
+        "id":7,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién ganó la Copa Libertadores 2015?",
+        "answers": [
+            "River Plate",
+            "Boca Juniors",
+            "Atlético Nacional"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id":8,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Campeón de la liga de fútbol de Brasil en 2015",
+        "answers": [
+            "Santos",
+            "Corinthians",
+            "Palmeiras"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id":9,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quien marcó el gol de la victoria del FC Barcelona en la final de la Copa del Rey 2015?",
+        "answers": [
+            "Lionel Messi",
+            "Neymar",
+            "Luis Suárez"
+        ],
+        "correctAnswer": 2
+    },{
+        "id":10,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál es el estadio del Central Cordoba de Santiago del Estero?",
+        "answers": [
+            "Estadio Gigante de Arroyito",
+            "Estadio Malvinas Argentinas",
+            "Estadio Único Madre de Ciudades"
+        ],
+        "correctAnswer": 2
     }
 ]
 

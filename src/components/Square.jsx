@@ -1,6 +1,6 @@
 export const Square = ({ children, isSelected, throwQuestion, index }) => {
 
-    console.log('Se renderiza el componente Square, isSelected: ', isSelected);
+    //console.log('Se renderiza el componente Square, isSelected: ', isSelected);
 
     let className = `square`;
 
@@ -9,7 +9,7 @@ export const Square = ({ children, isSelected, throwQuestion, index }) => {
     }
     
     const handleClick = () => {
-      throwQuestion(index);
+      //throwQuestion(index);
     }
   
     return (
