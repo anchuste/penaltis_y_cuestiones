@@ -158,3 +158,11 @@ body {
   text-align: center;
   margin-top: 20px;
 }
+
+.responseSymbol{
+  font-size: 24px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+

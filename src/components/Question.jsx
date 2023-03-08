@@ -16,7 +16,7 @@ export const Question = ({ question, answer, index, updateQuestion }) => {
             {
               question.answers.map((answer, index) => {
                 return (
-                  <li className='answers' key={index} onClick={() => updateQuestion(question.id)}
+                  <li className='answers' key={index} onClick={() => updateQuestion(question.id, index)}
                   >
                     {answer}
                   </li>

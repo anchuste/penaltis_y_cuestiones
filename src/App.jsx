@@ -10,6 +10,7 @@ function App() {
 
   let questions = data;
   let initialPositions = Array(10).fill(false);
+  let initialAnswers = Array(10).fill('notAnswered');
   
   // get first random question
   let cuestionsAskedArray = [];
@@ -25,9 +26,12 @@ function App() {
   const [showQuestion, setShowQuestion] = useState(true);
   const [cuestionsAsked, setCuestionsAsked] = useState(cuestionsAskedArray);
   const [cuestionNotAsked, setCuestionNotAsked] = useState(cuestionNotAskedInitial);
-  
-  const updateQuestion = (indexQuestion) => {
+  const [answers, setAnswers] = useState(initialAnswers);
 
+  const updateQuestion = (indexQuestion, indexAnswer) => {
+
+
+    
     
     // get current true position: marcamos la siguiente posición
     const currentTruePosition = positions.findIndex((position) => position === true);
@@ -41,6 +45,29 @@ function App() {
     setCuestionsAsked(cuestionsAskedCopy);
     
 
+    
+
+    // findindex of questions
+
+
+
+    const answerCorrect = questions.findIndex(item => item.id === indexQuestion);
+    console.log('answerCorrect: ', answerCorrect);
+    let answer = questions[answerCorrect].correctAnswer;
+    console.log('answer should be: ', answer);
+    console.log('answer was: ', indexAnswer);
+    let resultAnswer;
+    // compare answer with correctAnswer
+    if (indexAnswer === answer) {
+      resultAnswer = 'correct';
+    } else {
+      resultAnswer = 'incorrect';
+    }
+
+    let answersCopy = [...answers];
+    answersCopy[currentTruePosition] = resultAnswer;
+    setAnswers(answersCopy);
+
     // Extraer cuestiones no realizadas
     let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id));
     // Obtenemos cuestión al azar de todas las que no se han realizado
@@ -53,6 +80,10 @@ function App() {
     let questionNotAsked = questionsNotAsked[Math.floor(Math.random() * questionsNotAsked.length)];
     setCuestionNotAsked(questionNotAsked);
     //console.log('cuestionNotAsked: ', questionNotAsked.id);
+
+    // get answer of indexQuestion
+
+
     
   };
 
@@ -62,13 +93,17 @@ function App() {
         
       <h2 className='gameTitle'> Penaltis y cuestiones</h2>
 
+      
         <section className='game'>
+        
             {
+              
               positions.map((square, index) => {
                 return (
                   <Square
                     key={index}
                     index={index}
+                    status={answers[index]}
                     //throwQuestion={throwQuestion}
                     isSelected={square}
                   >
