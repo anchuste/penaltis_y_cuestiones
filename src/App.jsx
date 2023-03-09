@@ -27,17 +27,33 @@ function App() {
   const [cuestionsAsked, setCuestionsAsked] = useState(cuestionsAskedArray);
   const [cuestionNotAsked, setCuestionNotAsked] = useState(cuestionNotAskedInitial);
   const [answers, setAnswers] = useState(initialAnswers);
+  const [started, setStarted] = useState(false);
+
+  const startGame = () => {
+    resetGame();
+  }
+
+  const resetGame = () => {
+    setStarted(true);
+    setPositions(initialPositions);
+    setAnswers(initialAnswers);
+    setCuestionNotAsked(cuestionNotAskedInitial);
+    setCuestionsAsked([]);
+    setShowQuestion(true);
+  }
+
 
   const updateQuestion = (indexQuestion, indexAnswer) => {
-
-
-    
     
     // get current true position: marcamos la siguiente posición
     const currentTruePosition = positions.findIndex((position) => position === true);
+    console.log('currentTruePosition: ', currentTruePosition);
+    
     const newPositions = Array(10).fill(false);
     newPositions[currentTruePosition+1] = true;
     setPositions(newPositions);
+
+    
 
     // TODO - AAC - Añadimos la pregunta a las preguntas realizadas - Revisar esto puede que sobre
     let cuestionsAskedCopy = [...cuestionsAsked];
@@ -47,17 +63,11 @@ function App() {
 
     
 
-    // findindex of questions
-
-
-
-    const answerCorrect = questions.findIndex(item => item.id === indexQuestion);
-    console.log('answerCorrect: ', answerCorrect);
-    let answer = questions[answerCorrect].correctAnswer;
-    console.log('answer should be: ', answer);
-    console.log('answer was: ', indexAnswer);
-    let resultAnswer;
     // compare answer with correctAnswer
+    const answerCorrect = questions.findIndex(item => item.id === indexQuestion);
+    let answer = questions[answerCorrect].correctAnswer;
+    let resultAnswer;
+    
     if (indexAnswer === answer) {
       resultAnswer = 'correct';
     } else {
@@ -74,7 +84,7 @@ function App() {
 
     if (questionsNotAsked.length === 0) {
       setShowQuestion(false);
-      return;
+      setStarted(false);
     }
     
     let questionNotAsked = questionsNotAsked[Math.floor(Math.random() * questionsNotAsked.length)];
@@ -93,6 +103,7 @@ function App() {
         
       <h2 className='gameTitle'> Penaltis y cuestiones</h2>
 
+      {started === true ? 
       
         <section className='game'>
         
@@ -113,7 +124,8 @@ function App() {
               })
             }
         </section>
-          {showQuestion && <Question question={cuestionNotAsked} updateQuestion={updateQuestion} />}
+        : <button className='btn' onClick={startGame}>¡Pulsa para comenzar!</button> }
+          {started && showQuestion && <Question question={cuestionNotAsked} updateQuestion={updateQuestion} />}
     </main>
   )
 }
