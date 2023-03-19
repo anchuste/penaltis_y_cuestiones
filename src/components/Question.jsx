@@ -10,6 +10,10 @@ export const Question = ({ question, answer, index, updateQuestion }) => {
 
       return (
         <div>
+
+          {question.image ? 
+            <img src={question.image} style={{width: "320px", height: "220px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}} alt='React Logo' /> : null}
+          
             <h2 className='customDiv'>{question.text}</h2>
             <section>
             <ol>
@@ -24,7 +28,7 @@ export const Question = ({ question, answer, index, updateQuestion }) => {
               })
             }
             </ol>
-            
+            <h5 style={{marginTop: "8px"}}>Autor de la pregunta: {question.author}</h5>
           </section>
         </div>
       )

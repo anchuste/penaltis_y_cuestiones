@@ -8,7 +8,10 @@
             "Sí",
             "No"
         ],            
-        "correctAnswer": 0
+        "correctAnswer": 0,
+        "creationDate": "2023-01-01T00:00:00Z",
+        "author": "anchus",
+        "image": "https://www.realmadrid.com/StaticFiles/RealMadrid/directo/statics/primera/Rm_mediano.png"
     },
     {
         "id": 2,
@@ -20,7 +23,10 @@
             "Lionel Messi",
             "Neymar"
         ],
-        "correctAnswer": 0
+        "correctAnswer": 0,
+        "creationDate": "2023-01-01T00:00:00Z",
+        "author": "anchus",
+        "image": "https://assets.laliga.com/assets/logos/laliga-v/laliga-v-300x300.png"
     },
     {
         "id": 3,
@@ -32,7 +38,10 @@
             "Alemania",
             "España"
         ],
-        "correctAnswer": 0
+        "correctAnswer": 0,
+        "creationDate": "2023-01-01T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/UEFA_Euro_2016_logo.svg"
     },
     {
         "id": 4,
@@ -44,7 +53,10 @@
             "Barcelona",
             "Atlético de Madrid"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "creationDate": "2023-01-01T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Copa_del_Rey_2021_%28red_badge%29.svg/512px-Logo_Copa_del_Rey_2021_%28red_badge%29.svg.png"
     },
     {
         "id": 5,
@@ -56,7 +68,10 @@
             "Chile",
             "Brasil"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "creationDate": "2023-01-01T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Batistutia_copa_america_1991.jpg"
     },
     {
         "id":6,
@@ -68,7 +83,10 @@
             "Cruzeiro",
             "Benfica"
         ],
-        "correctAnswer": 0
+        "correctAnswer": 0,
+        "creationDate": "2023-01-01T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Ronaldo_2002_cropped.jpg"
     },
     {
         "id":7,
@@ -80,7 +98,10 @@
             "Boca Juniors",
             "Atlético Nacional"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "creationDate": "2023-01-01T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Chapitas_de_campeon.jpg"
     },
     {
         "id":8,
@@ -92,7 +113,10 @@
             "Corinthians",
             "Palmeiras"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "creationDate": "2023-01-01T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Chapitas_de_campeon.jpg"
     },
     {
         "id":9,
@@ -104,7 +128,10 @@
             "Neymar",
             "Luis Suárez"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "creationDate": "2023-01-01T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Copa_del_Rey_2021_%28red_badge%29.svg/512px-Logo_Copa_del_Rey_2021_%28red_badge%29.svg.png"
     },{
         "id":10,
         "genre": "Sports",
@@ -115,7 +142,98 @@
             "Estadio Malvinas Argentinas",
             "Estadio Único Madre de Ciudades"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "creationDate": "2023-01-01T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Argentine_Football_Association_logo.svg"
+    },{
+        "id":11,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién metió el gol del triunfo del Real Zaragoza, ante el Real Madrid, en la final de la Copa del Rey 2004?",
+        "answers":[
+            "David Villa",
+            "Gabriel Milito",
+            "Luciano Galleti"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-03-18T00:00:00Z",
+        "author": "anchus",
+        "image": "https://www3.pictures.zimbio.com/gi/Real+Madrid+CF+v+Real+Zaragoza+La+Liga+YCEeuLofM8Bx.jpg"
+    },
+    {
+        "id":12,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En qué estadio se disputó la final de la Copa del Rey 2014, donde el Real Madrid se impuso al Barcelona por 2-1?",
+        "answers":[
+            "Estadio Vicente Calderón",
+            "Estadio Santiago Bernabéu",
+            "Estadio Mestalla"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-03-18T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Copa_del_Rey_2021_%28red_badge%29.svg/512px-Logo_Copa_del_Rey_2021_%28red_badge%29.svg.png"
+    },
+    {
+        "id":13,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién es el máximo goleador extranjero de la historia de la copa del Rey?",
+        "answers":[
+            "Lionel Messi",
+            "Alfredo Di Stéfano",
+            "Telmo Zarra"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-03-18T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Copa_del_Rey_2021_%28red_badge%29.svg/512px-Logo_Copa_del_Rey_2021_%28red_badge%29.svg.png"
+    },
+    {
+        "id":14,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Tras Barcelona, Athletic Club, Real Madrid y Atlético de Madrid, ¿cuál es el quinto equipo con más títulos de la Copa del Rey?",
+        "answers":[
+            "Sevilla",
+            "Valencia",
+            "Real Zaragoza"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-03-18T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Copa_del_Rey_2021_%28red_badge%29.svg/512px-Logo_Copa_del_Rey_2021_%28red_badge%29.svg.png"
+    },{
+        "id":15,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál es el equipo con más títulos de la copa Libertadores?",
+        "answers":[
+            "Boca Juniors",
+            "Peñarol",
+            "Independiente"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-03-19T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Chapitas_de_campeon.jpg"
+    },
+    {
+        "id":16,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién fue elegido MVP de la final de la Copa Intercontinental 2000 que enfrentó al Real Madrid y al Boca Juniors?",
+        "answers":[
+            "Juan Román Riquelme",
+            "Martin Palermo",
+            "Óscar Córdoba"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-03-19T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Intercontinental_de_Boca_exhibida_en_el_Dardo_Rocha_02.jpg"
     }
 ]
 

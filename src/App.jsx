@@ -8,9 +8,11 @@ function App() {
 
   console.log('Se renderiza el componente App');
 
+  const numberQuestions = 12;
+
   let questions = data;
-  let initialPositions = Array(10).fill(false);
-  let initialAnswers = Array(10).fill('notAnswered');
+  let initialPositions = Array(numberQuestions).fill(false);
+  let initialAnswers = Array(numberQuestions).fill('notAnswered');
   
   // get first random question
   let cuestionsAskedArray = [];
@@ -49,7 +51,7 @@ function App() {
     const currentTruePosition = positions.findIndex((position) => position === true);
     console.log('currentTruePosition: ', currentTruePosition);
     
-    const newPositions = Array(10).fill(false);
+    const newPositions = Array(numberQuestions).fill(false);
     newPositions[currentTruePosition+1] = true;
     setPositions(newPositions);
 
@@ -82,7 +84,7 @@ function App() {
     let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id));
     // Obtenemos cuestión al azar de todas las que no se han realizado
 
-    if (questionsNotAsked.length === 0) {
+    if (questionsNotAsked.length === 0 ||cuestionsAskedCopy.length === numberQuestions) {
       setShowQuestion(false);
       setStarted(false);
     }
@@ -93,6 +95,7 @@ function App() {
 
     // get answer of indexQuestion
 
+    // https://www.ghanaiantimes.com.gh/wp-content/uploads/2019/11/Pele.jpg
 
     
   };
@@ -101,7 +104,7 @@ function App() {
     <main className='board'>
         <img src={reactLogo} alt='React Logo' />
         
-      <h2 className='gameTitle'> Penaltis y cuestiones</h2>
+      <h2 className='gameTitle'> Acierta-fútbol</h2>
 
       {started === true ? 
       
