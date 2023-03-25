@@ -3,16 +3,17 @@ import reactLogo from './assets/react.svg'
 import { Square } from './components/Square.jsx'
 import data from './assets/questions/questions.json';
 import { Question } from './components/Question'
+import { Summary } from './components/Summary';
 
 function App() {
 
   console.log('Se renderiza el componente App');
 
-  const numberQuestions = 12;
+  const QUESTIONS_NUMBER = 12;
 
   let questions = data;
-  let initialPositions = Array(numberQuestions).fill(false);
-  let initialAnswers = Array(numberQuestions).fill('notAnswered');
+  let initialPositions = Array(QUESTIONS_NUMBER).fill(false);
+  let initialAnswers = Array(QUESTIONS_NUMBER).fill('notAnswered');
   
   // get first random question
   let cuestionsAskedArray = [];
@@ -30,6 +31,7 @@ function App() {
   const [cuestionNotAsked, setCuestionNotAsked] = useState(cuestionNotAskedInitial);
   const [answers, setAnswers] = useState(initialAnswers);
   const [started, setStarted] = useState(false);
+  const [showSummary, setShowSummary] = useState(false);
 
   const startGame = () => {
     resetGame();
@@ -42,6 +44,7 @@ function App() {
     setCuestionNotAsked(cuestionNotAskedInitial);
     setCuestionsAsked([]);
     setShowQuestion(true);
+    setShowSummary(false);
   }
 
 
@@ -51,20 +54,16 @@ function App() {
     const currentTruePosition = positions.findIndex((position) => position === true);
     console.log('currentTruePosition: ', currentTruePosition);
     
-    const newPositions = Array(numberQuestions).fill(false);
+    const newPositions = Array(QUESTIONS_NUMBER).fill(false);
     newPositions[currentTruePosition+1] = true;
     setPositions(newPositions);
-
-    
+  
 
     // TODO - AAC - Añadimos la pregunta a las preguntas realizadas - Revisar esto puede que sobre
     let cuestionsAskedCopy = [...cuestionsAsked];
     cuestionsAskedCopy.push(indexQuestion);
     setCuestionsAsked(cuestionsAskedCopy);
     
-
-    
-
     // compare answer with correctAnswer
     const answerCorrect = questions.findIndex(item => item.id === indexQuestion);
     let answer = questions[answerCorrect].correctAnswer;
@@ -84,8 +83,10 @@ function App() {
     let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id));
     // Obtenemos cuestión al azar de todas las que no se han realizado
 
-    if (questionsNotAsked.length === 0 ||cuestionsAskedCopy.length === numberQuestions) {
+    if (questionsNotAsked.length === 0 ||cuestionsAskedCopy.length === QUESTIONS_NUMBER) {
       setShowQuestion(false);
+      console.log('answersCopy', answersCopy);
+      setShowSummary(true);
       setStarted(false);
     }
     
@@ -109,9 +110,7 @@ function App() {
       {started === true ? 
       
         <section className='game'>
-        
             {
-              
               positions.map((square, index) => {
                 return (
                   <Square
@@ -127,8 +126,16 @@ function App() {
               })
             }
         </section>
-        : <button className='btn' onClick={startGame}>¡Pulsa para comenzar!</button> }
-          {started && showQuestion && <Question question={cuestionNotAsked} updateQuestion={updateQuestion} />}
+        : null } 
+        
+        {started && showQuestion && <Question question={cuestionNotAsked} updateQuestion={updateQuestion} />}
+
+        {showSummary && <Summary answers={answers}></Summary>}
+
+        {started === false ?
+        <button className='btn' onClick={startGame}>¡Pulsa para comenzar una nueva partida!</button>:null}
+
+        
     </main>
   )
 }
