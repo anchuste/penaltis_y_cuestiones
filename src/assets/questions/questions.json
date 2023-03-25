@@ -122,13 +122,14 @@
         "id":9,
         "genre": "Sports",
         "subgenre": "Football",
-        "text": "¿Quien marcó el gol de la victoria del FC Barcelona en la final de la Copa del Rey 2015?",
+        "text": "¿Quien marcó el gol de la victoria del Atlético de Madrid ante su eterno rival, el Real Madrid, en la final de la Copa del Rey 2012-2013 (2-1)?",
         "answers": [
-            "Lionel Messi",
-            "Neymar",
-            "Luis Suárez"
+            "Diego Costa",
+            "João Miranda",
+            "Gabi Fernández"
         ],
-        "correctAnswer": 2,
+        
+        "correctAnswer": 1,
         "creationDate": "2023-01-01T00:00:00Z",
         "author": "anchus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Copa_del_Rey_2021_%28red_badge%29.svg/512px-Logo_Copa_del_Rey_2021_%28red_badge%29.svg.png"
