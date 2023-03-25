@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
+import trivialLogo from './assets/trivial_anchus_225.png'
 import { Square } from './components/Square.jsx'
 import data from './assets/questions/questions.json';
 import { Question } from './components/Question'
@@ -103,10 +104,8 @@ function App() {
 
   return (
     <main className='board'>
-        <img src={reactLogo} alt='React Logo' />
+        <img src={trivialLogo} style={{width: "300px", height: "200px"}} alt='React Logo' />
         
-      <h2 className='gameTitle'> Acierta-fútbol</h2>
-
       {started === true ? 
       
         <section className='game'>

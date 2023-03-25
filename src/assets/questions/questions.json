@@ -234,6 +234,155 @@
         "creationDate": "2023-03-19T00:00:00Z",
         "author": "anchus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Intercontinental_de_Boca_exhibida_en_el_Dardo_Rocha_02.jpg"
+    },{
+        "id":17,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál es el estadio del Club Atlético Boca Juniors?",
+        "answers":[
+            "Estadio Alberto J. Armando",
+            "Estadio Monumental de River Plate",
+            "Estadio Único de La Plata"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-03-25T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/3/38/La_Bombonera_2.jpg"
+    },{
+        "id":18,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Nombre del entrenador que más supercopas de España ha disputado",
+        "answers":[
+            "Diego Pablo Simeone",
+            "Pep Guardiola",
+            "Johan Cruyff"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-03-25T00:00:00Z",
+        "author": "anchus",
+        "image": "https://imgs.search.brave.com/Sr1udVSJYagMHRcM69m5Ejss5pglWgGjzCT85R-Vibs/rs:fit:360:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5O/ZFJFM0piMFJicXMx/Q3o3emxOdW1RSGFH/TCZwaWQ9QXBp"
+    },{
+        "id":19,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién es el máximo goleador de la historia de la Supercopa de España?",
+        "answers":[
+            "Lionel Messi",
+            "Cristiano Ronaldo",
+            "Raúl González Blanco"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-03-25T00:00:00Z",
+        "author": "anchus",
+        "image": "https://imgs.search.brave.com/Sr1udVSJYagMHRcM69m5Ejss5pglWgGjzCT85R-Vibs/rs:fit:360:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5O/ZFJFM0piMFJicXMx/Q3o3emxOdW1RSGFH/TCZwaWQ9QXBp"
+    },
+    {
+        "id":20,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text":"¿Quién fue el primer jugador sudamericano en ganar el Balón de Oro?",
+        "answers":[
+            "Ronaldo Nazario",
+            "Rivaldo",
+            "Kaká"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-03-25T00:00:00Z",
+        "author": "anchus",
+        "image": "https://www.directfutbol.com/wp-content/uploads/2020/07/Mapa_Sudamerica_10paises.jpg"
+    },
+    {
+        "id":21,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuántos balones de oro ha ganado Don Alfredo Di Stéfano?",
+        "answers":[
+            "Ninguno",
+            "1",
+            "2",
+            "Más de 2"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-03-25T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Mcu_Alfredo_Di_Stefano.jpg"
+    },
+    {
+        "id":22,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién es el máximo goleador de la historia de la copa del mundo?",
+        "answers":[
+            "Miroslav Klose",
+            "Pelé",
+            "Gerd Müller"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-03-25T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/a/a1/FIFA_World_Cup_Trophy_%28Jules_Rimet_Trophy%29_at_National_Football_Museum%2C_Manchester_02.jpg"
+    },
+    {
+        "id":23,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál era el estadio del, ya desaparecido, Club Deportivo Logroñés?",
+        "answers":[
+            "Nueva Condomina",
+            "La Romareda",
+            "Las Gaunas"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-03-25T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/CD_Logro%C3%B1%C3%A9s.png"
+
+    },{
+        "id":24,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "En la temporada 2000/2001, Fernando Hierro, jugador del Real Madrid, anotó un hat-trick en un partido de la liga española. ¿Contra qué equipo lo hizo?",
+        "answers":[
+            "Real Sociedad",
+            "Real Valladolid",
+            "Real Zaragoza"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-03-25T00:00:00Z",
+        "author": "anchus",
+        "image": "https://www.realmadrid.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fjpeg&blobkey=id&blobtable=MungoBlobs&blobwhere=1203340011388&ssbinary=true"
+    },{
+        "id":25,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En qué equipo argentino jugó Fernando Redondo antes de su desembarco en la liga española?",
+        "answers":[
+            "Newell's Old Boys",
+            "Racing Club",
+            "Argentinos Juniors"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-03-25T00:00:00Z",
+        "author": "anchus",
+        "image": "https://pbs.twimg.com/media/EBR_qTZWkAAl9Lx?format=jpg&name=900x900"
+
+    },{
+        "id":26,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Después de Messi, ¿cuál es el máximo goleador de la selección argentina?",
+        "answers":[
+            "Gabriel Omar Batistuta",
+            "Diego Armando Maradona",
+            "Sergio Agüero"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-03-25T00:00:00Z",
+        "author": "anchus",
+        "image": "https://pbs.twimg.com/media/FiHEezAXEAoa_va?format=jpg&name=900x900"
+
     }
+
 ]
 
