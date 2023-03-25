@@ -104,7 +104,7 @@ function App() {
 
   return (
     <main className='board'>
-        <img src={trivialLogo} style={{width: "300px", height: "200px"}} alt='React Logo' />
+        <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />
         
       {started === true ? 
       
