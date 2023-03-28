@@ -411,6 +411,20 @@
         "creationDate": "2023-03-28T00:00:00Z",
         "author": "anchus",
         "image": "https://www.mundodeportivo.com/files/image_948_465/uploads/2018/04/01/60e7ec28469fc.jpeg"
+    },{
+        "id":29,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "En la temporada 2007-08, el Getafe fue eliminado de la Europa League por el Bayern de Múnich, en los cuartos de final. ¿Cuál fue el resultado del partido de vuelta en el Coliseum Alfonso Pérez?",
+        "answers":[
+            "1-2",
+            "3-3",
+            "1-3"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-03-28T00:00:00Z",
+        "author": "anchus",
+        "image": "https://k-vod.uecdn.es/html5/html5lib/v2.89.0_ue/modules/KalturaSupport/thumbnail.php/p/110/uiconf_id/14969339/entry_id/0_yt0phn4r/height/407?"
     }
 
 ]
