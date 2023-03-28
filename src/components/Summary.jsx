@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react'
 
-export const Summary = ({ answers }) => {
+export const Summary = ({ answers, totalQuestionsNumber }) => {
     console.log('Se renderiza el componente Summary');
 
     const correctAnswers = answers.filter(answer => answer === 'correct').length;
     const incorrectAnswers = answers.filter(answer => answer === 'incorrect').length;
-    const rightPorcentage = (correctAnswers / answers.length) * 100;
+    const rightPorcentage = (correctAnswers / totalQuestionsNumber) * 100;
 
     
     return (
         <div className='summary'>
         {(
             <div>
+            
+            <h2 style={{marginBottom: "5%", marginTop: "5%"}}>¡PARTIDA FINALIZADA!</h2>
            
             {rightPorcentage >= 70 ? 
             <>
@@ -55,11 +57,9 @@ export const Summary = ({ answers }) => {
             :
             null}
 
-            <h2 style={{marginBottom: "5%"}}>Resumen de la partida</h2>
-            <h3>Porcentaje de aciertos ✅: {rightPorcentage.toFixed()} % </h3>
+            <h2 style={{marginBottom: "5%"}}>ESTADÍSTICAS</h2>
             <h3>Respuestas correctas ✅: {correctAnswers}</h3>
-            <h3>Respuestas incorrectas ❌: {incorrectAnswers}</h3>
-            
+            <h3>Juego completado 🎮: {rightPorcentage.toFixed()} % </h3>
 
             </div>
         )}

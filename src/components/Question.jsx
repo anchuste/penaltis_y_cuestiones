@@ -1,6 +1,6 @@
 import { Square } from './Square.jsx'
 
-export const Question = ({ question, answer, index, updateQuestion }) => {
+export const Question = ({ question, questionNumber, index, updateQuestion }) => {
 
     /*
     const maxNumber = question.length;
@@ -13,7 +13,9 @@ export const Question = ({ question, answer, index, updateQuestion }) => {
 
           {question.image ? 
             <img src={question.image} style={{width: "320px", height: "220px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}} alt='React Logo' /> : null}
-          
+
+            <h2 style={{color:"#1C79DB", fontFamily:"unset", fontWeight:"bolder"}} > Pregunta número: {questionNumber}</h2>
+
             <h2 className='customDiv'>{question.text}</h2>
             <section>
             <ol>
@@ -28,7 +30,7 @@ export const Question = ({ question, answer, index, updateQuestion }) => {
               })
             }
             </ol>
-            <h5 style={{marginTop: "8px"}}>Autor de la pregunta: {question.author}</h5>
+            <h4 style={{marginTop: "8px"}}>Autor de la pregunta: {question.author}</h4>
           </section>
         </div>
       )

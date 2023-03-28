@@ -101,7 +101,7 @@
         "correctAnswer": 1,
         "creationDate": "2023-01-01T00:00:00Z",
         "author": "anchus",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Chapitas_de_campeon.jpg"
+        "image": "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt31f738c2a94e8124/6238aa4fe1de8b6b8c340cca/copa_libertadores_0.jpg?quality=60&format=pjpg&auto=webp&width=1000"
     },
     {
         "id":8,
@@ -219,7 +219,7 @@
         "correctAnswer": 2,
         "creationDate": "2023-03-19T00:00:00Z",
         "author": "anchus",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Chapitas_de_campeon.jpg"
+        "image": "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt31f738c2a94e8124/6238aa4fe1de8b6b8c340cca/copa_libertadores_0.jpg?quality=60&format=pjpg&auto=webp&width=1000"
     },
     {
         "id":16,
@@ -383,6 +383,34 @@
         "author": "anchus",
         "image": "https://pbs.twimg.com/media/FiHEezAXEAoa_va?format=jpg&name=900x900"
 
+    },{
+        "id":27,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuánto pagó el Real Madrid, a su eterno rival, el FC Barcelona, por el fichaje de Luis Figo?",
+        "answers":[
+            "61 millones de euros",
+            "10270 millones de pesetas",
+            "6000 millones de pesetas"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-03-28T00:00:00Z",
+        "author": "anchus",
+        "image": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/07/23/15955357294388.jpg"
+    },{
+        "id":28,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En qué ronda de la Champions League de la temporada 1997-98, sucedió el famoso incidente donde la portería del Estadio Santiago Bernabéu se desplomó?",
+        "answers":[
+            "Octavos de final",
+            "Cuartos de final",
+            "Semifinales"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-03-28T00:00:00Z",
+        "author": "anchus",
+        "image": "https://www.mundodeportivo.com/files/image_948_465/uploads/2018/04/01/60e7ec28469fc.jpeg"
     }
 
 ]

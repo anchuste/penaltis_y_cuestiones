@@ -10,16 +10,14 @@ function App() {
 
   console.log('Se renderiza el componente App');
 
-  const QUESTIONS_NUMBER = 12;
-
   let questions = data;
+  const QUESTIONS_NUMBER = questions.length;
   let initialPositions = Array(QUESTIONS_NUMBER).fill(false);
   let initialAnswers = Array(QUESTIONS_NUMBER).fill('notAnswered');
   
   // get first random question
   let cuestionsAskedArray = [];
-  const maxNumber = questions.length;
-  let indexQuestionInitial = Math.floor(Math.random() * maxNumber);
+  let indexQuestionInitial = Math.floor(Math.random() * QUESTIONS_NUMBER);
   let cuestionNotAskedInitial = questions[indexQuestionInitial];
   cuestionsAskedArray.push(cuestionNotAskedInitial.id);
 
@@ -60,7 +58,7 @@ function App() {
     setPositions(newPositions);
   
 
-    // TODO - AAC - Añadimos la pregunta a las preguntas realizadas - Revisar esto puede que sobre
+    // Añadimos la pregunta a las preguntas realizadas
     let cuestionsAskedCopy = [...cuestionsAsked];
     cuestionsAskedCopy.push(indexQuestion);
     setCuestionsAsked(cuestionsAskedCopy);
@@ -82,9 +80,9 @@ function App() {
 
     // Extraer cuestiones no realizadas
     let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id));
-    // Obtenemos cuestión al azar de todas las que no se han realizado
 
-    if (questionsNotAsked.length === 0 ||cuestionsAskedCopy.length === QUESTIONS_NUMBER) {
+    // Obtenemos cuestión al azar de todas las que no se han realizado
+    if (questionsNotAsked.length === 0 ||cuestionsAskedCopy.length === QUESTIONS_NUMBER || resultAnswer === 'incorrect') {
       setShowQuestion(false);
       console.log('answersCopy', answersCopy);
       setShowSummary(true);
@@ -106,30 +104,9 @@ function App() {
     <main className='board'>
         <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />
         
-      {started === true ? 
-      
-        <section className='game'>
-            {
-              positions.map((square, index) => {
-                return (
-                  <Square
-                    key={index}
-                    index={index}
-                    status={answers[index]}
-                    //throwQuestion={throwQuestion}
-                    isSelected={square}
-                  >
-                    {index}
-                  </Square>
-                )
-              })
-            }
-        </section>
-        : null } 
-        
-        {started && showQuestion && <Question question={cuestionNotAsked} updateQuestion={updateQuestion} />}
+        {started && showQuestion && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
 
-        {showSummary && <Summary answers={answers}></Summary>}
+        {showSummary && <Summary totalQuestionsNumber={QUESTIONS_NUMBER} answers={answers}></Summary>}
 
         {started === false ?
         <button className='btn' onClick={startGame}>¡Pulsa para comenzar una nueva partida!</button>:null}
