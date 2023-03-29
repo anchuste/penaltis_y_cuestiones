@@ -7,55 +7,49 @@ export const Summary = ({ answers, totalQuestionsNumber }) => {
     const incorrectAnswers = answers.filter(answer => answer === 'incorrect').length;
     const rightPorcentage = (correctAnswers / totalQuestionsNumber) * 100;
 
-    
+    let fraseEncabezado = '';
+    let entrenador = '';
+    let imagenEntrenador = '';
+
+    if (rightPorcentage === 100) {
+        fraseEncabezado = '¡Eres un Dios de entrenador! 🏆🏆🏆';
+        entrenador = 'Pep Guardiola';
+        imagenEntrenador = 'https://upload.wikimedia.org/wikipedia/commons/b/be/Pep_2017_%28cropped%29.jpg';
+    }else if (rightPorcentage >= 90 && rightPorcentage < 100) {
+        fraseEncabezado = '¡Eres un auténtico míster! 🥈🥈🥈';
+        entrenador = 'José Mourinho';
+        imagenEntrenador = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Mourinho_Madrid.jpg/1023px-Mourinho_Madrid.jpg';
+    }else if (rightPorcentage >= 70 && rightPorcentage < 90) {
+        fraseEncabezado = '¡Te falta poco para llegar a ser un súper entrenador! Sigue practicando.';
+        entrenador = 'Fabio Capello';
+        imagenEntrenador = 'https://upload.wikimedia.org/wikipedia/commons/7/79/Russia-Aizer_%284%29.jpg';
+    }else if (rightPorcentage >= 50 && rightPorcentage < 70) {
+        fraseEncabezado = 'Si sigues así, en breve serás un entrenador de élite.';
+        entrenador = 'Marcelo Bielsa';
+        imagenEntrenador = 'https://cflvdg.avoz.es/sc/mkTkEUnog4iJl6CJhYLShvYscmI=/768x/2016/07/08/00121467978603783815804/Foto/afp_20160708_094658720.jpg';
+    }else if (rightPorcentage >= 30 && rightPorcentage < 50) {
+        fraseEncabezado = 'Necesitas más rodaje de partidos. ¡Sigue practicando!';
+        entrenador = 'Fernando Vázquez';
+        imagenEntrenador = 'https://cope-cdnmed.agilecontent.com/resources/jpg/5/6/1577718797065.jpg';
+    }else if (rightPorcentage < 30) {
+        fraseEncabezado = 'El fútbol no es lo tuyo. Dedícate a otra cosa. 🤦‍♂️🤦‍♂️🤦‍♂️';
+        entrenador = 'Miguel Ángel Lotina';
+        imagenEntrenador = 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Miguel_%C3%81ngel_Lotina.jpg';
+    }
+        
     return (
         <div className='summary'>
         {(
             <div>
             
             <h2 style={{marginBottom: "5%", marginTop: "5%"}}>¡PARTIDA FINALIZADA!</h2>
-           
-            {rightPorcentage >= 70 ? 
-            <>
-            <h3 style={{marginBottom: "5%"}}>¡Eres un auténtico míster! 🏆🏆🏆 </h3>
-            <h3>⚽Tus conocimientos futbolísticos se asemejan a los de Pep Guardiola.⚽</h3>
-            <img style={{width: "320px", height: "220px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}}
-            src='https://upload.wikimedia.org/wikipedia/commons/b/be/Pep_2017_%28cropped%29.jpg'></img>
-            </>
-            :
-            null}
-
             
-            {rightPorcentage >= 50 && rightPorcentage < 70 ?
             <>
-            <h3 style={{marginBottom: "5%"}}>¡Te falta poco para llegar a ser un súper entrenador! Sigue practicando. </h3>
-            <h3>⚽Tus conocimientos futbolísticos se asemejan a los de Fabio Capello.⚽</h3>
+            <h3 style={{marginBottom: "5%"}}> {fraseEncabezado} </h3>
+            <h3>⚽Tus conocimientos futbolísticos se asemejan a los de {entrenador}⚽</h3>
             <img style={{width: "320px", height: "220px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}}
-            src='https://upload.wikimedia.org/wikipedia/commons/7/79/Russia-Aizer_%284%29.jpg'></img>
+            src={imagenEntrenador}></img>
             </>
-            :
-            null}
-
-            {rightPorcentage >= 30 && rightPorcentage < 50 ?
-            <>
-            <h3 style={{marginBottom: "5%"}}>Necesitas más rodaje de partidos. ¡Sigue practicando!</h3>
-            <h3>⚽Tus conocimientos futbolísticos se asemejan a los de Fernando Vázquez.⚽</h3>
-            
-            <img style={{width: "320px", height: "220px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}}
-            src='https://upload.wikimedia.org/wikipedia/commons/3/3f/FERNANDO_VAZQUEZ_PENA.png'></img>
-            </>
-            :
-            null}
-
-            {rightPorcentage < 30 ?
-            <>
-            <h3 style={{marginBottom: "5%"}}>El fútbol no es lo tuyo. Dedícate a otra cosa. 🤦‍♂️🤦‍♂️🤦‍♂️</h3>
-            <h3>⚽ Tus conocimientos futbolísticos se asemejan a los de Miguel Ángel Lotina. ⚽</h3>
-            <img style={{width: "320px", height: "220px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}}
-            src='https://upload.wikimedia.org/wikipedia/commons/b/b2/Miguel_%C3%81ngel_Lotina.jpg'></img>
-            </>
-            :
-            null}
 
             <h2 style={{marginBottom: "5%"}}>ESTADÍSTICAS</h2>
             <h3>Respuestas correctas ✅: {correctAnswers}</h3>

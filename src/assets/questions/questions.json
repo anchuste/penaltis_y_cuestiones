@@ -425,6 +425,20 @@
         "creationDate": "2023-03-28T00:00:00Z",
         "author": "anchus",
         "image": "https://k-vod.uecdn.es/html5/html5lib/v2.89.0_ue/modules/KalturaSupport/thumbnail.php/p/110/uiconf_id/14969339/entry_id/0_yt0phn4r/height/407?"
+    },{
+        "id":30,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En qué competición nacional fue el golazo de Gaizka Mendieta que remató a la escuadra una bolea en el saque de esquina ante el Barcelona en la temporada 1999-00?",
+        "answers":[
+            "Copa del Rey",
+            "Supercopa de España",
+            "Liga"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-03-29T00:00:00Z",
+        "author": "anchus",
+        "image": "https://piks.eldesmarque.com/thumbs/o/1200/bin/2021/10/07/mendieta.jpg"
     }
 
 ]
