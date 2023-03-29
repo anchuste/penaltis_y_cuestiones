@@ -7,18 +7,19 @@ export const Summary = ({ answers, totalQuestionsNumber }) => {
     const incorrectAnswers = answers.filter(answer => answer === 'incorrect').length;
     const rightPorcentage = (correctAnswers / totalQuestionsNumber) * 100;
 
+    let title = '';
     let fraseEncabezado = '';
     let entrenador = '';
     let imagenEntrenador = '';
 
     if (rightPorcentage === 100) {
-        fraseEncabezado = '¡Eres un Dios de entrenador! 🏆🏆🏆';
+        fraseEncabezado = '¡Eres un auténtico míster! ';
         entrenador = 'Pep Guardiola';
         imagenEntrenador = 'https://upload.wikimedia.org/wikipedia/commons/b/be/Pep_2017_%28cropped%29.jpg';
     }else if (rightPorcentage >= 90 && rightPorcentage < 100) {
-        fraseEncabezado = '¡Eres un auténtico míster! 🥈🥈🥈';
+        fraseEncabezado = '¡Estás cerca de convertirte en el mejor! De momento tienes que conformarte con ser el segundo entrenador de un gran club. 🥈';
         entrenador = 'José Mourinho';
-        imagenEntrenador = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Mourinho_Madrid.jpg/1023px-Mourinho_Madrid.jpg';
+        imagenEntrenador = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Mourinho_Madrid.jpg/273px-Mourinho_Madrid.jpg';
     }else if (rightPorcentage >= 70 && rightPorcentage < 90) {
         fraseEncabezado = '¡Te falta poco para llegar a ser un súper entrenador! Sigue practicando.';
         entrenador = 'Fabio Capello';
@@ -32,9 +33,17 @@ export const Summary = ({ answers, totalQuestionsNumber }) => {
         entrenador = 'Fernando Vázquez';
         imagenEntrenador = 'https://cope-cdnmed.agilecontent.com/resources/jpg/5/6/1577718797065.jpg';
     }else if (rightPorcentage < 30) {
-        fraseEncabezado = 'El fútbol no es lo tuyo. Dedícate a otra cosa. 🤦‍♂️🤦‍♂️🤦‍♂️';
+        fraseEncabezado = 'El fútbol no es lo tuyo. Dedícate a otra cosa. 🤦‍♂️';
         entrenador = 'Miguel Ángel Lotina';
         imagenEntrenador = 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Miguel_%C3%81ngel_Lotina.jpg';
+    }
+
+    if (rightPorcentage === 100) {
+        title = 'PARTIDA FINALIZADA. ¡¡¡TE HAS PASADO EL JUEGO!!! 🏆🏆🏆';
+    }
+
+    if (incorrectAnswers > 0) {
+        title = 'PARTIDA FINALIZADA. HAS FALLADO ❌❌❌';
     }
         
     return (
@@ -42,7 +51,7 @@ export const Summary = ({ answers, totalQuestionsNumber }) => {
         {(
             <div>
             
-            <h2 style={{marginBottom: "5%", marginTop: "5%"}}>¡PARTIDA FINALIZADA!</h2>
+            <h2 style={{marginBottom: "5%", marginTop: "5%"}}>{title}</h2>
             
             <>
             <h3 style={{marginBottom: "5%"}}> {fraseEncabezado} </h3>

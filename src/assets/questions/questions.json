@@ -429,7 +429,7 @@
         "id":30,
         "genre": "Sports",
         "subgenre": "Football",
-        "text": "¿En qué competición nacional fue el golazo de Gaizka Mendieta que remató a la escuadra una bolea en el saque de esquina ante el Barcelona en la temporada 1999-00?",
+        "text": "¿En qué competición nacional fue el golazo de Gaizka Mendieta que remató a la escuadra una volea en el saque de esquina ante el Barcelona en la temporada 1999-00?",
         "answers":[
             "Copa del Rey",
             "Supercopa de España",
@@ -439,7 +439,34 @@
         "creationDate": "2023-03-29T00:00:00Z",
         "author": "anchus",
         "image": "https://piks.eldesmarque.com/thumbs/o/1200/bin/2021/10/07/mendieta.jpg"
+    },{
+        "id":31,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Qué equipo ha ganado más campeonatos en la historia de la segunda división española?",
+        "answers":[
+            "Real Murcia",
+            "Sporting de Gijón",
+            "Deportivo Alavés"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-03-29T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/LaLiga_SmartBank_logo_%28stacked%29.svg/299px-LaLiga_SmartBank_logo_%28stacked%29.svg.png"
+    },{
+        "id":32,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién es el jugador de la premier league que más hat-tricks ha marcado en la historia de la competición?",
+        "answers":[
+            "Alan Shearer",
+            "Wayne Rooney",
+            "Sergio Agüero"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-03-29T00:00:00Z",
+        "author": "anchus",
+        "image": "https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2017/04/premierleaguelogo.jpg"
     }
-
 ]
 
