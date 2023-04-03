@@ -467,6 +467,34 @@
         "creationDate": "2023-03-29T00:00:00Z",
         "author": "anchus",
         "image": "https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2017/04/premierleaguelogo.jpg"
+    },{
+        "id":33,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Jugador foráneo con más partidos en la historia del Deportivo de La Coruña",
+        "answers":[
+            "Donato",
+            "Mauro Silva",
+            "Miroslav Djukic"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-04-03T00:00:00Z",
+        "author": "anchus",
+        "image": "https://realclubdeportivoblog.files.wordpress.com/2015/12/superdepor.jpg?w=600"
+    },{
+        "id":34,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién fue el capitán del Celta de Vigo en el partido de vuelta de los octavos de final de la copa de la Uefa 2009 ante la Juventus de Turín?",
+        "answers":[
+            "Gustavo López",
+            "Giovanella",
+            "Mostovoi"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-04-03T00:00:00Z",
+        "author": "anchus",
+        "image": "https://cflvdg.avoz.es/sc/ICScgvabXMAd6nC4wNrjfsqnJu0=/480x/2016/03/08/00121457452563788472831/Foto/v09m0055.jpg"
     }
 ]
 
