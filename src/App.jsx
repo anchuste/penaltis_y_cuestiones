@@ -5,6 +5,8 @@ import { Square } from './components/Square.jsx'
 import data from './assets/questions/questions.json';
 import { Question } from './components/Question'
 import { Summary } from './components/Summary';
+import { NavBar } from './components/NavBar';
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
 
@@ -101,7 +103,12 @@ function App() {
   };
 
   return (
+    <>
+    <BrowserRouter>
+      <NavBar showNavbarWhilePlaying={started} />
+    </BrowserRouter>
     <main className='board'>
+        
         <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />
         
         {started && showQuestion && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
@@ -110,9 +117,8 @@ function App() {
 
         {started === false ?
         <button className='btn' onClick={startGame}>¡Pulsa para comenzar una nueva partida!</button>:null}
-
-        
     </main>
+    </>
   )
 }
 

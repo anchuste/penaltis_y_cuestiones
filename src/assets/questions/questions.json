@@ -495,6 +495,62 @@
         "creationDate": "2023-04-03T00:00:00Z",
         "author": "anchus",
         "image": "https://cflvdg.avoz.es/sc/ICScgvabXMAd6nC4wNrjfsqnJu0=/480x/2016/03/08/00121457452563788472831/Foto/v09m0055.jpg"
+    },{
+        "id":35,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿De qué nacionalidad es Nayim, héroe de la Recopa de Europa conquistada por el Zaragoza en el año 1995?",
+        "answers":[
+            "Español",
+            "Francés",
+            "Marroquí"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-04-04T00:00:00Z",
+        "author": "anchus",
+        "image": "https://s1.abcstatics.com/media/deportes/2020/05/10/nayim4-k9tG--510x349@abc.jpeg"
+    },{
+        "id":36,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál es el club en el que Xabi Alonso ha jugado más partidos?",
+        "answers":[
+            "Real Sociedad",
+            "Real Madrid",
+            "Liverpool"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-04-04T00:00:00Z",
+        "author": "anchus",
+        "image": "https://www.elheraldo.co/sites/default/files/styles/840x473/public/articulo/2017/03/09/xabi-alonso.jpg?itok=xj5mJ1Mb"
+    },{
+        "id":37,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién es el máximo goleador histórico extranjero del Atlético de Madrid?",
+        "answers":[
+            "Sergio Agüero",
+            "Paulo Futre",
+            "Antoine Griezmann"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-04-04T00:00:00Z",
+        "author": "anchus",
+        "image": "https://img-estaticos.atleticodemadrid.com/system/file6s/58772/medium2x2/JFN8kc86FH_AGL_8965.jpg?1569964753"
+    },{
+        "id":38,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Hasta qué ronda llegó en la Copa del Rey el Atletico de Madrid en la temporada de su descenso a segunda división en el año 1999-00?",
+        "answers":[
+            "Cuartos de final",
+            "Semifinales",
+            "Final"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-04-04T00:00:00Z",
+        "author": "anchus",
+        "image": "https://futbolretro.es/wp-content/uploads/2018/09/abc-3.jpg"
     }
 ]
 
