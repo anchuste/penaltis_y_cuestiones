@@ -551,6 +551,34 @@
         "creationDate": "2023-04-04T00:00:00Z",
         "author": "anchus",
         "image": "https://futbolretro.es/wp-content/uploads/2018/09/abc-3.jpg"
+    },{
+        "id":39,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Qué sanción recibió el FC Barcelona por los incidentes acontecidos en el regreso de Luis Figo al Camp Nou como jugador del Real Madrid en la temporada 2002?",
+        "answers":[
+            "Multa de 4000 euros",
+            "Se cerró el Camp Nou durante 2 partidos",
+            "No hubo sanción"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-04-07T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Luis_figo.jpg/320px-Luis_figo.jpg"
+    },{
+        "id":40,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "En los años 90, ¿a qué dirigente de un equipo gallego propinó un puñetazo el presidente del Atlético de Madrid, Jesús Gil?",
+        "answers":[
+            "A José María Caneda",
+            "A José González Fidalgo",
+            "Augusto César Lendoiro"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-04-07T00:00:00Z",
+        "author": "anchus",
+        "image": "https://www.lavanguardia.com/files/og_thumbnail/uploads/2016/03/08/5fa2bcff88ab5.jpeg"
     }
 ]
 
