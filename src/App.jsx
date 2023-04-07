@@ -7,6 +7,8 @@ import { Question } from './components/Question'
 import { Summary } from './components/Summary';
 import { NavBar } from './components/NavBar';
 import { BrowserRouter } from 'react-router-dom'
+import { Sanctions } from './components/Sanctions';
+import { SanctionsSummary } from './components/SanctionsSummary';
 
 function App() {
 
@@ -33,10 +35,18 @@ function App() {
   const [answers, setAnswers] = useState(initialAnswers);
   const [started, setStarted] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
+  const [sanctions, setSanctions] = useState(0);
+  const [showSanctions, setShowSanctions] = useState(false);
+
 
   const startGame = () => {
     resetGame();
   }
+
+  const resumeGame = () => {
+    setShowSanctions(false);
+  }
+
 
   const resetGame = () => {
     setStarted(true);
@@ -46,6 +56,8 @@ function App() {
     setCuestionsAsked([]);
     setShowQuestion(true);
     setShowSummary(false);
+    setSanctions(0);
+    setShowSanctions(false);
   }
 
 
@@ -80,13 +92,28 @@ function App() {
     answersCopy[currentTruePosition] = resultAnswer;
     setAnswers(answersCopy);
 
+    let currentSanctions = sanctions;
+
     // Extraer cuestiones no realizadas
     let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id));
 
+    // Si la respuesta es incorrecta, sumamos una sanción
+    if (resultAnswer === 'incorrect') {
+      currentSanctions = currentSanctions + 1;
+      setSanctions(currentSanctions);
+      if (currentSanctions === 1){
+        setShowSanctions(true);
+      }
+    }
+
+    
+
     // Obtenemos cuestión al azar de todas las que no se han realizado
-    if (questionsNotAsked.length === 0 ||cuestionsAskedCopy.length === QUESTIONS_NUMBER || resultAnswer === 'incorrect') {
+    if (questionsNotAsked.length === 0 ||
+      cuestionsAskedCopy.length === QUESTIONS_NUMBER ||
+       currentSanctions > 1) {
       setShowQuestion(false);
-      console.log('answersCopy', answersCopy);
+      //console.log('answersCopy', answersCopy);
       setShowSummary(true);
       setStarted(false);
     }
@@ -111,12 +138,22 @@ function App() {
         
         <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />
         
-        {started && showQuestion && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
+        {started && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
+
+        {started && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}
 
         {showSummary && <Summary totalQuestionsNumber={QUESTIONS_NUMBER} answers={answers}></Summary>}
 
+        {showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
+
         {started === false ?
-        <button className='btn' onClick={startGame}>¡Pulsa para comenzar una nueva partida!</button>:null}
+          <button className='btn' onClick={startGame}>¡Pulse para comenzar una nueva partida!</button>
+          :null}
+        
+        {showSanctions ?
+          <button className='btn' onClick={resumeGame}>Entendido señor colegiado. ¡Pulse para continuar!</button>
+          :null}
+        
     </main>
     </>
   )

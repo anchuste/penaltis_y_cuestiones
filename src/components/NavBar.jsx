@@ -23,13 +23,20 @@ export const NavBar = ({ showNavbarWhilePlaying  }) => {
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
           <li>
-              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/home">Home</NavLink>
+              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/home">Inicio</NavLink>
             </li>
             <li>
-              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/blog">Ranking</NavLink>
+              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/contact">Acerca de</NavLink>
+            </li>
+            
+            <li>
+              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/ranking">Clasificación</NavLink>
             </li>
             <li>
-              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/contact">Contact</NavLink>
+              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/help">Instrucciones</NavLink>
+            </li>
+            <li>
+              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/support">Colabora</NavLink>
             </li>
           </ul>
         </div>

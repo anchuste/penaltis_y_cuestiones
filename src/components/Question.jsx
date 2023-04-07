@@ -12,7 +12,7 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
         <div>
 
           {question.image ? 
-            <img src={question.image} style={{width: "320px", height: "220px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}} alt='React Logo' /> : null}
+            <img src={question.image} style={{width: "280px", height: "180px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}} alt='React Logo' /> : null}
 
             <h2 style={{color:"#1C79DB", fontFamily:"unset", fontWeight:"bolder"}} > Pregunta número: {questionNumber}</h2>
 
