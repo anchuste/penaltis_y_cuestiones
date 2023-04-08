@@ -101,17 +101,15 @@ function App() {
     if (resultAnswer === 'incorrect') {
       currentSanctions = currentSanctions + 1;
       setSanctions(currentSanctions);
-      if (currentSanctions === 1){
+      if (currentSanctions > 0 && currentSanctions < 3) {
         setShowSanctions(true);
       }
     }
 
-    
-
     // Obtenemos cuestión al azar de todas las que no se han realizado
     if (questionsNotAsked.length === 0 ||
       cuestionsAskedCopy.length === QUESTIONS_NUMBER ||
-       currentSanctions > 1) {
+       currentSanctions > 2) {
       setShowQuestion(false);
       //console.log('answersCopy', answersCopy);
       setShowSummary(true);

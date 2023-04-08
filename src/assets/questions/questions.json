@@ -146,7 +146,7 @@
         "correctAnswer": 2,
         "creationDate": "2023-01-01T00:00:00Z",
         "author": "anchus",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Argentine_Football_Association_logo.svg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Estadio_%C3%9Anico_Madre_de_Ciudades_%28Este%29.jpg/320px-Estadio_%C3%9Anico_Madre_de_Ciudades_%28Este%29.jpg"
     },{
         "id":11,
         "genre": "Sports",
@@ -571,8 +571,8 @@
         "subgenre": "Football",
         "text": "En los años 90, ¿a qué dirigente de un equipo gallego propinó un puñetazo el presidente del Atlético de Madrid, Jesús Gil?",
         "answers":[
-            "A José María Caneda",
-            "A José González Fidalgo",
+            "José María Caneda",
+            "José González Fidalgo",
             "Augusto César Lendoiro"
         ],
         "correctAnswer": 1,

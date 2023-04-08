@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import yellowCard from '../assets/yellow-card.png'
+import redCard from '../assets/red-card.png'
 
 export const Summary = ({ answers, totalQuestionsNumber }) => {
     console.log('Se renderiza el componente Summary');
@@ -42,27 +44,68 @@ export const Summary = ({ answers, totalQuestionsNumber }) => {
         title = 'PARTIDA FINALIZADA. ¡¡¡TE HAS PASADO EL JUEGO!!! 🏆🏆🏆';
     }
 
-    if (incorrectAnswers > 0) {
-        title = 'PARTIDA FINALIZADA. HAS FALLADO ❌❌❌';
+    if (incorrectAnswers > 2) {
+        title = 'PARTIDA FINALIZADA';
     }
         
     return (
         <div className='summary'>
         {(
             <div>
-            
-            <h2 style={{marginBottom: "5%", marginTop: "5%"}}>{title}</h2>
-            
+
+            {incorrectAnswers === 1 ? 
             <>
-            <h3 style={{marginBottom: "5%"}}> {fraseEncabezado} </h3>
-            <h3>⚽Tus conocimientos futbolísticos se asemejan a los de {entrenador}⚽</h3>
+            <h1 style={{marginBottom: "5%", marginTop: "5%"}}>
+                {title}  
+            </h1>
+            <h2 style={{marginBottom: "10px", color: "red"}}>¡HAS TENIDO 1 SANCIÓN!</h2>
+            <h2 style={{marginBottom: "30px"}}>
+            <img src={yellowCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
+            </h2>
+            </>
+                
+             :null}
+            
+            {incorrectAnswers === 2 ? 
+            <>
+            <h1 style={{marginBottom: "5%", marginTop: "5%"}}>
+                {title}  
+            </h1>
+            <h2 style={{marginBottom: "10px", color: "red"}}>¡HAS TENIDO 2 SANCIONES!</h2>
+            <h2 style={{marginBottom: "30px"}}>
+            <img src={yellowCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
+            <img src={yellowCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
+            </h2>
+            </>
+             :null}
+            
+            {incorrectAnswers > 2 ? 
+            <>
+            <h1 style={{marginBottom: "5%", marginTop: "5%"}}>
+                {title}  
+            </h1>
+            <h2 style={{marginBottom: "10px", color: "red"}}>¡HAS SIDO EXPULSADO!</h2>
+            <h2 style={{marginBottom: "30px"}}>
+            <img src={yellowCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
+            <img src={yellowCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
+            <img src={redCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
+            </h2>
+            </>
+             :null}
+            
+            <h2 className="border_trivial">Respuestas acertadas ✅: {correctAnswers}</h2>
+            <h2 className="border_trivial">Respuestas falladas ❌: {incorrectAnswers}</h2>
+            <h2 className="border_trivial"> Juego completado al 🎮: {rightPorcentage.toFixed()} % </h2>
+
+            <>
+            <h3>Eres comparable a</h3>
+            <h3>{entrenador}</h3>
             <img style={{width: "320px", height: "220px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}}
             src={imagenEntrenador}></img>
             </>
 
-            <h2 style={{marginBottom: "5%"}}>ESTADÍSTICAS</h2>
-            <h3>Respuestas correctas ✅: {correctAnswers}</h3>
-            <h3>Juego completado 🎮: {rightPorcentage.toFixed()} % </h3>
+            
+            
 
             </div>
         )}

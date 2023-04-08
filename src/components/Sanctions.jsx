@@ -8,8 +8,15 @@ export function Sanctions({SanctionsNumber}){
 
     return (
         <>
-        {sanctions > 0? 
-            <h4 style={{color: "black", backgroundColor: "#00b4d8", marginTop: "3px"}}> *Sanciones del jugador : <img src={yellowCard} style={{width: "60px", height: "30px", verticalAlign: "middle"}}></img> </h4>
+        {sanctions === 1? 
+            <h4 className='border_sanction_player'> *Sanciones del jugador : <img src={yellowCard} style={{width: "60px", height: "30px", verticalAlign: "middle"}}></img> </h4>
+            : null}
+        
+        {sanctions === 2? 
+            <h4 className='border_sanction_player'> *Sanciones del jugador : 
+            <img src={yellowCard} style={{width: "60px", height: "30px", verticalAlign: "middle"}}></img> 
+            <img src={yellowCard} style={{width: "60px", height: "30px", verticalAlign: "middle"}}></img> 
+            </h4>
             : null}
         </>
     );
