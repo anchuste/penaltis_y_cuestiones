@@ -175,7 +175,7 @@
         "correctAnswer": 2,
         "creationDate": "2023-03-18T00:00:00Z",
         "author": "anchus",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Logo_Copa_del_Rey_2021_%28red_badge%29.svg/512px-Logo_Copa_del_Rey_2021_%28red_badge%29.svg.png"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Mestalla1.jpg/640px-Mestalla1.jpg"
     },
     {
         "id":13,
@@ -579,6 +579,90 @@
         "creationDate": "2023-04-07T00:00:00Z",
         "author": "anchus",
         "image": "https://www.lavanguardia.com/files/og_thumbnail/uploads/2016/03/08/5fa2bcff88ab5.jpeg"
+    },{
+        "id":41,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Equipo de procedencia de Enzo Fernández cuando fichó por el Benfica",
+        "answers":[
+            "River Plate",
+            "Boca Juniors",
+            "Independiente"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-04-15T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Enzo_Fern%C3%A1ndez_WC2022.jpg/421px-Enzo_Fern%C3%A1ndez_WC2022.jpg"
+    },{
+        "id":42,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En la cantera de qué equipo se formó el jugador Juan Carlos Valerón?",
+        "answers":[
+            "Las Palmas",
+            "Mallorca",
+            "Deportivo de la Coruña"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-04-15T00:00:00Z",
+        "author": "anchus",
+        "image": "https://www.sporting-heroes.net/content/thumbnails/00251/24995-zoom.jpg"
+    },{
+        "id":43,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Qué nombre tenía el estadio del Villareal antes de llamarse Estado de la Cerámica?",
+        "answers":[
+            "Campo del Villareal",
+            "El Molinón",
+            "El Madrigal"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-04-15T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/City_v_Villarreal.jpg/640px-City_v_Villarreal.jpg"
+    },{
+        "id":44,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "En 1998, ¿contra qué equipo marcó Raúl González Blanco el gol conocido como 'El Aguanís', en la final de la copa Intercontinental?",
+        "answers":[
+            "Vasco da Gama",
+            "Palmeiras",
+            "Cruzeiro"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-04-15T00:00:00Z",
+        "author": "anchus",
+        "image": "https://img.asmedia.epimg.net/resizer/fJLqJAwiDyJaK5nbbVyPwI1gJ6U=/736x414/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/4QEAZAISCNJRVMK2TCKFNEZSAI.jpg"
+    },{
+        "id":45,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Ordene estos equipos en función de las copas interconinentales que han ganado (de mayor número de trofeos a menor)",
+        "answers":[
+            "Milán, Boca Juniors, Barcelona",
+            "Barcelona, Boca Juniors, Milán",
+            "Boca Juniors, Milán, Barcelona"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-04-15T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Elgrafico_river_gallego_funes.jpg"
+    },{
+        "id":46,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuántas copas de Europa ha ganado el Nottingham Forest?",
+        "answers":[
+            "Ninguna",
+            "1",
+            "2"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-04-15T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Plaque_to_formation_of_Nottingham_Forest_FC_%28geograph_6721173%29.jpg/640px-Plaque_to_formation_of_Nottingham_Forest_FC_%28geograph_6721173%29.jpg"
     }
 ]
 
