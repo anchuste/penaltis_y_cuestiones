@@ -663,6 +663,20 @@
         "creationDate": "2023-04-15T00:00:00Z",
         "author": "anchus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Plaque_to_formation_of_Nottingham_Forest_FC_%28geograph_6721173%29.jpg/640px-Plaque_to_formation_of_Nottingham_Forest_FC_%28geograph_6721173%29.jpg"
+    },{
+        "id":47,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text":"¿En qué país nació Eduardo Camavinga?",
+        "answers":[
+            "Francia",
+            "Angola",
+            "Congo"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-04-15T00:00:00Z",
+        "author": "anchus",
+        "image": "https://s3.sportstatics.com/relevo/www/multimedia/202302/09/media/cortadas/Cama-Horizontal-RfA9ArjsmtZEd9Dj0YDMTbK-720x960@Relevo.jpg?cw=414&ch=552&img=default"
     }
 ]
 
