@@ -167,23 +167,17 @@ body {
 
 ol li { list-style:none }
 
-
-
 .navbar {
   height: 60px;
   position: relative;
 }
 
-.logo {
-}
-
-.nav-elements {
-}
-
 .nav-elements ul {
+  margin-top: 15px;
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  
 }
 
 .nav-elements ul li:not(:last-child) {
@@ -213,13 +207,30 @@ ol li { list-style:none }
   background-color: #574c4c;
 }
 
+.menu-icon {
+  display: block;
+  cursor: pointer;
+  display: none;
+}
+
+.btn_nav_bar{
+  color: rgb(0, 153, 255);
+  text-decoration: none;
+  font-size: 26px;
+  background-color: #242424;
+  border: #242424;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
+  
   .menu-icon {
     display: block;
     cursor: pointer;
   }
 
   .nav-elements {
+    margin-top: 0px;
     position: absolute;
     top: 60px;
     width: 0px;
@@ -229,11 +240,13 @@ ol li { list-style:none }
   }
 
   .nav-elements.active {
+    
     width: 100%;
     background-color: #242424;
   }
 
   .nav-elements ul {
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
   }
@@ -265,5 +278,7 @@ ol li { list-style:none }
     margin-top: 8px;
     border-top-left-radius: 35px;
   }
+
+  
 }
 

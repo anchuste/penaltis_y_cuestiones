@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import trivialLogo from './assets/trivial_anchus_225.png'
-import { Square } from './components/Square.jsx'
 import data from './assets/questions/questions.json';
 import { Question } from './components/Question'
 import { Summary } from './components/Summary';
 import { NavBar } from './components/NavBar';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter} from 'react-router-dom'
 import { Sanctions } from './components/Sanctions';
 import { SanctionsSummary } from './components/SanctionsSummary';
+
 
 function App() {
 
@@ -37,6 +36,8 @@ function App() {
   const [showSummary, setShowSummary] = useState(false);
   const [sanctions, setSanctions] = useState(0);
   const [showSanctions, setShowSanctions] = useState(false);
+  const [navBarstate, setNavBarstate] = useState('');
+  
 
 
   const startGame = () => {
@@ -129,9 +130,11 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
-      <NavBar showNavbarWhilePlaying={started} />
-    </BrowserRouter>
+
+        <BrowserRouter>
+          <NavBar showNavbarWhilePlaying={started}/>
+        </BrowserRouter>
+    
     <main className='board'>
         
         <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />
@@ -151,7 +154,6 @@ function App() {
         {showSanctions ?
           <button className='btn' onClick={resumeGame}>Entendido señor colegiado. ¡Pulse para continuar!</button>
           :null}
-        
     </main>
     </>
   )

@@ -677,6 +677,35 @@
         "creationDate": "2023-04-15T00:00:00Z",
         "author": "anchus",
         "image": "https://s3.sportstatics.com/relevo/www/multimedia/202302/09/media/cortadas/Cama-Horizontal-RfA9ArjsmtZEd9Dj0YDMTbK-720x960@Relevo.jpg?cw=414&ch=552&img=default"
+    },{
+        "id":48,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál es el nombre completo del ex-jugador del Swansea City, entre otros, 'Michu'?",
+        "answers":[
+            "Miguel Ángel Rodríguez Fernández",
+            "Miguel Flores Rodríguez",
+            "Miguel Pérez Cuesta"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-04-18T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Michu_2013.jpg/419px-Michu_2013.jpg"
+    },{
+        "id":49,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En qué equipo ha marcado más goles Dani Güiza?",
+        "answers":[
+            "Mallorca",
+            "Fenerbahçe",
+            "Ciudad de Murcia"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-04-18T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Spain_Euro_08_celebration_1.jpg/640px-Spain_Euro_08_celebration_1.jpg"
+
     }
 ]
 

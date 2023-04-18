@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import trivialLogo from './../assets/trivial_anchus_225.png'
 import Hamburger from './../assets/hamburger.png';
+import { QuestionsForm } from "./QuestionsForm";
 
-export const NavBar = ({ showNavbarWhilePlaying  }) => {
-  const [showNavbar, setShowNavbar] = useState(false)
+export const NavBar = ({showNavbarWhilePlaying}) => {
+  const [showNavbar, setShowNavbar] = useState(false);
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar)
@@ -22,21 +21,20 @@ export const NavBar = ({ showNavbarWhilePlaying  }) => {
         </div>
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
-          <li>
-              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/home">Inicio</NavLink>
+            <li>
+              <button className="btn_nav_bar" to="/support">Inicio</button>
             </li>
             <li>
-              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/contact">Acerca de</NavLink>
-            </li>
-            
-            <li>
-              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/ranking">Clasificación</NavLink>
+              <button className="btn_nav_bar" to="/support">Acerca de</button>
             </li>
             <li>
-              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/help">Instrucciones</NavLink>
+              <button className="btn_nav_bar" to="/support">Clasificación</button>
             </li>
             <li>
-              <NavLink style={{color: '#09f', textDecoration: 'none', fontSize: "26px"}} to="/support">Colabora</NavLink>
+              <button className="btn_nav_bar" to="/support">Instrucciones</button>
+            </li>
+            <li>
+              <button className="btn_nav_bar" to="/support">Colabora</button>
             </li>
           </ul>
         </div>
@@ -44,6 +42,4 @@ export const NavBar = ({ showNavbarWhilePlaying  }) => {
     </nav>:null}
     </>
       );
-
-
 }
