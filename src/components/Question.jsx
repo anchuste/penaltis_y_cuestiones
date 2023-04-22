@@ -12,9 +12,9 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
         <div>
 
           {question.image ? 
-            <img src={question.image} style={{width: "280px", height: "180px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}} alt='React Logo' /> : null}
+            <img src={question.image} className='question_image' alt='React Logo' /> : null}
 
-            <h2 style={{color:"#1C79DB", fontFamily:"unset", fontWeight:"bolder"}} > Pregunta número: {questionNumber}</h2>
+            <h2 className='question_number' > Pregunta número: {questionNumber}</h2>
 
             <h2 className='customDiv'>{question.text}</h2>
             <section>
@@ -30,7 +30,7 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
               })
             }
             </ol>
-            <h4 style={{marginTop: "8px"}}>Autor de la pregunta: {question.author}</h4>
+            <h5 style={{marginTop: "8px"}}>Autor de la pregunta: {question.author}</h5>
           </section>
         </div>
       )

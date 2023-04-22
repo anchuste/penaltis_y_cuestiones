@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import trivialLogo from './assets/trivial_anchus_225.png'
+import trivialLogo from './assets/trivial_anchus_225_lila.png'
 import data from './assets/questions/questions.json';
 import { Question } from './components/Question'
 import { Summary } from './components/Summary';

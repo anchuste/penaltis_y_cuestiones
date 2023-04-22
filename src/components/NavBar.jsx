@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Hamburger from './../assets/hamburger.png';
+import Hamburger from './../assets/hamburger_violet.png';
 import { QuestionsForm } from "./QuestionsForm";
 
 export const NavBar = ({showNavbarWhilePlaying}) => {

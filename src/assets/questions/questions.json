@@ -705,7 +705,20 @@
         "creationDate": "2023-04-18T00:00:00Z",
         "author": "anchus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Spain_Euro_08_celebration_1.jpg/640px-Spain_Euro_08_celebration_1.jpg"
-
+    },{
+        "id":50,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Qué jugadores acompañaron en el podio a Luka Modric en la gala del Balón de Oro 2018?",
+        "answers":[
+            "Cristiano Ronaldo y Antoine Griezmann",
+            "Cristiano Ronaldo y Neymar",
+            "Lionel Messi y Antoine Griezmann"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-04-22T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/ISL-HRV_%287%29.jpg/440px-ISL-HRV_%287%29.jpg"
     }
 ]
 
