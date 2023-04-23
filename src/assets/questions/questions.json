@@ -719,6 +719,20 @@
         "creationDate": "2023-04-22T00:00:00Z",
         "author": "anchus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/ISL-HRV_%287%29.jpg/440px-ISL-HRV_%287%29.jpg"
+    },{
+        "id":51,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Con cuál de los siguientes entrenadores jugó más partidos en el Real Madrid Fernando Gago?",
+        "answers":[
+            "Bernd Schuster",
+            "Manuel Pellegrini",
+            "Fabio Capello"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-04-23T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Albiol%2C_Gago.jpg/443px-Albiol%2C_Gago.jpg"
     }
 ]
 

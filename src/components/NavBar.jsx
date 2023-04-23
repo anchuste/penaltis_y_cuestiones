@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import Hamburger from './../assets/hamburger_violet.png';
 import { QuestionsForm } from "./QuestionsForm";
 
-export const NavBar = ({showNavbarWhilePlaying}) => {
+export const NavBar = ({showNavbarWhilePlaying, handleNavBarState}) => {
   const [showNavbar, setShowNavbar] = useState(false);
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar)
+  }
+
+  const navBarButtonOnClick = (event) => {
+    console.log(event.target.id)
+    handleNavBarState(event.target.id);
   }
 
     return (
@@ -22,10 +27,10 @@ export const NavBar = ({showNavbarWhilePlaying}) => {
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
             <li>
-              <button className="btn_nav_bar" to="/support">Inicio</button>
+              <button id="homeNavBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/home">Inicio</button>
             </li>
             <li>
-              <button className="btn_nav_bar" to="/support">Acerca de</button>
+              <button id="infoNavBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/info">Acerca de</button>
             </li>
             <li>
               <button className="btn_nav_bar" to="/support">Clasificación</button>
@@ -34,7 +39,7 @@ export const NavBar = ({showNavbarWhilePlaying}) => {
               <button className="btn_nav_bar" to="/support">Instrucciones</button>
             </li>
             <li>
-              <button className="btn_nav_bar" to="/support">Colabora</button>
+              <button id="supportNavBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/support">Colabora</button>
             </li>
           </ul>
         </div>

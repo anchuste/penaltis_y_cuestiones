@@ -7,6 +7,7 @@ import { NavBar } from './components/NavBar';
 import { BrowserRouter} from 'react-router-dom'
 import { Sanctions } from './components/Sanctions';
 import { SanctionsSummary } from './components/SanctionsSummary';
+import { SupportForm } from './components/SupportForm';
 
 
 function App() {
@@ -36,9 +37,12 @@ function App() {
   const [showSummary, setShowSummary] = useState(false);
   const [sanctions, setSanctions] = useState(0);
   const [showSanctions, setShowSanctions] = useState(false);
-  const [navBarstate, setNavBarstate] = useState('');
-  
 
+  const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
+  
+  const handleNavBarState = (newNavBarState) => {
+    setNavBarstate(newNavBarState);
+  }
 
   const startGame = () => {
     resetGame();
@@ -132,12 +136,15 @@ function App() {
     <>
 
         <BrowserRouter>
-          <NavBar showNavbarWhilePlaying={started}/>
+          <NavBar showNavbarWhilePlaying={started} handleNavBarState={handleNavBarState} />
         </BrowserRouter>
     
     <main className='board'>
         
+        
         <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />
+
+        {navBarstate === 'supportNavBarButton' && <SupportForm></SupportForm>}
         
         {started && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
 
@@ -147,13 +154,14 @@ function App() {
 
         {showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
 
-        {started === false ?
+        {started === false &&  navBarstate === 'homeNavBarButton' ?
           <button className='btn' onClick={startGame}>¡Pulse para comenzar una nueva partida!</button>
           :null}
         
         {showSanctions ?
           <button className='btn' onClick={resumeGame}>Entendido señor colegiado. ¡Pulse para continuar!</button>
           :null}
+        
     </main>
     </>
   )
