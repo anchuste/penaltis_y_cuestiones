@@ -317,7 +317,7 @@ ol li { list-style:none }
 .questions_support_form_input_text{
   background-color: #c9c17e2b;
   /* color: red; */
-  width: 70%;
+  width: 85%;
   margin: 10px;
   font-size: unset;
   border-radius: 10p;
@@ -328,7 +328,7 @@ ol li { list-style:none }
 .questions_support_form_text_area{
   background-color: #c9c17e2b;
   /* color: red; */
-  width: 70%;
+  width: 85%;
   margin: 10px;
   font-size: unset;
   border-radius: 10p;

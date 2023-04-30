@@ -58,7 +58,7 @@ export const SupportForm = () => {
         <div>
             <h2> {constants.COLABORA_TITULO_PRINCIPAL} </h2>
             <form action="" onSubmit={handleSubmmit}>
-                <input name='usuario' className='questions_support_form_input_text' type="text" placeholder="Escribe tu nombre" />
+                <input style={{marginTop: '20px'}}name='usuario' className='questions_support_form_input_text' type="text" placeholder="Escribe tu nombre" />
                 <textarea name='pregunta' className='questions_support_form_text_area' rows={4} maxLength={200} placeholder="Escribe tu pregunta" />
                 <textarea name='respuesta1' className='questions_support_form_text_area' rows={2} maxLength={30} placeholder="Escribe la respuesta 1" />
                 <textarea name='respuesta2' className='questions_support_form_text_area' rows={2} maxLength={30} placeholder="Escribe la respuesta 2" />
