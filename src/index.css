@@ -218,7 +218,7 @@ ol li { list-style:none }
 }
 
 .btn_nav_bar{
-  color: #E8A0BF;
+  color: #6f4499;
   text-decoration: none;
   font-size: 26px;
   background-color: #242424;
@@ -322,6 +322,7 @@ ol li { list-style:none }
   font-size: unset;
   border-radius: 10p;
   color: white;
+  font-family: sans-serif;
 }
 
 .questions_support_form_text_area{
@@ -333,5 +334,6 @@ ol li { list-style:none }
   border-radius: 10p;
   color: white;
   resize: none;
+  font-family: sans-serif;
 }
 

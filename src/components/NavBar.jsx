@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Hamburger from './../assets/hamburger_violet.png';
-import { QuestionsForm } from "./QuestionsForm";
 
 export const NavBar = ({showNavbarWhilePlaying, handleNavBarState}) => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -12,6 +11,8 @@ export const NavBar = ({showNavbarWhilePlaying, handleNavBarState}) => {
   const navBarButtonOnClick = (event) => {
     console.log(event.target.id)
     handleNavBarState(event.target.id);
+    setShowNavbar(showNavbar);
+    handleShowNavbar();
   }
 
     return (

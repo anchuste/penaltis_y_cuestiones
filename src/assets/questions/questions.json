@@ -733,6 +733,34 @@
         "creationDate": "2023-04-23T00:00:00Z",
         "author": "anchus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Albiol%2C_Gago.jpg/443px-Albiol%2C_Gago.jpg"
+    },{
+        "id":52,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En qué equipo se retiró el ex-jugador del Real Madrid, entre otros, 'Pedja' Mijatovic?",
+        "answers":[
+            "Partizán de Belgrado",
+            "Levante",
+            "Fiorentina"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-04-30T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/95/93-94_-_Mijatovic_-_Val%C3%A8ncia.jpg"
+    },{
+        "id":53,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál es la altura, en centímetros, de Peter Crouch?",
+        "answers":[
+            "200",
+            "198",
+            "211"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-04-30T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Chelsea_3_Stoke_0_%2813677350585%29_-_Peter_Crouch_%28cropped%29.jpg/443px-Chelsea_3_Stoke_0_%2813677350585%29_-_Peter_Crouch_%28cropped%29.jpg"
     }
 ]
 
