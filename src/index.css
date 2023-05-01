@@ -319,7 +319,7 @@ ol li { list-style:none }
   /* color: red; */
   width: 85%;
   margin: 10px;
-  font-size: unset;
+  font-size: larger;
   border-radius: 10p;
   color: white;
   font-family: sans-serif;
@@ -330,7 +330,7 @@ ol li { list-style:none }
   /* color: red; */
   width: 85%;
   margin: 10px;
-  font-size: unset;
+  font-size: larger;
   border-radius: 10p;
   color: white;
   resize: none;
