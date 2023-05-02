@@ -639,7 +639,7 @@
         "id":45,
         "genre": "Sports",
         "subgenre": "Football",
-        "text": "Ordene estos equipos en función de las copas interconinentales que han ganado (de mayor número de trofeos a menor)",
+        "text": "Ordene estos equipos en función de las copas intercontinentales que han ganado (de mayor número de trofeos a menor)",
         "answers":[
             "Milán, Boca Juniors, Barcelona",
             "Barcelona, Boca Juniors, Milán",
@@ -761,6 +761,63 @@
         "creationDate": "2023-04-30T00:00:00Z",
         "author": "anchus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Chelsea_3_Stoke_0_%2813677350585%29_-_Peter_Crouch_%28cropped%29.jpg/443px-Chelsea_3_Stoke_0_%2813677350585%29_-_Peter_Crouch_%28cropped%29.jpg"
+    },
+    {
+        "id":54,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Míchel, junto a Laudrup, se retiró del Real Madrid en el año 1996 en el Santiago Bernabéu. ¿Cuál fue el rival?",
+        "answers":[
+            "Real Zaragoza",
+            "Extremadura",
+            "Mérida"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-05-02T00:00:00Z",
+        "author": "anchus",
+        "image": "https://1.bp.blogspot.com/-LrPj0uXHvMA/VipffoGbkgI/AAAAAAAAAZ8/xuP5h0ctxvkThHqrS6ehscAuSHNHj9bpACKgB/s320/tumblr_ncxh4yslrM1t52aheo1_540.jpg"
+    },{
+        "id":55,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En cuál de los siguientes equipos no ha jugado Pep Guardiola?",
+        "answers":[
+            "Bolonia",
+            "Al-Ahli Doha",
+            "Dorados de Sinaloa"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-05-02T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Guardiola_training_cropped.jpg/435px-Guardiola_training_cropped.jpg"
+    },{
+        "id":56,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Desde que distancia fue el zapatazo de Mikel Lasa ante el Sevilla en la temporada 1994/1995 en el estadio Santiago Bernabéu?",
+        "answers":[
+            "62 metros",
+            "51 metros",
+            "58 metros"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-05-02T00:00:00Z",
+        "author": "diegoles",
+        "image": "https://4.bp.blogspot.com/-famGTyso5Cg/WIFs8ijmoHI/AAAAAAAAB3A/Rehz9wiQ1OcwJBCV4ImTTDAd80xXdz_FwCLcB/s320/tumblr_nkk8iuqas81t52aheo2_r1_400.jpg"
+    },{
+        "id":57,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Ordene de menor a mayor estatura los siguientes jugadores:",
+        "answers":[
+            "Roberto Carlos, Pablo Piatti, Munitis",
+            "Pablo Piatti, Roberto Carlos, Munitis",
+            "Pablo Piatti, Munitis, Roberto Carlos"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-05-02T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pablo_Piatti_2015.jpg/320px-Pablo_Piatti_2015.jpg"
     }
 ]
 
