@@ -818,6 +818,63 @@
         "creationDate": "2023-05-02T00:00:00Z",
         "author": "anchus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pablo_Piatti_2015.jpg/320px-Pablo_Piatti_2015.jpg"
+    },{
+        "id":58,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál es el único portero del Getafe que ha ganado un trofeo Zamora?",
+        "answers":[
+            "Miguel Ángel Moyá",
+            "Roberto Abbondanzieri",
+            "Vicente Guaita"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-05-06T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/David_Soria.jpg"
+    },{
+        "id":59,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Quién era el entrenador del Barcelona cuando Messi anotó el gol 'Maradoniano' ante el Getafe, que acabó en 5-2?",
+        "answers":[
+            "Frank Rijkaard",
+            "Pep Guardiola",
+            "Tito Vilanova",
+            "Tata Martino"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-05-06T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Lionel_Messi_31mar2007.jpg/444px-Lionel_Messi_31mar2007.jpg"
+    },{
+        "id":60,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Qué presidente del Real Madrid antes de una eliminatoria europea ante el Liverpool dijo 'Y los vamos a chorrear allí...'?",
+        "answers":[
+            "Ramón Mendoza",
+            "Lorenzo Sanz",
+            "Vicente Boluda"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-05-06T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Aankomst_Real_Madrid_op_Schiphol._Santiago_Bernabeu_%28cropped%29.jpg"
+    },{
+        "id":61,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Dorsal de Ronaldo Nazario en su primera temporada en el Inter de Milán, en la que acabó conquistando la UEFA.",
+        "answers":[
+            "9",
+            "10",
+            "11"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-05-06T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Ronaldo_em_campo.jpg/491px-Ronaldo_em_campo.jpg"
     }
 ]
 
