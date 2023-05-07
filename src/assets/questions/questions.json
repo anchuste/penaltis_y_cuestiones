@@ -875,6 +875,21 @@
         "creationDate": "2023-05-06T00:00:00Z",
         "author": "anchus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Ronaldo_em_campo.jpg/491px-Ronaldo_em_campo.jpg"
+    },
+    {
+        "id":62,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuánto tiempo pasó entre la conquista de la sexta y la séptima Copa de Europa del Real Madrid?",
+        "answers":[
+            "27 años",
+            "32 años",
+            "30 años"
+        ],
+        "correctAnswer": 1,
+        "creationDate": "2023-05-07T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Trofeo_UEFA_Champions_League.jpg"
     }
 ]
 

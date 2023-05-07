@@ -10,6 +10,7 @@ import { SanctionsSummary } from './components/SanctionsSummary';
 import { SupportForm } from './components/SupportForm';
 
 
+
 function App() {
 
   console.log('Se renderiza el componente App');
@@ -37,6 +38,7 @@ function App() {
   const [showSummary, setShowSummary] = useState(false);
   const [sanctions, setSanctions] = useState(0);
   const [showSanctions, setShowSanctions] = useState(false);
+  const [timer, setTimer] = useState(0);
 
   const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
   
@@ -66,7 +68,9 @@ function App() {
   }
 
 
-  const updateQuestion = (indexQuestion, indexAnswer) => {
+  const updateQuestion = (indexQuestion, indexAnswer, seconds) => {
+
+    console.log('seconds to go: ', seconds);
     
     // get current true position: marcamos la siguiente posición
     const currentTruePosition = positions.findIndex((position) => position === true);
@@ -123,11 +127,6 @@ function App() {
     
     let questionNotAsked = questionsNotAsked[Math.floor(Math.random() * questionsNotAsked.length)];
     setCuestionNotAsked(questionNotAsked);
-    //console.log('cuestionNotAsked: ', questionNotAsked.id);
-
-    // get answer of indexQuestion
-
-    // https://www.ghanaiantimes.com.gh/wp-content/uploads/2019/11/Pele.jpg
 
     
   };
