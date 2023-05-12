@@ -890,6 +890,20 @@
         "creationDate": "2023-05-07T00:00:00Z",
         "author": "anchus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Trofeo_UEFA_Champions_League.jpg"
+    },{
+        "id":63,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál era el apodo del futbolista de la foto?",
+        "answers":[
+            "El payaso",
+            "La joya",
+            "El diez"
+        ],
+        "correctAnswer": 0,
+        "creationDate": "2023-05-12T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Zenit-Benfica2012_%288%29.jpg/493px-Zenit-Benfica2012_%288%29.jpg"
     }
 ]
 

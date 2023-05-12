@@ -1,11 +1,13 @@
 import { Square } from './Square.jsx'
 import Countdown from 'react-countdown';
+import * as constants from './../constants/index.js'
 
 export const Question = ({ question, questionNumber, index, updateQuestion }) => {
 
     console.log('se renderiza Question');
 
     let currentSeconds = 0;
+
 
     // Random component
     const Completionist = () => {
@@ -17,21 +19,13 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
       //console.log('api', api);
       //console.log('props', props);
       currentSeconds = seconds;
-      
 
       console.log('seconds', seconds);
       
-      if (completed) {
-        console.log('completed');
-        // Render a completed state
-        //api.start();
-        //api.stop();
-        return <Completionist/>;
-      } else {
+      
         console.log('not completed');
         // Render a countdown
-        return <span>{seconds} s.</span>;
-      }
+        return <h2 className='time_to_go_question'> {seconds} s.  </h2>;
     };
 
       return (
@@ -44,14 +38,14 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
 
             <h2 className='question_number' > Pregunta número: {questionNumber}</h2>
 
-            <h2>
+            
             <Countdown
-                date={Date.now() + 10000}
-                //renderer={renderer}
+                date={Date.now() + constants.TIME_TO_GO_QUESTIONS}
+                renderer={renderer}
                 onComplete={(event, api) => console.log('event api', api)}
                 key={question.id}
             />
-            </h2>
+            
 
             <h2 className='customDiv'>{question.text}</h2>
             <section>
