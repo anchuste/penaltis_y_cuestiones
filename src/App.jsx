@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import trivialLogo from './assets/trivial_anchus_225_lila.png'
+import trivialLogoHor from  './assets/trivial_anchus_207_hor.png'
 import data from './assets/questions/questions.json';
 import { Question } from './components/Question'
 import { Summary } from './components/Summary';
@@ -141,7 +142,7 @@ function App() {
     <main className='board'>
         
         
-        {started && <img src={trivialLogo} style={{width: "50%", height: "30%"}} alt='Anchus logotipo' />}
+        {started && <img src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
         {!started && <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />}
         
 
