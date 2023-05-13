@@ -904,6 +904,20 @@
         "creationDate": "2023-05-12T00:00:00Z",
         "author": "anchus",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Zenit-Benfica2012_%288%29.jpg/493px-Zenit-Benfica2012_%288%29.jpg"
+    },{
+        "id":64,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En qué provincia Argentina nació Oscar Trejo, jugador del Rayo Vallecano?",
+        "answers":[
+            "Buenos Aires",
+            "Córdoba",
+            "Santiago del Estero"
+        ],
+        "correctAnswer": 2,
+        "creationDate": "2023-05-13T00:00:00Z",
+        "author": "anchus",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Real_Valladolid_-_Rayo_Vallecano_2019-01-05_9_%28cropped%29.jpg"
     }
 ]
 
