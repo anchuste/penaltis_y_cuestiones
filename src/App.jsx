@@ -141,7 +141,9 @@ function App() {
     <main className='board'>
         
         
-        <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />
+        {started && <img src={trivialLogo} style={{width: "50%", height: "30%"}} alt='Anchus logotipo' />}
+        {!started && <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />}
+        
 
         {navBarstate === 'supportNavBarButton' && <SupportForm></SupportForm>}
         
