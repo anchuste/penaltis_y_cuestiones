@@ -25,10 +25,8 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
       
         console.log('not completed');
         // Render a countdown
-        return <div>
-        <h2 className='time_to_go_question_time'> ⏱⏲ </h2>
-        <h2 className='time_to_go_question'> {seconds} s.  </h2>
-        </div>
+        return <h2 className='time_to_go_question'> {seconds} s.  </h2>
+        
     };
 
       return (
@@ -42,12 +40,17 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
             <div>
             <h2 className='question_number' > Pregunta {questionNumber}</h2>
             </div>
+            <div>
+            <h2 className='time_to_go_question_time'> ⏱ </h2>
+            
             <Countdown
                 date={Date.now() + constants.TIME_TO_GO_QUESTIONS}
                 renderer={renderer}
                 onComplete={(event, api) => console.log('event api', api)}
                 key={question.id}
             />
+
+            </div>
 
             <h2 className='customDiv'>{question.text}</h2>
             <section>
