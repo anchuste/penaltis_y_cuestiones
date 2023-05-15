@@ -41,7 +41,7 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
             <h2 className='question_number' > Pregunta {questionNumber}</h2>
             </div>
             <div>
-            <h2 className='time_to_go_question_time'> ⏱ </h2>
+            <h2 className='time_to_go_question_time'> ⌚ </h2>
             
             <Countdown
                 date={Date.now() + constants.TIME_TO_GO_QUESTIONS}
