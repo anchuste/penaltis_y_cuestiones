@@ -26,7 +26,7 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
         console.log('not completed');
         // Render a countdown
         return <div>
-        <h2 className='time_to_go_question_time'>⏱</h2>
+        <h2 className='time_to_go_question_time'> ⏱⏲ </h2>
         <h2 className='time_to_go_question'> {seconds} s.  </h2>
         </div>
     };
