@@ -25,7 +25,10 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
       
         console.log('not completed');
         // Render a countdown
-        return <h2 className='time_to_go_question'> {seconds} s.  </h2>;
+        return <div>
+        <h2 className='time_to_go_question_time'>⏱</h2>
+        <h2 className='time_to_go_question'> {seconds} s.  </h2>
+        </div>
     };
 
       return (
@@ -36,16 +39,15 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
           {question.image ? 
             <img src={question.image} className='question_image' alt='React Logo' /> : null}
 
-            <h2 className='question_number' > Pregunta número: {questionNumber}</h2>
-
-            
+            <div>
+            <h2 className='question_number' > Pregunta {questionNumber}</h2>
+            </div>
             <Countdown
                 date={Date.now() + constants.TIME_TO_GO_QUESTIONS}
                 renderer={renderer}
                 onComplete={(event, api) => console.log('event api', api)}
                 key={question.id}
             />
-            
 
             <h2 className='customDiv'>{question.text}</h2>
             <section>

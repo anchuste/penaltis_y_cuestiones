@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import trivialLogo from './assets/trivial_anchus_225_lila.png'
 import trivialLogoHor from  './assets/trivial_anchus_207_hor.png'
 import data from './assets/questions/questions.json';
@@ -40,6 +40,8 @@ function App() {
   const [sanctions, setSanctions] = useState(0);
   const [showSanctions, setShowSanctions] = useState(false);
   const [timer, setTimer] = useState(0);
+  const points = useRef(0);
+  
 
   const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
   
@@ -66,10 +68,13 @@ function App() {
     setShowSummary(false);
     setSanctions(0);
     setShowSanctions(false);
+    points.current = 0;
   }
 
 
   const updateQuestion = (indexQuestion, indexAnswer, seconds) => {
+
+    
 
     console.log('seconds to go: ', seconds);
     
@@ -125,6 +130,9 @@ function App() {
       setShowSummary(true);
       setStarted(false);
     }
+
+    points.current = points.current + 25;
+    console.log('points: ', points);
     
     let questionNotAsked = questionsNotAsked[Math.floor(Math.random() * questionsNotAsked.length)];
     setCuestionNotAsked(questionNotAsked);
@@ -147,8 +155,13 @@ function App() {
         
 
         {navBarstate === 'supportNavBarButton' && <SupportForm></SupportForm>}
+
+        
         
         {started && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
+
+        {started && showQuestion && !showSanctions ?
+        <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}
 
         {started && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}
 
