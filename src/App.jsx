@@ -76,7 +76,7 @@ function App() {
 
     
 
-    console.log('seconds to go: ', seconds);
+    //console.log('seconds to go: ', seconds);
     
     // get current true position: marcamos la siguiente posición
     const currentTruePosition = positions.findIndex((position) => position === true);
@@ -119,7 +119,12 @@ function App() {
       if (currentSanctions > 0 && currentSanctions < 3) {
         setShowSanctions(true);
       }
+    }else{
+      points.current = points.current + 25;
+      //console.log('points: ', points);
     }
+
+    
 
     // Obtenemos cuestión al azar de todas las que no se han realizado
     if (questionsNotAsked.length === 0 ||
@@ -131,8 +136,7 @@ function App() {
       setStarted(false);
     }
 
-    points.current = points.current + 25;
-    console.log('points: ', points);
+    
     
     let questionNotAsked = questionsNotAsked[Math.floor(Math.random() * questionsNotAsked.length)];
     setCuestionNotAsked(questionNotAsked);
