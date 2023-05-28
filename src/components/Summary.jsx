@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import yellowCard from '../assets/yellow-card.png'
 import redCard from '../assets/red-card.png'
 
-export const Summary = ({ answers, totalQuestionsNumber }) => {
+export const Summary = ({ answers, totalQuestionsNumber, points }) => {
     console.log('Se renderiza el componente Summary');
 
     const correctAnswers = answers.filter(answer => answer === 'correct').length;
@@ -34,10 +34,15 @@ export const Summary = ({ answers, totalQuestionsNumber }) => {
         fraseEncabezado = 'Necesitas más rodaje de partidos. ¡Sigue practicando!';
         entrenador = 'Fernando Vázquez';
         imagenEntrenador = 'https://cope-cdnmed.agilecontent.com/resources/jpg/5/6/1577718797065.jpg';
-    }else if (rightPorcentage < 30) {
+    }else if (rightPorcentage >= 15 && rightPorcentage < 50) {
         fraseEncabezado = 'El fútbol no es lo tuyo. Dedícate a otra cosa. 🤦‍♂️';
         entrenador = 'Miguel Ángel Lotina';
         imagenEntrenador = 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Miguel_%C3%81ngel_Lotina.jpg';
+    }
+    else if (rightPorcentage < 15) {
+        fraseEncabezado = 'El fútbol no es lo tuyo. Dedícate a otra cosa. 🤦‍♂️';
+        entrenador = 'Javier Clemente';
+        imagenEntrenador = 'https://upload.wikimedia.org/wikipedia/commons/0/0d/JaviClemente.jpg';
     }
 
     if (rightPorcentage === 100) {
@@ -93,6 +98,7 @@ export const Summary = ({ answers, totalQuestionsNumber }) => {
             </>
              :null}
             
+            <h2 className='points_accumulated'>📊 Puntuación: {points} </h2>
             <h2 className="border_trivial">Respuestas acertadas ✅: {correctAnswers}</h2>
             <h2 className="border_trivial">Respuestas falladas ❌: {incorrectAnswers}</h2>
             <h2 className="border_trivial"> Juego completado al 🎮: {rightPorcentage.toFixed()} % </h2>

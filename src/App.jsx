@@ -10,8 +10,6 @@ import { Sanctions } from './components/Sanctions';
 import { SanctionsSummary } from './components/SanctionsSummary';
 import { SupportForm } from './components/SupportForm';
 
-
-
 function App() {
 
   console.log('Se renderiza el componente App');
@@ -41,6 +39,10 @@ function App() {
   const [showSanctions, setShowSanctions] = useState(false);
   const [timer, setTimer] = useState(0);
   const points = useRef(0);
+
+  const bonusPoints = 2;
+  const sanctionMultiplicatorPoints = 3;
+  const rightAnswerPoints = 25;
   
 
   const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
@@ -72,15 +74,16 @@ function App() {
   }
 
 
+  const calculateSecondsPoints = (secondsToGo) => {
+    return secondsToGo * bonusPoints
+  }
+
+
   const updateQuestion = (indexQuestion, indexAnswer, seconds) => {
 
-    
-
-    //console.log('seconds to go: ', seconds);
-    
     // get current true position: marcamos la siguiente posición
     const currentTruePosition = positions.findIndex((position) => position === true);
-    console.log('currentTruePosition: ', currentTruePosition);
+    //console.log('currentTruePosition: ', currentTruePosition);
     
     const newPositions = Array(QUESTIONS_NUMBER).fill(false);
     newPositions[currentTruePosition+1] = true;
@@ -109,18 +112,21 @@ function App() {
 
     let currentSanctions = sanctions;
 
-    // Extraer cuestiones no realizadas
+    // Extraer preguntas no realizadas
     let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id));
 
     // Si la respuesta es incorrecta, sumamos una sanción
     if (resultAnswer === 'incorrect') {
       currentSanctions = currentSanctions + 1;
+      // Restamos puntos por sanción
+      points.current = points.current - (rightAnswerPoints * sanctionMultiplicatorPoints);
       setSanctions(currentSanctions);
       if (currentSanctions > 0 && currentSanctions < 3) {
         setShowSanctions(true);
       }
     }else{
-      points.current = points.current + 25;
+      console.log('seconds to go: ', seconds);
+      points.current = points.current + rightAnswerPoints + calculateSecondsPoints(seconds);
       //console.log('points: ', points);
     }
 
@@ -169,7 +175,7 @@ function App() {
 
         {started && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}
 
-        {showSummary && <Summary totalQuestionsNumber={QUESTIONS_NUMBER} answers={answers}></Summary>}
+        {showSummary && <Summary totalQuestionsNumber={QUESTIONS_NUMBER} answers={answers} points={points.current}></Summary>}
 
         {showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
 
