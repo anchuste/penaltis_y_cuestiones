@@ -377,4 +377,22 @@ ol li { list-style:none }
   font-size: 20px;
 }
 
+.board .btn_save_disk{
+    border: none;
+    text-decoration: none;
+    font-size: 24px;
+    width: 10%;
+}
+
+.name_player {
+  background-color: #163e822b;
+  width: 75%;
+  height: 50%;
+  font-size: larger;
+  border-radius: 8px;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+
 

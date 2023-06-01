@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import yellowCard from '../assets/yellow-card.png'
 import redCard from '../assets/red-card.png'
+import { SaveRecord } from './SaveRecord';
 
 export const Summary = ({ answers, totalQuestionsNumber, points }) => {
     console.log('Se renderiza el componente Summary');
@@ -103,9 +104,11 @@ export const Summary = ({ answers, totalQuestionsNumber, points }) => {
             <h2 className="border_trivial">Respuestas falladas ❌: {incorrectAnswers}</h2>
             <h2 className="border_trivial"> Juego completado al 🎮: {rightPorcentage.toFixed()} % </h2>
 
+            <SaveRecord></SaveRecord>
+
             <>
-            <h3>Eres comparable a</h3>
-            <h3>{entrenador}</h3>
+            <h3>Eres comparable a {entrenador}</h3>
+            <h3></h3>
             <img style={{width: "320px", height: "220px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}}
             src={imagenEntrenador}></img>
             </>
