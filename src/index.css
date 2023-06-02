@@ -385,14 +385,11 @@ ol li { list-style:none }
 }
 
 .name_player {
-  background-color: #163e822b;
-  width: 75%;
-  height: 50%;
   font-size: larger;
   border-radius: 8px;
-  color: white;
   font-family: sans-serif;
   text-align: center;
+  height: 40px;
 }
 
 

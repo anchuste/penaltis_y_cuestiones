@@ -107,9 +107,9 @@ export const Summary = ({ answers, totalQuestionsNumber, points }) => {
             <SaveRecord></SaveRecord>
 
             <>
-            <h3>Eres comparable a {entrenador}</h3>
+            <h3 style={{marginTop:'10px'}}>¡Eres comparable a {entrenador}!</h3>
             <h3></h3>
-            <img style={{width: "320px", height: "220px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}}
+            <img style={{width: "290px", height: "190px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}}
             src={imagenEntrenador}></img>
             </>
 

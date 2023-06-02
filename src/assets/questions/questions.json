@@ -974,6 +974,20 @@
         "author":"anchus",
         "creationDate": "2023-05-28T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Carles_Puyol_Joan_Gamper-Tr.jpg"
+    },{
+        "id":69,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál de los siguientes jugadores ha jugado en los siguientes equipos: Real Madrid, Milán y São Paulo",
+        "answers":[
+            "Robinho",
+            "Ronaldo Nazario",
+            "Kaká"
+        ],
+        "correctAnswer": 1,
+        "author":"anchus",
+        "creationDate": "2023-06-02T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Robinho061115.jpg/360px-Robinho061115.jpg"
     }
 ]
 
