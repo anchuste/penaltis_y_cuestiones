@@ -104,12 +104,16 @@ export const Summary = ({ answers, totalQuestionsNumber, points }) => {
             <h2 className="border_trivial">Respuestas falladas ❌: {incorrectAnswers}</h2>
             <h2 className="border_trivial"> Juego completado al 🎮: {rightPorcentage.toFixed()} % </h2>
 
+            
+
             <>
             <h3 style={{marginTop:'10px'}}>¡Eres comparable a {entrenador}!</h3>
             <h3></h3>
             <img style={{width: "290px", height: "190px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}}
             src={imagenEntrenador}></img>
             </>
+            
+            <SaveRecord></SaveRecord>
 
             
             
