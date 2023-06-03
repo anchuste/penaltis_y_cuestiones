@@ -113,7 +113,7 @@ export const Summary = ({ answers, totalQuestionsNumber, points }) => {
             src={imagenEntrenador}></img>
             </>
             
-            <SaveRecord></SaveRecord>
+            <SaveRecord points={points}></SaveRecord>
 
             
             

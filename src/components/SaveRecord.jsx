@@ -2,12 +2,14 @@ import { Square } from './Square.jsx'
 import * as constants from '../constants/index.js'
 import { useState } from 'react'
 import floppyDisk from '../assets/floppy-disk-64.png'
+import {saveGame} from './../services/game-service.js'
 
-export const SaveRecord = () => {
+export const SaveRecord = (points) => {
 
     const [errors, setErrors] = useState('');
     const [questionSent, setQuestionSent] = useState(false);
     const [showHint, setShowHint] = useState(true);
+    let userAndPoints = "";
 
     const handleSubmmit = (event) => {
       event.preventDefault();
@@ -22,6 +24,10 @@ export const SaveRecord = () => {
         return;
       }
 
+      console.log('points: ', points)
+      // Crear objeto con usuario y puntos para guardar en bbdd
+      userAndPoints =  { "user": fields.usuario, "points":points.points}
+      saveGame(userAndPoints);
       setShowHint(false);
       setErrors('');
       setQuestionSent(true);
@@ -46,7 +52,7 @@ export const SaveRecord = () => {
                 
                 {showHint && <h4 style={{color: '#c4cd5c'}}> * Pulsa en el disco para guardar tu puntuación</h4>}
                 {errors != '' && <h4 style={{color: 'indianred'}}>* {errors }</h4>}
-                {questionSent && <h4 style={{color: '#4c93d0'}}> La puntuación ha sido guardada en el ranking. Muchas gracias.💜💜</h4>}
+                {questionSent && <h4 style={{color: '#4c93d0'}}> La puntuación de ha sido guardada en el ranking. Muchas gracias.💜💜</h4>}
                 </>
       )
 }
