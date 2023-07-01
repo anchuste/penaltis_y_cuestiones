@@ -6,11 +6,22 @@ export const saveGame = (game) => {
     let endPoint = saveGameURL;
     let points =  game.points;
     let username = game.user;
-    endPoint = endPoint + "?points=" + points + "&username=" + username;
-    console.log('endPoint: ', endPoint)
-    fetch(endPoint)
-    .then(response => response.json())
-    .then(data => console.log(data));
 
-    //setNavBarstate(newNavBarState);
+    endPoint = endPoint + "?points=" + points + "&username=" + username;
+
+    return new Promise((resolve, reject) => {
+        fetch(endPoint)
+        .then(response => {
+            if (!response.ok) throw Error(response.status);
+        })
+        .then(data => {
+            console.log(data);
+            resolve(true);
+        })
+        .catch(error => {
+            console.log(error);
+            reject(false);
+            }); 
+    });
+
 }

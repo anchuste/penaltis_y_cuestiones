@@ -11,7 +11,7 @@ export const SaveRecord = (points) => {
     const [showHint, setShowHint] = useState(true);
     let userAndPoints = "";
 
-    const handleSubmmit = (event) => {
+    const handleSubmmit = async (event) => {
       event.preventDefault();
       const fields = Object.fromEntries(new FormData(event.target));
       console.log(fields);
@@ -27,11 +27,15 @@ export const SaveRecord = (points) => {
       console.log('points: ', points)
       // Crear objeto con usuario y puntos para guardar en bbdd
       userAndPoints =  { "user": fields.usuario, "points":points.points}
-      saveGame(userAndPoints);
-      setShowHint(false);
-      setErrors('');
-      setQuestionSent(true);
-      console.log('Se ha enviado el formulario');
+      let savedGame = await saveGame(userAndPoints);
+      if (savedGame === true){
+        setShowHint(false);
+        setErrors('');
+        setQuestionSent(true);
+      }else{
+        setErrors('No se ha podido salvar la partida');
+      }
+      //console.log('Se ha enviado el formulario');
     }
 
       return (
