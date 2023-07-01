@@ -27,14 +27,21 @@ export const SaveRecord = (points) => {
       console.log('points: ', points)
       // Crear objeto con usuario y puntos para guardar en bbdd
       userAndPoints =  { "user": fields.usuario, "points":points.points}
-      let savedGame = await saveGame(userAndPoints);
-      if (savedGame === true){
-        setShowHint(false);
-        setErrors('');
-        setQuestionSent(true);
-      }else{
+      try {
+        let savedGame = await saveGame(userAndPoints);
+        if (savedGame === true){
+          setShowHint(false);
+          setErrors('');
+          setQuestionSent(true);
+        }else{
+          setErrors('No se ha podido salvar la partida');
+        }
+      } catch (error) {
+        console.error(error);
         setErrors('No se ha podido salvar la partida');
       }
+      
+      
       //console.log('Se ha enviado el formulario');
     }
 
