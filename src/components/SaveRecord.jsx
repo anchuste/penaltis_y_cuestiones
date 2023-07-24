@@ -52,7 +52,7 @@ export const SaveRecord = (points) => {
                 <form action="" onSubmit={handleSubmmit}>
                 <div style={{width:'100%', backgroundColor:'rebeccapurple', display:'flex', borderRadius:'6px'}}>
                     <div>
-                        <input style={{width:'90%', display:'table-cell', marginTop:'2px', backgroundColor: 'seashell'}} name='usuario' className='name_player' type="text" placeholder="Introduce tu nombre" />
+                        <input style={{width:'90%', display:'table-cell', marginTop:'2px', backgroundColor: 'seashell', color: 'black'}} name='usuario' className='name_player' type="text" placeholder="Introduce tu nombre" />
                     </div>
                     <button  style={{width:'25%'}} type='submit' className='btn_save_disk'> 
                       <img style={{width: "27px", height: "27px", verticalAlign: "middle"}} src={floppyDisk} alt='floppy disk' />
