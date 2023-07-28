@@ -1059,6 +1059,48 @@
         "author":"anchus",
         "creationDate": "2023-07-10T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Gold_Cup_2013_final_in_Chicago_%28cropped%29.JPG/640px-Gold_Cup_2013_final_in_Chicago_%28cropped%29.JPG"
+    },{
+        "id":75,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En cuál de los siguientes equipos no ha jugado David Silva?",
+        "answers":[
+            "Eibar",
+            "Celta de Vigo",
+            "Las Palmas"
+        ],
+        "correctAnswer": 2,
+        "author":"anchus",
+        "creationDate": "2023-07-28T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/David_Silva_Euro_2012_vs_France_02.jpg/397px-David_Silva_Euro_2012_vs_France_02.jpg"
+    },{
+        "id":76,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿De quién fue la asistencia del primer gol de Ronaldo en el Real Madrid?",
+        "answers":[
+            "Roberto Carlos",
+            "Guti",
+            "Santiago Solari"
+        ],
+        "correctAnswer": 0,
+        "author":"anchus",
+        "creationDate": "2023-07-28T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Ronaldo_Nazario_%22Fen%C3%B4meno%22_%285122564094%29.jpg/640px-Ronaldo_Nazario_%22Fen%C3%B4meno%22_%285122564094%29.jpg"
+    },{
+        "id":77,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En el mundial de qué año jugó Franz Beckenbauer el partido ante Italia con el mítico brazo en cabestrillo?",
+        "answers":[
+            "Alemania Federal 1974",
+            "Argentina 1978",
+            "México 1970"
+        ],
+        "correctAnswer": 2,
+        "author":"anchus",
+        "creationDate": "2023-07-28T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Bundesarchiv_Bild_183-N0622-0035%2C_Fu%C3%9Fball-Weltmeisterschaft%2C_Spiel_DDR-BRDb.jpg"
     }
 ]
 
