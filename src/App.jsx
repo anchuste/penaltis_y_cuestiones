@@ -9,6 +9,8 @@ import { BrowserRouter} from 'react-router-dom'
 import { Sanctions } from './components/Sanctions';
 import { SanctionsSummary } from './components/SanctionsSummary';
 import { SupportForm } from './components/SupportForm';
+import {getTopPoints} from './services/points-service.js'
+import { Ranking } from './components/Ranking';
 
 function App() {
 
@@ -37,6 +39,7 @@ function App() {
   const [showSummary, setShowSummary] = useState(false);
   const [sanctions, setSanctions] = useState(0);
   const [showSanctions, setShowSanctions] = useState(false);
+  const [pointsRecovered, setpointsRecovered] = useState([]);
   const [timer, setTimer] = useState(0);
   const points = useRef(0);
 
@@ -46,6 +49,23 @@ function App() {
   
 
   const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
+
+  useEffect(() => {
+
+    async function fetchData() {
+      // You can await here
+      const response = await getTopPoints();
+      console.info("App - useEffect - rankingPoints: " + response.response[0]);
+      for (const property in response.response) {
+        console.log(`${property}: ${response.response[property]}`);
+      }
+      setpointsRecovered(response);
+
+      // ...
+    }
+    fetchData();
+
+  }, []);
   
   const handleNavBarState = (newNavBarState) => {
     setNavBarstate(newNavBarState);
@@ -159,7 +179,6 @@ function App() {
     
     <main className='board'>
         
-        
         {started &&  !showSummary && <img src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
         {!started && !showSummary && <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />}
         {!started && showSummary && <img src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
@@ -178,8 +197,16 @@ function App() {
 
         {showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
 
+        {started === false && navBarstate === 'homeNavBarButton' && !showSummary ?
+          <>
+          <Ranking points={pointsRecovered}></Ranking>
+          </>
+          :null}
+
         {started === false &&  navBarstate === 'homeNavBarButton' ?
+          <>
           <button className='btn' onClick={startGame}>¡Pulse para comenzar una nueva partida!</button>
+          </>
           :null}
         
         {showSanctions ?

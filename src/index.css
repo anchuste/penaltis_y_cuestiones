@@ -393,4 +393,8 @@ ol li { list-style:none }
   height: 37px;
 }
 
+.ranking_table{
+  display: grid;
+}
+
 
