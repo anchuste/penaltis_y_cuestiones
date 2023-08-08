@@ -197,7 +197,7 @@ function App() {
 
         {showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
 
-        {started === false && navBarstate === 'homeNavBarButton' && !showSummary ?
+        {(started === false && navBarstate === 'homeNavBarButton' && !showSummary) || navBarstate === 'rankingNavBarButton'  ?
           <>
           <Ranking points={pointsRecovered}></Ranking>
           </>
@@ -212,6 +212,8 @@ function App() {
         {showSanctions ?
           <button className='btn' onClick={resumeGame}>Entendido señor colegiado. ¡Pulse para continuar!</button>
           :null}
+
+        
         
     </main>
     </>

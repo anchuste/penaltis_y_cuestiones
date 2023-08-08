@@ -1,7 +1,7 @@
 
 const getTop10pointsURL = 'https://3a4s6i7sdlnrbgzsqkpcwsn4he0kunkc.lambda-url.eu-west-1.on.aws/';
 
-export const getTopPoints = () => {
+export const getTopPoints = (numPlayers) => {
 
     let endPoint = getTop10pointsURL;
 
