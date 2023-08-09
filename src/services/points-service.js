@@ -8,12 +8,12 @@ export const getTopPoints = (numPlayers) => {
     // Posibles parámetros para configurar la llamada a la lambda.
     //let points =  game.points;
     //let username = game.user;
-    //endPoint = endPoint + "?points=" + points + "&username=" + username;
+    endPoint = endPoint + "?numPlayers=" + numPlayers;
 
     return new Promise((resolve, reject) => {
 
 
-        fetch(getTop10pointsURL)
+        fetch(endPoint)
             .then(result => result.json())
             .then(data => {
                 resolve(data);

@@ -1,7 +1,7 @@
 export default function RowsStockInfoTable(stocksInfo) {
 
     console.log('stocks info: ', stocksInfo)
-    const stocksInfoDestruct = stocksInfo.stocksInfo.points;
+    const stocksInfoDestruct = stocksInfo.stocksInfo;
 
     if (undefined == stocksInfoDestruct || stocksInfoDestruct.length === 0){
         return(

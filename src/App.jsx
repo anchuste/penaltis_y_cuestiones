@@ -9,7 +9,6 @@ import { BrowserRouter} from 'react-router-dom'
 import { Sanctions } from './components/Sanctions';
 import { SanctionsSummary } from './components/SanctionsSummary';
 import { SupportForm } from './components/SupportForm';
-import {getTopPoints} from './services/points-service.js'
 import { Ranking } from './components/Ranking';
 
 function App() {
@@ -39,7 +38,7 @@ function App() {
   const [showSummary, setShowSummary] = useState(false);
   const [sanctions, setSanctions] = useState(0);
   const [showSanctions, setShowSanctions] = useState(false);
-  const [pointsRecovered, setpointsRecovered] = useState([]);
+  
   const [timer, setTimer] = useState(0);
   const points = useRef(0);
 
@@ -50,22 +49,7 @@ function App() {
 
   const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
 
-  useEffect(() => {
-
-    async function fetchData() {
-      // You can await here
-      const response = await getTopPoints();
-      console.info("App - useEffect - rankingPoints: " + response.response[0]);
-      for (const property in response.response) {
-        console.log(`${property}: ${response.response[property]}`);
-      }
-      setpointsRecovered(response);
-
-      // ...
-    }
-    fetchData();
-
-  }, []);
+  
   
   const handleNavBarState = (newNavBarState) => {
     setNavBarstate(newNavBarState);
@@ -197,9 +181,15 @@ function App() {
 
         {showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
 
-        {(started === false && navBarstate === 'homeNavBarButton' && !showSummary) || navBarstate === 'rankingNavBarButton'  ?
+        {(started === false && navBarstate === 'homeNavBarButton' && !showSummary)?
           <>
-          <Ranking points={pointsRecovered}></Ranking>
+          <Ranking points={5} title={"TOP 5"}></Ranking>
+          </>
+          :null}
+
+        {navBarstate === 'rankingNavBarButton'  ?
+          <>
+          <Ranking points={10} title={"Clasificación"}></Ranking>
           </>
           :null}
 
