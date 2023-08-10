@@ -42,6 +42,9 @@ export const NavBar = ({showNavbarWhilePlaying, handleNavBarState}) => {
             <li>
               <button id="supportNavBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/support">Colabora</button>
             </li>
+            <li>
+              <button id="buyaCoffeeBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/coffee">Apoyáme</button>
+            </li>
           </ul>
         </div>
       </div>

@@ -10,6 +10,7 @@ import { Sanctions } from './components/Sanctions';
 import { SanctionsSummary } from './components/SanctionsSummary';
 import { SupportForm } from './components/SupportForm';
 import { Ranking } from './components/Ranking';
+import BuyACoffee from './components/BuyACoffee';
 
 function App() {
 
@@ -190,6 +191,12 @@ function App() {
         {navBarstate === 'rankingNavBarButton'  ?
           <>
           <Ranking points={10} title={"Clasificación"}></Ranking>
+          </>
+          :null}
+        
+        {navBarstate === 'buyaCoffeeBarButton' ?
+          <>
+          <BuyACoffee></BuyACoffee>
           </>
           :null}
 
