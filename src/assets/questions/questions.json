@@ -1101,6 +1101,48 @@
         "author":"anchus",
         "creationDate": "2023-07-28T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Bundesarchiv_Bild_183-N0622-0035%2C_Fu%C3%9Fball-Weltmeisterschaft%2C_Spiel_DDR-BRDb.jpg"
+    },{
+        "id":78,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En qué liga de fútbol debutó David Trezeguet como futbolista profesional?",
+        "answers":[
+            "Italiana",
+            "Argentina",
+            "Francesa"
+        ],
+        "correctAnswer": 1,
+        "author":"anchus",
+        "creationDate": "2023-08-10T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/David_Trezeguet.jpg/363px-David_Trezeguet.jpg"
+    },{
+        "id":79,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Qué marcador suponía el gol del siglo de Maradona ante Inglaterra en el mundial de México 1986?",
+        "answers":[
+            "1-0",
+            "2-1",
+            "2-0"
+        ],
+        "correctAnswer": 2,
+        "author":"anchus",
+        "creationDate": "2023-08-10T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Maradona_vs_england.jpg/320px-Maradona_vs_england.jpg"
+    },{
+        "id":80,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Contra qué selección anotó Maradona su famoso gol de la Mano de Dios?",
+        "answers":[
+            "Italia",
+            "Inglaterra",
+            "Alemania"
+        ],
+        "correctAnswer": 1,
+        "author":"anchus",
+        "creationDate": "2023-08-10T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Maradona_shilton_mano_dios.jpg/640px-Maradona_shilton_mano_dios.jpg"
     }
 ]
 
