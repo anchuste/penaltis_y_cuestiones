@@ -1,6 +1,6 @@
 export default function RowsStockInfoTable(stocksInfo) {
 
-    console.log('stocks info: ', stocksInfo)
+    //console.log('stocks info: ', stocksInfo)
     const stocksInfoDestruct = stocksInfo.stocksInfo;
 
     if (undefined == stocksInfoDestruct || stocksInfoDestruct.length === 0){
@@ -9,7 +9,7 @@ export default function RowsStockInfoTable(stocksInfo) {
             </>
         )
     }
-    console.log('stocksInfoDestruct: ', stocksInfoDestruct)
+    //console.log('stocksInfoDestruct: ', stocksInfoDestruct)
     return (
             <tbody>
                 {stocksInfoDestruct.response.map((stock, index) => {

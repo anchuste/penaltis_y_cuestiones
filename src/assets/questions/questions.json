@@ -1143,6 +1143,20 @@
         "author":"anchus",
         "creationDate": "2023-08-10T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Maradona_shilton_mano_dios.jpg/640px-Maradona_shilton_mano_dios.jpg"
+    },{
+        "id":81,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Qué dorsal llevó Riquelme en su primera temporada en el Villareal?",
+        "answers":[
+            "22",
+            "10",
+            "8"
+        ],
+        "correctAnswer": 2,
+        "author":"anchus",
+        "creationDate": "2023-08-14T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Juan_Riquelme_beim_Audi_Cup.jpg/392px-Juan_Riquelme_beim_Audi_Cup.jpg"
     }
 ]
 

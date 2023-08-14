@@ -168,19 +168,13 @@ function App() {
         {!started && !showSummary && <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />}
         {!started && showSummary && <img src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
         
-
         {navBarstate === 'supportNavBarButton' && <SupportForm></SupportForm>}
+        {navBarstate === 'homeNavBarButton' && started && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
+        {navBarstate === 'homeNavBarButton' && started && showQuestion && !showSanctions ? <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}
+        {navBarstate === 'homeNavBarButton' && started && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}
+        {navBarstate === 'homeNavBarButton' && showSummary && <Summary totalQuestionsNumber={QUESTIONS_NUMBER} answers={answers} points={points.current}></Summary>}
+        {navBarstate === 'homeNavBarButton' && showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
 
-        {started && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
-
-        {started && showQuestion && !showSanctions ?
-        <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}
-
-        {started && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}
-
-        {showSummary && <Summary totalQuestionsNumber={QUESTIONS_NUMBER} answers={answers} points={points.current}></Summary>}
-
-        {showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
 
         {(started === false && navBarstate === 'homeNavBarButton' && !showSummary)?
           <>
@@ -209,8 +203,6 @@ function App() {
         {showSanctions ?
           <button className='btn' onClick={resumeGame}>Entendido señor colegiado. ¡Pulse para continuar!</button>
           :null}
-
-        
         
     </main>
     </>

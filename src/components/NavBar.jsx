@@ -40,10 +40,10 @@ export const NavBar = ({showNavbarWhilePlaying, handleNavBarState}) => {
               <button className="btn_nav_bar" to="/support">Instrucciones</button>
             </li>
             <li>
-              <button id="supportNavBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/support">Colabora</button>
+              <button id="supportNavBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/support">Envía preguntas</button>
             </li>
             <li>
-              <button id="buyaCoffeeBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/coffee">Apoyáme</button>
+              <button id="buyaCoffeeBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/coffee">Apóyame</button>
             </li>
           </ul>
         </div>
