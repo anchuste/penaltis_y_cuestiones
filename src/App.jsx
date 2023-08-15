@@ -164,9 +164,16 @@ function App() {
     
     <main className='board'>
         
-        {started &&  !showSummary && <img src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
-        {!started && !showSummary && <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />}
-        {!started && showSummary && <img src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
+        {started &&  !showSummary && navBarstate === 'homeNavBarButton' &&  <img src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
+        {!started && showSummary && navBarstate === 'homeNavBarButton' && <img src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
+        {!started && !showSummary && navBarstate === 'homeNavBarButton' && <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />}
+
+        {!started && !showSummary && 
+                          (navBarstate === 'supportNavBarButton' ||
+                          navBarstate === 'buyaCoffeeBarButton' ||
+                          navBarstate === 'rankingNavBarButton') 
+                          && <img src={trivialLogo} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
+        
         
         {navBarstate === 'supportNavBarButton' && <SupportForm></SupportForm>}
         {navBarstate === 'homeNavBarButton' && started && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
