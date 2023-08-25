@@ -1157,6 +1157,34 @@
         "author":"anchus",
         "creationDate": "2023-08-14T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Juan_Riquelme_beim_Audi_Cup.jpg/392px-Juan_Riquelme_beim_Audi_Cup.jpg"
+    },{
+        "id":82,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Coincidieron Riquelme y Maradona en el mismo club, Boca Juniors, sobre el césped en partido oficial?",
+        "answers":[
+            "No, nunca llegaron a jugar un partido oficial juntos",
+            "Sí, en 1998, empate 1-1 ante River",
+            "Sí, en 1997, victoria 4-2 ante Argentinos Juniors"
+        ],
+        "correctAnswer": 2,
+        "author":"anchus",
+        "creationDate": "2023-08-25T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Maradona_eg_3203.jpg/492px-Maradona_eg_3203.jpg"
+    },{
+        "id":83,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Como entrenador, ¿con qué equipo, en una misma temporada, logró un doblete de títulos Don Alfredo Di Stéfano?",
+        "answers":[
+            "Real Madrid",
+            "Club Atlético Boca Juniors",
+            "Valencia"
+        ],
+        "correctAnswer": 1,
+        "author":"anchus",
+        "creationDate": "2023-08-25T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Di_St%C3%A9fano_as_coach_of_Boca.JPG"
     }
 ]
 
