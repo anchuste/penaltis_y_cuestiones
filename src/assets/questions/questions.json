@@ -1185,6 +1185,34 @@
         "author":"anchus",
         "creationDate": "2023-08-25T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Di_St%C3%A9fano_as_coach_of_Boca.JPG"
+    },{
+        "id":84,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál de las siguientes selecciones de fútbol femenino no ha ganado la copa del Mundo?",
+        "answers":[
+            "Noruega",
+            "Japón",
+            "Brasil"
+        ],
+        "correctAnswer": 2,
+        "author":"anchus",
+        "creationDate": "2023-08-25T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Champions%21_%2819185117834%29.jpg/320px-Champions%21_%2819185117834%29.jpg"
+    },{
+        "id":85,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Máxima goleadora de la historia de los mundiales femeninos de fútbol",
+        "answers":[
+            "Marta Vieira da Silva",
+            "Megan Rapinoe",
+            "Birgit Prinz"
+        ],
+        "correctAnswer": 0,
+        "author":"anchus",
+        "creationDate": "2023-08-25T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/FIFA_museum%2C_Zurich_06_%28cropped%29.jpg/354px-FIFA_museum%2C_Zurich_06_%28cropped%29.jpg"
     }
 ]
 
