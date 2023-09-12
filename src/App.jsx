@@ -11,6 +11,7 @@ import { SanctionsSummary } from './components/SanctionsSummary';
 import { SupportForm } from './components/SupportForm';
 import { Ranking } from './components/Ranking';
 import BuyACoffee from './components/BuyACoffee';
+import { ShowIconHeader } from './components/ShowIconHeader';
 
 function App() {
 
@@ -100,7 +101,7 @@ function App() {
     cuestionsAskedCopy.push(indexQuestion);
     setCuestionsAsked(cuestionsAskedCopy);
     
-    // compare answer with correctAnswer
+    // Check if the response answered is right (comparing answer value with correctAnswer)
     const answerCorrect = questions.findIndex(item => item.id === indexQuestion);
     let answer = questions[answerCorrect].correctAnswer;
     let resultAnswer;
@@ -137,10 +138,13 @@ function App() {
 
     
 
-    // Obtenemos cuestión al azar de todas las que no se han realizado
-    if (questionsNotAsked.length === 0 ||
+    // No hay más cuestiones o hemos respondido a todas las preguntas o hemos tenido más de dos sanciones,
+    // el juego termina.
+    if (
+      questionsNotAsked.length === 0 ||
       cuestionsAskedCopy.length === QUESTIONS_NUMBER ||
-       currentSanctions > 2) {
+      currentSanctions > 2
+      ) {
       setShowQuestion(false);
       //console.log('answersCopy', answersCopy);
       setShowSummary(true);
@@ -164,18 +168,12 @@ function App() {
     
     <main className='board'>
         
-        {started &&  !showSummary && navBarstate === 'homeNavBarButton' &&  <img src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
-        {!started && showSummary && navBarstate === 'homeNavBarButton' && <img src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
-        {!started && !showSummary && navBarstate === 'homeNavBarButton' && <img src={trivialLogo} style={{width: "70%", height: "30%"}} alt='Anchus logotipo' />}
-
-        {!started && !showSummary && 
-                          (navBarstate === 'supportNavBarButton' ||
-                          navBarstate === 'buyaCoffeeBarButton' ||
-                          navBarstate === 'rankingNavBarButton') 
-                          && <img src={trivialLogo} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
+        <ShowIconHeader started={started} showSummary={showSummary} navBarstate={navBarstate}></ShowIconHeader>
         
         
         {navBarstate === 'supportNavBarButton' && <SupportForm></SupportForm>}
+
+        
         {navBarstate === 'homeNavBarButton' && started && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
         {navBarstate === 'homeNavBarButton' && started && showQuestion && !showSanctions ? <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}
         {navBarstate === 'homeNavBarButton' && started && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}
@@ -187,6 +185,16 @@ function App() {
           <>
           <Ranking points={5} title={"TOP 5"}></Ranking>
           </>
+          :null}
+        
+        {started === false &&  navBarstate === 'homeNavBarButton' ?
+          <>
+          <button className='btn' onClick={startGame}>¡Pulse para comenzar una nueva partida!</button>
+          </>
+          :null}
+        
+        {showSanctions ?
+          <button className='btn' onClick={resumeGame}>Entendido señor colegiado. ¡Pulse para continuar!</button>
           :null}
 
         {navBarstate === 'rankingNavBarButton'  ?
@@ -201,15 +209,7 @@ function App() {
           </>
           :null}
 
-        {started === false &&  navBarstate === 'homeNavBarButton' ?
-          <>
-          <button className='btn' onClick={startGame}>¡Pulse para comenzar una nueva partida!</button>
-          </>
-          :null}
         
-        {showSanctions ?
-          <button className='btn' onClick={resumeGame}>Entendido señor colegiado. ¡Pulse para continuar!</button>
-          :null}
         
     </main>
     </>
