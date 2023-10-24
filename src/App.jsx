@@ -13,6 +13,7 @@ import { Ranking } from './components/Ranking';
 import BuyACoffee from './components/BuyACoffee';
 import { ShowIconHeader } from './components/ShowIconHeader';
 
+
 function App() {
 
   console.log('Se renderiza el componente App');
@@ -58,7 +59,7 @@ function App() {
   }
 
   const startGame = () => {
-    resetGame();
+    resetGame(null);
   }
 
   const resumeGame = () => {
@@ -131,7 +132,7 @@ function App() {
         setShowSanctions(true);
       }
     }else{
-      console.log('seconds to go: ', seconds);
+      //console.log('seconds to go: ', seconds);
       points.current = points.current + rightAnswerPoints + calculateSecondsPoints(seconds);
       //console.log('points: ', points);
     }
@@ -167,6 +168,8 @@ function App() {
         </BrowserRouter>
     
     <main className='board'>
+
+        
         
         <ShowIconHeader started={started} showSummary={showSummary} navBarstate={navBarstate}></ShowIconHeader>
         
@@ -177,7 +180,7 @@ function App() {
         {navBarstate === 'homeNavBarButton' && started && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
         {navBarstate === 'homeNavBarButton' && started && showQuestion && !showSanctions ? <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}
         {navBarstate === 'homeNavBarButton' && started && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}
-        {navBarstate === 'homeNavBarButton' && showSummary && <Summary totalQuestionsNumber={QUESTIONS_NUMBER} answers={answers} points={points.current}></Summary>}
+        {navBarstate === 'homeNavBarButton' && showSummary && <Summary totalQuestionsNumber={QUESTIONS_NUMBER} answers={answers} points={points.current} resetGame={startGame}></Summary>}
         {navBarstate === 'homeNavBarButton' && showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
 
 
@@ -187,7 +190,7 @@ function App() {
           </>
           :null}
         
-        {started === false &&  navBarstate === 'homeNavBarButton' ?
+        {started === false &&  navBarstate === 'homeNavBarButton' && !showSummary ?
           <>
           <button className='btn' onClick={startGame}>¡Pulse para comenzar una nueva partida!</button>
           </>

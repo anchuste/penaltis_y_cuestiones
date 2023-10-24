@@ -4,7 +4,7 @@ import * as constants from './../constants/index.js'
 
 export const Question = ({ question, questionNumber, index, updateQuestion }) => {
 
-    console.log('se renderiza Question');
+    //console.log('se renderiza Question');
 
     let currentSeconds = 0;
 

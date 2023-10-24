@@ -1227,7 +1227,34 @@
         "author":"vmat",
         "creationDate": "2023-09-12T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Bixente_Lizarazu_%28cropped%29.jpg/325px-Bixente_Lizarazu_%28cropped%29.jpg"
-
+    },{
+        "id":87,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Qué futbolista dijo la frase: \"El fútbol es un deporte que inventaron los ingleses, juegan once contra once y siempre gana Alemania\"?",
+        "answers":[
+            "Gary Lineker",
+            "Paul Breitner",
+            "Franz Beckenbauer"
+        ],
+        "correctAnswer": 0,
+        "author":"anchus",
+        "creationDate": "2023-10-23T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Muller%2C_Beckenbauer_en_trainer_Schon_1974.jpg/277px-Muller%2C_Beckenbauer_en_trainer_Schon_1974.jpg"
+    },{
+        "id":88,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿En qué equipo se retiró Johan Cruyff?",
+        "answers":[
+            "Feyenoord",
+            "Ajax",
+            "Levante"
+        ],
+        "correctAnswer": 0,
+        "author":"anchus",
+        "creationDate": "2023-10-23T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Cruijff_afscheidswedstrijd_bij_Ajax.jpg/314px-Cruijff_afscheidswedstrijd_bij_Ajax.jpg"
     }
 ]
 

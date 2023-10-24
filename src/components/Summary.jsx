@@ -3,7 +3,7 @@ import yellowCard from '../assets/yellow-card.png'
 import redCard from '../assets/red-card.png'
 import { SaveRecord } from './SaveRecord';
 
-export const Summary = ({ answers, totalQuestionsNumber, points }) => {
+export const Summary = ({ answers, totalQuestionsNumber, points, resetGame }) => {
     console.log('Se renderiza el componente Summary');
 
     const correctAnswers = answers.filter(answer => answer === 'correct').length;
@@ -113,7 +113,7 @@ export const Summary = ({ answers, totalQuestionsNumber, points }) => {
             src={imagenEntrenador}></img>
             </>
             
-            <SaveRecord points={points}></SaveRecord>
+            <SaveRecord points={points} resetGame={resetGame}></SaveRecord>
 
             
             
