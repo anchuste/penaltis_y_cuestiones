@@ -1,11 +1,8 @@
-import { useEffect, useState, useRef } from 'react'
-import trivialLogo from './assets/trivial_anchus_225_lila.png'
-import trivialLogoHor from  './assets/trivial_anchus_207_hor.png'
+import { useState, useRef } from 'react'
 import data from './assets/questions/questions.json';
 import { Question } from './components/Question'
 import { Summary } from './components/Summary';
 import { NavBar } from './components/NavBar';
-import { BrowserRouter} from 'react-router-dom'
 import { Sanctions } from './components/Sanctions';
 import { SanctionsSummary } from './components/SanctionsSummary';
 import { SupportForm } from './components/SupportForm';
@@ -163,19 +160,15 @@ function App() {
   return (
     <>
 
-        <BrowserRouter>
-          <NavBar showNavbarWhilePlaying={started} handleNavBarState={handleNavBarState} />
-        </BrowserRouter>
+        
+        <NavBar showNavbarWhilePlaying={started} handleNavBarState={handleNavBarState} />
+        
     
     <main className='board'>
-
-        
         
         <ShowIconHeader started={started} showSummary={showSummary} navBarstate={navBarstate}></ShowIconHeader>
-        
-        
-        {navBarstate === 'supportNavBarButton' && <SupportForm></SupportForm>}
 
+        {navBarstate === 'supportNavBarButton' && <SupportForm></SupportForm>}
         
         {navBarstate === 'homeNavBarButton' && started && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length+1} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
         {navBarstate === 'homeNavBarButton' && started && showQuestion && !showSanctions ? <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}
@@ -211,9 +204,6 @@ function App() {
           <BuyACoffee></BuyACoffee>
           </>
           :null}
-
-        
-        
     </main>
     </>
   )

@@ -1161,9 +1161,9 @@
         "id":82,
         "genre": "Sports",
         "subgenre": "Football",
-        "text": "¿Coincidieron Riquelme y Maradona en el mismo club, Boca Juniors, sobre el césped en partido oficial?",
+        "text": "¿Coincidieron Riquelme y Maradona en Boca Juniors, en partido oficial?",
         "answers":[
-            "No, nunca llegaron a jugar un partido oficial juntos",
+            "No, nunca",
             "Sí, en 1998, empate 1-1 ante River",
             "Sí, en 1997, victoria 4-2 ante Argentinos Juniors"
         ],
@@ -1255,6 +1255,49 @@
         "author":"anchus",
         "creationDate": "2023-10-23T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Cruijff_afscheidswedstrijd_bij_Ajax.jpg/314px-Cruijff_afscheidswedstrijd_bij_Ajax.jpg"
+    },{
+        "id":89,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Contra qué selección marcó Maradona su último gol en un mundial?",
+        "answers":[
+            "Nigeria",
+            "Bulgaria",
+            "Grecia"
+        ],
+        "correctAnswer": 2,
+        "author":"anchus",
+        "creationDate": "2023-10-26T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/48/Argentina_celebrando_copa_%28cropped%29.jpg"
+    },
+    {
+        "id":90,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Nombre del balón utilizado en el mundial de Francia 1998",
+        "answers":[
+            "Tricolore",
+            "Tango",
+            "Questra"
+        ],
+        "correctAnswer": 0,
+        "author":"anchus",
+        "creationDate": "2023-10-26T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Adidas_Telstar_18_in_Russia_vs._Argentina.jpg/240px-Adidas_Telstar_18_in_Russia_vs._Argentina.jpg"
+    },{
+        "id":91,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Contra qué selección anotó Butragueño un póker de goles en el mundial de México 1986?",
+        "answers":[
+            "Bélgica",
+            "Dinamarca",
+            "Argelia"
+        ],
+        "correctAnswer": 1,
+        "author":"anchus",
+        "creationDate": "2023-10-26T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Denmark_vs_spain_elkjaer.jpg"
     }
 ]
 
