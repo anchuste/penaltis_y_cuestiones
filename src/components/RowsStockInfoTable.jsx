@@ -9,15 +9,18 @@ export default function RowsStockInfoTable(stocksInfo) {
             </>
         )
     }
+
+    //console.log('stocksInfoDestruct: ', stocksInfoDestruct);
+    //console.log('example: ', stocksInfoDestruct[0].user);
     //console.log('stocksInfoDestruct: ', stocksInfoDestruct)
     return (
             <tbody>
-                {stocksInfoDestruct.response.map((stock, index) => {
+                {stocksInfoDestruct.map((stock, index) => {
                 const list = (
-                <tr key={stock[1]}> 
+                <tr key={stock.id_user_points}> 
                     <td>{index+1}</td>
-                    <td>{stock[0]} </td>
-                    <td>{stock[1]}</td>
+                    <td>{stock.user} </td>
+                    <td>{stock.maxpoints}</td>
                 </tr>
                 );
                 return list;

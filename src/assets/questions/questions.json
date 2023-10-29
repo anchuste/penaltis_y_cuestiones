@@ -1298,6 +1298,20 @@
         "author":"anchus",
         "creationDate": "2023-10-26T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Denmark_vs_spain_elkjaer.jpg"
+    },{
+        "id":92,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál es el nombre de este estadio de fútbol?",
+        "answers":[
+            "City Ground (Nottingham Forest)",
+            "Gtech Community Stadium (Brentford)",
+            "Old Trafford (Manchester United)"
+        ],
+        "correctAnswer": 2,
+        "author":"anchus",
+        "creationDate": "2023-10-29T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Stretford_End.jpg/320px-Stretford_End.jpg"
     }
 ]
 
