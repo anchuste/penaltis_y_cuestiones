@@ -1312,6 +1312,20 @@
         "author":"anchus",
         "creationDate": "2023-10-29T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Stretford_End.jpg/320px-Stretford_End.jpg"
+    },{
+        "id":93,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "En el año 1998, ¿quién lesionó de gravedad a Juninho Paulista?",
+        "answers":[
+            "Míchel Salgado",
+            "Fernando Hierro",
+            "Paco Camarasa"
+        ],
+        "correctAnswer": 0,
+        "author":"anchus",
+        "creationDate": "2023-11-01T00:00:00Z",
+        "image": "https://i0.wp.com/odiofutbolmoderno.com/wp-content/uploads/2020/10/juninho.jpg?w=683&ssl=1"
     }
 ]
 

@@ -49,7 +49,6 @@ export const SaveRecord = ({points, resetGame}) => {
           setShowHint(false);
           setErrors('');
           setQuestionSent(true);
-          setshowLoading(false);
 
           toast.success('¡Puntuación de ' + fields.usuario +  ' guardada!', {
             position: "top-center",
@@ -69,6 +68,8 @@ export const SaveRecord = ({points, resetGame}) => {
       } catch (error) {
         console.error(error);
         setErrors('No se ha podido salvar la partida');
+      } finally {
+        setshowLoading(false);
       }
       
       

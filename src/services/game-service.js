@@ -1,13 +1,14 @@
 
-const saveGameURL = 'https://pffhtyq7ld3ybnmmfkvnleamuq0neaij.lambda-url.eu-west-1.on.aws/';
+//const saveGameURL = 'https://pffhtyq7ld3ybnmmfkvnleamuq0neaij.lambda-url.eu-west-1.on.aws/';
+
+const saveGameURL = 'https://soft-shape-e688.albertoanchuste.workers.dev/api/game/save';
 
 export const saveGame = (game) => {
 
-    let endPoint = saveGameURL;
-    let points =  game.points;
-    let username = game.user;
+    let endPoint = new URL(saveGameURL);
 
-    endPoint = endPoint + "?points=" + points + "&username=" + username;
+    endPoint.searchParams.append('points', game.points);
+    endPoint.searchParams.append('username', game.user);
 
     return new Promise((resolve, reject) => {
         fetch(endPoint)
