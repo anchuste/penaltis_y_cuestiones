@@ -1326,6 +1326,34 @@
         "author":"anchus",
         "creationDate": "2023-11-01T00:00:00Z",
         "image": "https://i0.wp.com/odiofutbolmoderno.com/wp-content/uploads/2020/10/juninho.jpg?w=683&ssl=1"
+    },{
+        "id":94,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál de los siguientes equipos posee más balones de oro?",
+        "answers":[
+            "Liverpool",
+            "Ajax",
+            "Dinamo de Kiev"
+        ],
+        "correctAnswer": 2,
+        "author":"anchus",
+        "creationDate": "2023-11-06T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Camp_Nou_Experience_%28_Ank_Kumar%2C_INFOSYS%29_02.jpg/320px-Camp_Nou_Experience_%28_Ank_Kumar%2C_INFOSYS%29_02.jpg"
+    },{
+        "id":95,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál es la nacionalidad del futbolista del Rayo Vallecano, Bebé?",
+        "answers":[
+            "Portuguesa",
+            "Caboverdiana",
+            "Dominicana"
+        ],
+        "correctAnswer": 1,
+        "author":"anchus",
+        "creationDate": "2023-11-06T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Tiago_Manuel_Dias_Correia.JPG/254px-Tiago_Manuel_Dias_Correia.JPG"
     }
 ]
 
