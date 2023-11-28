@@ -185,7 +185,7 @@ function App() {
         
         {started === false &&  navBarstate === 'homeNavBarButton' && !showSummary ?
           <>
-          <button className='btn' onClick={startGame}>¡Pulse para comenzar una nueva partida!</button>
+          <button className='board_button_start' onClick={startGame}>¡Comenzar partida!</button>
           </>
           :null}
         

@@ -39,7 +39,7 @@ body {
   margin-bottom: 16px;
 }
 
-.board button {
+.board_button {
   padding: 8px 12px;
   margin: 25px;
   background: transparent;
@@ -50,8 +50,25 @@ body {
   transition: 0.2s;
   font-weight: bold;
   cursor: pointer;
-  border-color: #E5B8F4;;
+  border-color: #E5B8F4;
 }
+
+.board button{
+  padding: 0.5em 6px;
+  margin: 25px;
+  background: #6a0a6a;
+  /* border: 2px solid #eee; */
+  color: #fbf8f8;
+  width: 63%;
+  border-radius: 8px;
+  transition: 0.2s;
+  /*font-weight: bold; */
+  /* cursor: pointer; */
+  border-color: #E5B8F4;
+  /* height: 50%; */
+  font-size: large;
+}
+
 
 .board button:hover {
   background: #eee;

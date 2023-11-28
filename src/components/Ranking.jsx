@@ -47,7 +47,6 @@ export const Ranking = ({points, title}) => {
                 cssOverride={CSSProperties}
                 aria-label="Loading Spinner"
                 data-testid="loader"
-                title='Hola'
             />
         </div>
     );
