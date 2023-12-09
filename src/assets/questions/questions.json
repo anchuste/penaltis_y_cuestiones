@@ -1368,6 +1368,36 @@
         "author":"anchus",
         "creationDate": "2023-12-09T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Unai_Emery_at_Baku_before_2019_UEFA_Europe_League_Final.jpg"
+    },{
+        "id":97,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿A qué club pertenece el escudo de la imagen?",
+        "answers":[
+            "Club Atlético Central Córdoba",
+            "Club Atlético Rosario Central",
+            "Club Atlético San Lorenzo de Almagro"
+        ],
+        "correctAnswer": 0,
+        "author":"anchus",
+        "creationDate": "2023-12-09T00:00:00Z",
+        "image": "https://logodetimes.com/times/club-atletico-central-cordoba/club-central-cordoba-de-santiago-del-estero-512.png"
+    },{
+        "id":98,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Cuál de los siguientes equipos de la liga brasileña no ha descendido nunca a segunda división?",
+        "answers":[
+            "Palmeiras",
+            "São Paulo",
+            "Santos"
+        ],
+        "correctAnswer": 1,
+        "author":"anchus",
+        "creationDate": "2023-12-09T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/300px-Palmeiras_logo.svg.png"
+
+
     }
 ]
 

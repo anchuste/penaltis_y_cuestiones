@@ -5,6 +5,8 @@ import data from '../assets/questions/questions.json';
 
 export const TestQuestion = ({ questionIndex }) => {
 
+    console.log('Se renderiza el componente TestQuestion');
+
     let questions = data;
     const QUESTIONS_NUMBER = questions.length;
 

@@ -41,7 +41,9 @@ function App() {
   const [showSanctions, setShowSanctions] = useState(false);
   
   const [timer, setTimer] = useState(0);
+
   const points = useRef(0);
+  const unlockTestQuestion = useRef(0);
 
   const bonusPoints = 2;
   const sanctionMultiplicatorPoints = 3;
@@ -53,7 +55,21 @@ function App() {
   
   
   const handleNavBarState = (newNavBarState) => {
+
+    console.log('newNavBarState: ', newNavBarState);
+
+    if (newNavBarState === 'instructionsNavBarButton') {
+      unlockTestQuestion.current = unlockTestQuestion.current + 1;
+    }
+
     setNavBarstate(newNavBarState);
+
+    if (newNavBarState === 'instructionsNavBarButton' && unlockTestQuestion.current >= 6) {
+      unlockTestQuestion.current = 0;
+    }
+
+
+    console.log('unlockTestQuestion.current: ', unlockTestQuestion.current);
   }
 
   const startGame = () => {
@@ -159,10 +175,9 @@ function App() {
   };
 
   return (
-    <>
+    <>    
 
-        
-        <NavBar showNavbarWhilePlaying={started} handleNavBarState={handleNavBarState} />
+    <NavBar showNavbarWhilePlaying={started} handleNavBarState={handleNavBarState} />
         
     
     <main className='board'>
@@ -206,13 +221,12 @@ function App() {
           </>
           :null}
 
-        {navBarstate === 'instructionsNavBarButton'  ?
+        {navBarstate === 'instructionsNavBarButton' && unlockTestQuestion.current >= 2 ? 
           <>
-          <TestQuestion questionIndex={95} ></TestQuestion>
+          <TestQuestion questionIndex={97} ></TestQuestion>
           </>
           :null}
-
-        
+          
     </main>
     </>
   )
