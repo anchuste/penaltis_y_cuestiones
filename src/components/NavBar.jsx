@@ -37,7 +37,7 @@ export const NavBar = ({showNavbarWhilePlaying, handleNavBarState}) => {
               <button id="rankingNavBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/support">Clasificación</button>
             </li>
             <li>
-              <button className="btn_nav_bar" to="/support">Instrucciones</button>
+              <button id="instructionsNavBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/support">Instrucciones</button>
             </li>
             <li>
               <button id="supportNavBarButton" onClick={navBarButtonOnClick} className="btn_nav_bar" to="/support">Envía preguntas</button>

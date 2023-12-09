@@ -9,6 +9,7 @@ import { SupportForm } from './components/SupportForm';
 import { Ranking } from './components/Ranking';
 import BuyACoffee from './components/BuyACoffee';
 import { ShowIconHeader } from './components/ShowIconHeader';
+import { TestQuestion } from './components/TestQuestion';
 
 
 function App() {
@@ -204,6 +205,14 @@ function App() {
           <BuyACoffee></BuyACoffee>
           </>
           :null}
+
+        {navBarstate === 'instructionsNavBarButton'  ?
+          <>
+          <TestQuestion questionIndex={0} ></TestQuestion>
+          </>
+          :null}
+
+        
     </main>
     </>
   )
