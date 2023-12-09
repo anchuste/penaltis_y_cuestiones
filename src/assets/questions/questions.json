@@ -1354,6 +1354,20 @@
         "author":"anchus",
         "creationDate": "2023-11-06T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Tiago_Manuel_Dias_Correia.JPG/254px-Tiago_Manuel_Dias_Correia.JPG"
+    },{
+        "id":96,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "Equipo con el que Unay Emery ganó su primer duelo a Guardiola como entrenador",
+        "answers":[
+            "Valencia",
+            "Arsenal",
+            "Aston Villa"
+        ],
+        "correctAnswer": 2,
+        "author":"anchus",
+        "creationDate": "2023-12-09T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Unai_Emery_at_Baku_before_2019_UEFA_Europe_League_Final.jpg"
     }
 ]
 
