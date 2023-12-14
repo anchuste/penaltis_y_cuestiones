@@ -223,7 +223,7 @@ function App() {
 
         {navBarstate === 'instructionsNavBarButton' && unlockTestQuestion.current >= 2 ? 
           <>
-          <TestQuestion questionIndex={97} ></TestQuestion>
+          <TestQuestion questionIndex={98} ></TestQuestion>
           </>
           :null}
           

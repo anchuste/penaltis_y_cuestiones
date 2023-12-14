@@ -1396,8 +1396,21 @@
         "author":"anchus",
         "creationDate": "2023-12-09T00:00:00Z",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/300px-Palmeiras_logo.svg.png"
-
-
+    },
+    {
+        "id":99,
+        "genre": "Sports",
+        "subgenre": "Football",
+        "text": "¿Qué equipo conquistó más veces el campeonato liguero (Fußball-Oberliga) en la ya extinta Alemania Oriental?",
+        "answers":[
+            "Dynamo Dresden",
+            "Dynamo Berlin",
+            "Hansa Rostock"
+        ],
+        "correctAnswer": 1,
+        "author":"anchus",
+        "creationDate": "2023-12-14T00:00:00Z",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/DFV.png/480px-DFV.png"
     }
 ]
 
