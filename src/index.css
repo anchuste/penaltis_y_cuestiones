@@ -335,25 +335,24 @@ ol li { list-style:none }
 }
 
 .questions_support_form_input_text{
-  background-color: #c9c17e2b;
+  background-color: #9225d457;
   /* color: red; */
   width: 85%;
-  margin: 10px;
-  font-size: larger;
-  border-radius: 10p;
-  color: white;
+  margin: 4px;
+  font-size: medium;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
   font-family: sans-serif;
 }
 
 .questions_support_form_text_area{
-  background-color: #c9c17e2b;
+  background-color: #9225d457;
   /* color: red; */
   width: 85%;
-  margin: 10px;
-  font-size: larger;
-  border-radius: 10p;
-  color: white;
-  resize: none;
+  margin: 4px;
+  font-size: medium;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
   font-family: sans-serif;
 }
 

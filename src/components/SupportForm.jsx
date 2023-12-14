@@ -58,14 +58,14 @@ export const SupportForm = () => {
         <div style={{width: '22em'}}>
             <h2> {constants.COLABORA_TITULO_PRINCIPAL} </h2>
             <form action="" onSubmit={handleSubmmit}>
-                <input style={{marginTop: '20px'}}name='usuario' className='questions_support_form_input_text' type="text" placeholder="Escribe tu nombre" />
+                <textarea style={{marginTop: '20px'}} name='usuario' className='questions_support_form_input_text' rows={2} maxLength={15} placeholder="Escribe tu nombre" />
                 <textarea name='pregunta' className='questions_support_form_text_area' rows={4} maxLength={200} placeholder="Escribe tu pregunta" />
                 <textarea name='respuesta1' className='questions_support_form_text_area' rows={2} maxLength={30} placeholder="Escribe la respuesta 1" />
                 <textarea name='respuesta2' className='questions_support_form_text_area' rows={2} maxLength={30} placeholder="Escribe la respuesta 2" />
                 <textarea name='respuesta3' className='questions_support_form_text_area' rows={2} maxLength={30} placeholder="Escribe la respuesta 3" />
-                <input name='respuestaCorrecta' className='questions_support_form_input_text' type="text" maxLength={1} placeholder="Respuesta verdadera ¿1/2/3?" />
+                <textarea name='respuestaCorrecta' className='questions_support_form_text_area' rows={2} maxLength={15} placeholder="Respuesta verdadera ¿1/2/3?" />
 
-                {errors != '' && <h3 style={{color: 'indianred'}}> {errors }</h3>}
+                {errors != '' && <h3 style={{color: '#e24444'}}> ❌ {errors } </h3>}
                 {questionSent && <h3 style={{color: '#4c93d0'}}> Pregunta enviada. ¡Muchas gracias! ⭐</h3>}
                 <button className='questions_support_form_button' type="submit">Enviar</button>
             </form>
