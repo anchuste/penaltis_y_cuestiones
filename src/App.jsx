@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import data from './assets/questions/questions.json';
 import { Question } from './components/Question'
 import { Summary } from './components/Summary';
@@ -10,38 +10,53 @@ import { Ranking } from './components/Ranking';
 import BuyACoffee from './components/BuyACoffee';
 import { ShowIconHeader } from './components/ShowIconHeader';
 import { TestQuestion } from './components/TestQuestion';
+import {getQuestions} from './services/question-service.js'
 
 
 function App() {
 
   console.log('Se renderiza el componente App');
 
-  let questions = data;
-  const QUESTIONS_NUMBER = questions.length;
-  let initialPositions = Array(QUESTIONS_NUMBER).fill(false);
-  let initialAnswers = Array(QUESTIONS_NUMBER).fill('notAnswered');
-  
-  // get first random question
+  const [questions, setQuestions] = useState();
+
+  let QUESTIONS_NUMBER = 0;
+  let initialPositions = [];
+  let initialAnswers = [];
   let cuestionsAskedArray = [];
-  let indexQuestionInitial = Math.floor(Math.random() * QUESTIONS_NUMBER);
-  let cuestionNotAskedInitial = questions[indexQuestionInitial];
-  cuestionsAskedArray.push(cuestionNotAskedInitial.id);
+  let indexQuestionInitial = 0;
+  let cuestionNotAskedInitial = {};
 
-  // set initial position
-  initialPositions[0] = true;
+  if (questions !== undefined && questions.length > 0 && QUESTIONS_NUMBER === 0) {
+    QUESTIONS_NUMBER = questions.length;
+    initialPositions = Array(QUESTIONS_NUMBER).fill(false);
+    initialAnswers = Array(QUESTIONS_NUMBER).fill('notAnswered');
+  
+    // get first random question
+    indexQuestionInitial = Math.floor(Math.random() * QUESTIONS_NUMBER);
+    cuestionNotAskedInitial = questions[indexQuestionInitial];
+    cuestionsAskedArray.push(cuestionNotAskedInitial.id);
 
+    // set initial position
+    initialPositions[0] = true;
+    
+  }
+  
+
+  
   const [positions, setPositions] = useState(initialPositions);
-  const [showQuestion, setShowQuestion] = useState(true);
   const [cuestionsAsked, setCuestionsAsked] = useState(cuestionsAskedArray);
   const [cuestionNotAsked, setCuestionNotAsked] = useState(cuestionNotAskedInitial);
   const [answers, setAnswers] = useState(initialAnswers);
+  const [reloadQuestions, setReloadQuestions] = useState(false);
+
+  const [showQuestion, setShowQuestion] = useState(true);
   const [started, setStarted] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
   const [sanctions, setSanctions] = useState(0);
   const [showSanctions, setShowSanctions] = useState(false);
-  
-  const [timer, setTimer] = useState(0);
 
+  const [timer, setTimer] = useState(0);
+  
   const points = useRef(0);
   const unlockTestQuestion = useRef(0);
 
@@ -52,11 +67,26 @@ function App() {
 
   const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
 
-  
+  useEffect(() => {
+
+    async function fetchQuestionData() {
+      const response = await getQuestions();
+      initialConfig(response);
+      //await delay(5000);
+      //setpointsRecovered(response);
+      //setshowLoading(false)
+    }
+
+    fetchQuestionData();
+    
+  }, [reloadQuestions]);
+
+  const initialConfig = (data) => {
+    console.log('Se ejecuta initialConfig');
+    setQuestions(data);
+  }
   
   const handleNavBarState = (newNavBarState) => {
-
-    console.log('newNavBarState: ', newNavBarState);
 
     if (newNavBarState === 'instructionsNavBarButton') {
       unlockTestQuestion.current = unlockTestQuestion.current + 1;
@@ -67,9 +97,6 @@ function App() {
     if (newNavBarState === 'instructionsNavBarButton' && unlockTestQuestion.current >= 6) {
       unlockTestQuestion.current = 0;
     }
-
-
-    console.log('unlockTestQuestion.current: ', unlockTestQuestion.current);
   }
 
   const startGame = () => {
@@ -81,7 +108,7 @@ function App() {
   }
 
 
-  const resetGame = () => {
+  const resetGame = async () => {
     setStarted(true);
     setPositions(initialPositions);
     setAnswers(initialAnswers);
@@ -104,7 +131,6 @@ function App() {
 
     // get current true position: marcamos la siguiente posición
     const currentTruePosition = positions.findIndex((position) => position === true);
-    //console.log('currentTruePosition: ', currentTruePosition);
     
     const newPositions = Array(QUESTIONS_NUMBER).fill(false);
     newPositions[currentTruePosition+1] = true;
@@ -117,8 +143,8 @@ function App() {
     setCuestionsAsked(cuestionsAskedCopy);
     
     // Check if the response answered is right (comparing answer value with correctAnswer)
-    const answerCorrect = questions.findIndex(item => item.id === indexQuestion);
-    let answer = questions[answerCorrect].correctAnswer;
+    const answerCorrect = questions.findIndex(item => item.id_question === indexQuestion);
+    let answer = questions[answerCorrect].correct_answer;
     let resultAnswer;
     
     if (indexAnswer === answer) {
@@ -134,7 +160,7 @@ function App() {
     let currentSanctions = sanctions;
 
     // Extraer preguntas no realizadas
-    let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id));
+    let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id_question));
 
     // Si la respuesta es incorrecta, sumamos una sanción
     if (resultAnswer === 'incorrect') {
@@ -146,9 +172,7 @@ function App() {
         setShowSanctions(true);
       }
     }else{
-      //console.log('seconds to go: ', seconds);
       points.current = points.current + rightAnswerPoints + calculateSecondsPoints(seconds);
-      //console.log('points: ', points);
     }
 
     
@@ -164,6 +188,7 @@ function App() {
       //console.log('answersCopy', answersCopy);
       setShowSummary(true);
       setStarted(false);
+      setReloadQuestions(true);
     }
 
     

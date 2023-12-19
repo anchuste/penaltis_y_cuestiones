@@ -4,14 +4,13 @@ import * as constants from './../constants/index.js'
 
 export const Question = ({ question, questionNumber, index, updateQuestion }) => {
 
-    //console.log('se renderiza Question');
+    question.answersFormatted = question.answers.split('**');
 
     let currentSeconds = 0;
 
     // Renderer callback with condition
     const renderer = ({ seconds, completed, api, props }) => {
-      //console.log('api', api);
-      //console.log('props', props);
+      //console.log('seconds', seconds);
       currentSeconds = seconds;
 
       // Render a countdown
@@ -35,18 +34,19 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
               date={Date.now() + constants.TIME_TO_GO_QUESTIONS}
               renderer={renderer}
               onComplete={(event, api) => console.log('event api', api)}
-              key={question.id}
+              key={question.id_question}
           />
 
           </div>
 
-          <h2 className='customDiv'>{question.text}</h2>
+          <h2 className='customDiv'>{question.question}</h2>
           <section>
           <ol>
           {
-            question.answers.map((answer, index) => {
+            question.answersFormatted.map(
+              (answer, index) => {
               return (
-                <li className='answers' key={index} onClick={() => updateQuestion(question.id, index, currentSeconds)}
+                <li className='answers' key={index} onClick={() => updateQuestion(question.id_question, index, currentSeconds)}
                 >
                   {answer}
                 </li>

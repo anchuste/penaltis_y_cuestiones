@@ -1,6 +1,4 @@
 
-//const saveGameURL = 'https://pffhtyq7ld3ybnmmfkvnleamuq0neaij.lambda-url.eu-west-1.on.aws/';
-
 const saveGameURL = 'https://soft-shape-e688.albertoanchuste.workers.dev/api/game/save';
 
 export const saveGame = (game) => {
@@ -16,7 +14,7 @@ export const saveGame = (game) => {
             if (!response.ok) throw Error(response.status);
         })
         .then(data => {
-            console.log(data);
+            //console.log(data);
             resolve(true);
         })
         .catch(error => {

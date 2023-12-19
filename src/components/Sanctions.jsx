@@ -4,7 +4,6 @@ import redCard from '../assets/red-card.png'
 export function Sanctions({SanctionsNumber}){
 
     const sanctions = SanctionsNumber;
-    console.log('sanctions: ', sanctions);
 
     return (
         <>

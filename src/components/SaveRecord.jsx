@@ -26,20 +26,16 @@ export const SaveRecord = ({points, resetGame}) => {
     let userAndPoints = "";
 
     const handleSubmmit = async (event) => {
-      console.log('handleSubmmit: ', event.target);
       event.preventDefault();
       const fields = Object.fromEntries(new FormData(event.target));
-      console.log(fields);
       setQuestionSent(false);
       
 
       if (fields.usuario === '') {
-        console.log('Error en el campo usuario');
         setErrors('El nombre no puede estar vacío');
         return;
       }
 
-      console.log('points: ', points)
       // Crear objeto con usuario y puntos para guardar en bbdd
       userAndPoints =  { "user": fields.usuario, "points":points}
       try {
@@ -70,10 +66,7 @@ export const SaveRecord = ({points, resetGame}) => {
         setErrors('No se ha podido salvar la partida');
       } finally {
         setshowLoading(false);
-      }
-      
-      
-      //console.log('Se ha enviado el formulario');
+      }      
     }
 
       return (

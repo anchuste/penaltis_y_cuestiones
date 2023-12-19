@@ -335,7 +335,7 @@ ol li { list-style:none }
 }
 
 .questions_support_form_input_text{
-  background-color: #9225d457;
+  background-color: #8738f4c0;
   /* color: red; */
   width: 85%;
   margin: 4px;
@@ -346,7 +346,7 @@ ol li { list-style:none }
 }
 
 .questions_support_form_text_area{
-  background-color: #9225d457;
+  background-color: #8738f4c0;
   /* color: red; */
   width: 85%;
   margin: 4px;
@@ -391,6 +391,12 @@ ol li { list-style:none }
   margin-bottom: 9px;
   height: 1.3em;
   font-size: 20px;
+}
+
+textarea::placeholder {
+  color: #c682bb;
+  font-size: 15px;
+  font-family: sans-serif;
 }
 
 .board .btn_save_disk{
