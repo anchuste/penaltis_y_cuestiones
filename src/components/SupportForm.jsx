@@ -55,6 +55,7 @@ export const SupportForm = () => {
 
       // Crear objeto para guardar en bbdd
       let questionUser = {
+      id: lastIdQuestion + 1,
       question: fields.pregunta, 
       answer1: fields.respuesta1, 
       answer2: fields.respuesta2, 
