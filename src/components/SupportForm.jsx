@@ -1,13 +1,14 @@
 import { Square } from './Square.jsx'
 import * as constants from './../constants/index.js'
 import { useState } from 'react'
+import { setSaveUserQuestion, getLastIdQuestion } from '../services/question-service.js'
 
 export const SupportForm = () => {
 
     const [errors, setErrors] = useState('');
     const [questionSent, setQuestionSent] = useState(false);
 
-    const handleSubmmit = (event) => {
+    const handleSubmmit = async (event) => {
       event.preventDefault();
       const fields = Object.fromEntries(new FormData(event.target));
       console.log(fields);
@@ -49,9 +50,30 @@ export const SupportForm = () => {
         return;
       }
 
-      setErrors('');
-      setQuestionSent(true);
-      console.log('Se ha enviado el formulario');
+      let lastIdQuestion = await getLastIdQuestion();
+      lastIdQuestion = lastIdQuestion[0].lastId;
+
+      // Crear objeto para guardar en bbdd
+      let questionUser = {
+      question: fields.pregunta, 
+      answer1: fields.respuesta1, 
+      answer2: fields.respuesta2, 
+      answer3: fields.respuesta3, 
+      correctAnswer: fields.respuestaCorrecta,
+      user: fields.usuario,
+      validated: 0
+      }
+
+      let savedUserQuestion = await setSaveUserQuestion(questionUser);
+      if (savedUserQuestion === true){
+        setErrors('');
+        setQuestionSent(true);
+        console.log('Se ha enviado el formulario');
+      }
+      else{
+        setErrors('No se ha podido salvar la pregunta');
+        console.log('No se ha podido enviar el formulario');
+      }
     }
 
       return (
