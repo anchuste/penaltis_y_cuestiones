@@ -1,7 +1,4 @@
-import { Square } from './Square.jsx'
-import * as constants from '../constants/index.js'
 import { useState } from 'react'
-import floppyDisk from '../assets/floppy-disk-64.png'
 import {saveGame} from './../services/game-service.js'
 import DotLoader from "react-spinners/DotLoader";
 import { ToastContainer, toast } from 'react-toastify';

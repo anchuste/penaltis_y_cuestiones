@@ -36,11 +36,11 @@ export const getLastIdQuestion = () => {
 
 export const setSaveUserQuestion = (question) => {
 
-        console.log("setSaveUserQuestion", question);
+        //console.log("setSaveUserQuestion", question);
     
         let endPoint = new URL(setUserQuestionURL);
 
-        console.log("question json", question);
+        //console.log("question json", question);
     
         return new Promise((resolve, reject) => {
             fetch(endPoint, 
@@ -58,7 +58,7 @@ export const setSaveUserQuestion = (question) => {
                 }
             })
             .then(function(response){
-                console.log(response);
+                //console.log(response);
                 resolve(true);
             })
             .catch(function(error){
