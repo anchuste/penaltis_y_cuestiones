@@ -10,13 +10,13 @@ export const TestQuestion = ({ questionIndex }) => {
     console.log('Se renderiza el componente TestQuestion');
 
     const [questionToTest, setQuestionToTest] = useState();
+    const [questionIndexSelected, setQuestionIndexSelected] = useState();
 
     if (questionToTest != undefined) {
       questionToTest.answersFormatted = questionToTest.answers.split('**');
     }
 
     let questions;
-    
 
     //let questionToTest = questions[questionIndex];
 
@@ -24,19 +24,19 @@ export const TestQuestion = ({ questionIndex }) => {
 
     useEffect(() => {
 
-      console.log('Se renderiza el componente TestQuestion useEffect');
+      //console.log('Se renderiza el componente TestQuestion useEffect');
 
       async function fetchQuestionData() {
         const response = await getQuestions();
         questions = response;
-        const indexCuestion = questions.findIndex(item => item.id_question === questionIndex);
+        const indexCuestion = questions.findIndex(item => item.id_question === questionIndexSelected);
         let questionToTestAux = questions[indexCuestion];
         setQuestionToTest(questionToTestAux);
       }
   
       fetchQuestionData();
       
-    }, []);
+    }, [questionIndexSelected]);
 
     // Renderer callback with condition
     const renderer = ({ seconds, completed, api, props }) => {
@@ -51,6 +51,12 @@ export const TestQuestion = ({ questionIndex }) => {
 
     return (
       <div>
+        <div>
+        <input id="questionIndexSelected" name='selectedQuestion' onChange={
+          (event) => {
+            setQuestionIndexSelected(parseInt(event.target.value));
+        }}></input>
+        </div>
 
         {questionToTest != undefined && questionToTest.image ? 
           <img src={questionToTest.image} className='question_image' alt='React Logo' /> : null}
