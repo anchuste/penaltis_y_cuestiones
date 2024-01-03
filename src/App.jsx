@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react'
-import data from './assets/questions/questions.json';
 import { Question } from './components/Question'
 import { Summary } from './components/Summary';
 import { NavBar } from './components/NavBar';
@@ -11,6 +10,8 @@ import BuyACoffee from './components/BuyACoffee';
 import { ShowIconHeader } from './components/ShowIconHeader';
 import { TestQuestion } from './components/TestQuestion';
 import {getQuestions} from './services/question-service.js'
+import { SelectNumberPlayers } from './components/SelectNumberPlayers.jsx';
+import { PLAYERS_NUMBER_ALLOWED } from './constants/index.js';
 
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
   const [showSummary, setShowSummary] = useState(false);
   const [sanctions, setSanctions] = useState(0);
   const [showSanctions, setShowSanctions] = useState(false);
+  const [multiplayer, setMultiplayer] = useState(false);
 
   const [timer, setTimer] = useState(0);
   
@@ -72,9 +74,6 @@ function App() {
     async function fetchQuestionData() {
       const response = await getQuestions();
       initialConfig(response);
-      //await delay(5000);
-      //setpointsRecovered(response);
-      //setshowLoading(false)
     }
 
     fetchQuestionData();
@@ -82,7 +81,7 @@ function App() {
   }, [reloadQuestions]);
 
   const initialConfig = (data) => {
-    console.log('Se ejecuta initialConfig');
+    //console.log('Se ejecuta initialConfig');
     setQuestions(data);
   }
   
@@ -101,6 +100,10 @@ function App() {
 
   const startGame = () => {
     resetGame(null);
+  }
+
+  const multiplayerStartGame = () => {
+    setMultiplayer(true);
   }
 
   const resumeGame = () => {
@@ -218,15 +221,16 @@ function App() {
         {navBarstate === 'homeNavBarButton' && showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
 
 
-        {(started === false && navBarstate === 'homeNavBarButton' && !showSummary)?
+        {(!multiplayer && started === false && navBarstate === 'homeNavBarButton' && !showSummary)?
           <>
           <Ranking points={5} title={"TOP 5"}></Ranking>
           </>
           :null}
         
-        {started === false &&  navBarstate === 'homeNavBarButton' && !showSummary ?
+        {!multiplayer && started === false &&  navBarstate === 'homeNavBarButton' && !showSummary ?
           <>
-          <button className='board_button_start' onClick={startGame}>¡Comenzar partida!</button>
+          <button className='board_button_start' onClick={startGame}>Partida clásica 🙍🏻‍♂️</button>
+          <button className='board_button_start' onClick={multiplayerStartGame}> Partida multijugador 🙍🏻‍♂️🙍🏼‍♀️</button>
           </>
           :null}
         
@@ -251,6 +255,11 @@ function App() {
           <TestQuestion questionIndex={101} ></TestQuestion>
           </>
           :null}
+
+        {multiplayer && !started && navBarstate === 'homeNavBarButton' ?
+          <SelectNumberPlayers numberPlayersAllowed={PLAYERS_NUMBER_ALLOWED}></SelectNumberPlayers>
+          :null
+        }
           
     </main>
     </>
