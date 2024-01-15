@@ -4,6 +4,8 @@ import * as constants from './../constants/index.js'
 
 export const Question = ({ question, questionNumber, index, updateQuestion }) => {
 
+    //console.log('Se renderiza el componente Question', question);
+
     question.answersFormatted = question.answers.split('**');
 
     let currentSeconds = 0;

@@ -4,7 +4,9 @@ import redCard from '../assets/red-card.png'
 import { SaveRecord } from './SaveRecord';
 
 export const Summary = ({ answers, totalQuestionsNumber, points, resetGame }) => {
-    console.log('Se renderiza el componente Summary');
+
+    //console.log('Se renderiza el componente Summary');
+    //console.log('answers', answers);
 
     const correctAnswers = answers.filter(answer => answer === 'correct').length;
     const incorrectAnswers = answers.filter(answer => answer === 'incorrect').length;

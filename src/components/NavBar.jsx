@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Hamburger from './../assets/hamburger_violet.png';
 
-export const NavBar = ({showNavbarWhilePlaying, handleNavBarState}) => {
+export const NavBar = ({handleNavBarState}) => {
   const [showNavbar, setShowNavbar] = useState(false);
 
   const handleShowNavbar = () => {
@@ -17,7 +17,6 @@ export const NavBar = ({showNavbarWhilePlaying, handleNavBarState}) => {
 
     return (
       <>
-      {showNavbarWhilePlaying === false ?
       <nav className="navbar">
       <div className="container">
         <div className="logo">
@@ -48,7 +47,7 @@ export const NavBar = ({showNavbarWhilePlaying, handleNavBarState}) => {
           </ul>
         </div>
       </div>
-    </nav>:null}
+    </nav>
     </>
       );
 }

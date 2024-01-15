@@ -1,10 +1,10 @@
 export const getQuestionsForMultiplayerGame = (data, questionsNumber, playersNumber) => {
 
     let usedQuestions = [];
+    let arrayQuestions = [];
     let totalQuestionsToReturn = questionsNumber * playersNumber;
     let questions = data;
 
-    console.log('totalQuestionsToReturn', questions);
 
     for (let i = 0; i < totalQuestionsToReturn; i++) {
 
@@ -15,11 +15,10 @@ export const getQuestionsForMultiplayerGame = (data, questionsNumber, playersNum
         }
 
         usedQuestions.push(randomIndex);
+        arrayQuestions.push(questions[randomIndex]);
 
     }
 
-    console.log('usedQuestions', usedQuestions);
-
-    return usedQuestions;
+    return arrayQuestions;
 
 }
