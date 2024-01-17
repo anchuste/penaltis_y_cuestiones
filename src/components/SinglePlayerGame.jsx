@@ -6,7 +6,7 @@ import { SanctionsSummary } from './SanctionsSummary';
 import { SupportForm } from './SupportForm';
 import {getQuestions} from '../services/question-service.js'
 
-export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame}) {
+export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, gameStarted}) {
 
     console.log('Se renderiza el componente SinglePlayerGame');
 
@@ -29,6 +29,8 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame}) 
     const bonusPoints = 2;
     const sanctionMultiplicatorPoints = 3;
     const rightAnswerPoints = 25;
+
+    
 
     const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
 
@@ -83,7 +85,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame}) 
   
     const startGame = () => {
         resetGame(true);
-        singlePlayerStartGame();
+        //singlePlayerStartGame();
     }
 
     const resumeGame = () => {
@@ -92,7 +94,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame}) 
 
     const resetGame = (event) => {
 
-        setStarted(true);
+        //setStarted(true);
         
         if (event !== true) {
             if (reloadQuestions === true) {
@@ -176,6 +178,10 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame}) 
         
     };
 
+    if (gameStarted === true) {
+        startGame();
+    }
+
     //const [numberPlayers, setNumberPlayersState] = useState(1);
     //const [showButton, setShowButton] = useState(false);
       
@@ -184,24 +190,15 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame}) 
     
         <main className='board'>
             
-            {started && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
-            {started && showQuestion && !showSanctions ? <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}
-            {started && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}
+            {gameStarted && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
+            {gameStarted && showQuestion && !showSanctions ? <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}
+            {gameStarted && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}
             {showSummary && <Summary totalQuestionsNumber={questions.length} answers={answers} points={points.current} resetGame={resetGame}></Summary>}
             {showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
-            
-            {started === false &&  navBarstate === 'homeNavBarButton' && !showSummary ?
-              <>
-              <button className='board_button_start' onClick={startGame}>Partida clásica 🙍🏻‍♂️</button>
-              <button className='board_button_start' onClick={multiplayerStartGame}> Partida multijugador 🙍🏻‍♂️🙍🏼‍♀️</button>
-              </>
-              :null}
             
             {showSanctions ?
               <button className='btn' onClick={resumeGame}>Entendido señor colegiado. ¡Pulse para continuar!</button>
               :null}
-    
-            
 
         </main>
         </>

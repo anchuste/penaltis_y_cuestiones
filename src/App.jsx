@@ -17,6 +17,7 @@ function App() {
   //const [numberPlayers, setNumberPlayers] = useState(0);
   const [multiplayer, setMultiplayer] = useState(false);
   const [gameTypeSelected, setGameTypeSelected] = useState(false);
+  const [started, setStarted] = useState(false);
 
   const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
 
@@ -43,10 +44,14 @@ function App() {
     setNavBarstate(newNavBarState);
   }
 
+  const startGame = () => {
+    setStarted(true);
+  }
+
   return (
     <>    
 
-    {gameTypeSelected === false ? 
+    {gameTypeSelected === false && started === false ?
     <>
     <NavBar handleNavBarState={handleNavBarState} />
     </>
@@ -56,7 +61,14 @@ function App() {
 
         <ShowIconHeader started={gameTypeSelected} showSummary={false} navBarstate={navBarstate}></ShowIconHeader>
 
-        {navBarstate === 'homeNavBarButton' && gameTypeSelected === false?
+        {started === false &&  navBarstate === 'homeNavBarButton' ?
+              <>
+              <button className='board_button_start' onClick={startGame}>Partida clásica 🙍🏻‍♂️</button>
+              <button className='board_button_start' onClick={multiplayerStartGame}> Partida multijugador 🙍🏻‍♂️🙍🏼‍♀️</button>
+              </>
+              :null}
+
+        {navBarstate === 'homeNavBarButton' && gameTypeSelected === false && started === false?
               <>
               <Ranking points={5} title={"TOP 5"}></Ranking>
               </>
@@ -64,7 +76,7 @@ function App() {
 
           {multiplayer === false ?
           <>
-          <SinglePlayerGame singlePlayerStartGame={singlePlayerStartGame} multiplayerStartGame={multiplayerStartGame}>  </SinglePlayerGame>
+          <SinglePlayerGame singlePlayerStartGame={singlePlayerStartGame} multiplayerStartGame={multiplayerStartGame} gameStarted={started}>  </SinglePlayerGame>
           </>
           : null}
 
