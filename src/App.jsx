@@ -10,6 +10,7 @@ import { SupportForm } from './components/SupportForm';
 
 
 
+
 function App() {
 
   console.log('Se renderiza el componente App');
@@ -18,8 +19,8 @@ function App() {
   const [multiplayer, setMultiplayer] = useState(false);
   const [gameTypeSelected, setGameTypeSelected] = useState(false);
   const [started, setStarted] = useState(false);
-
   const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
+  const unlockTestQuestion = useRef(0);
 
   const multiplayerStartGame = () => {
     setGameTypeSelected(true);
@@ -41,6 +42,15 @@ function App() {
   };
 
   const handleNavBarState = (newNavBarState) => {
+
+    if (newNavBarState === 'instructionsNavBarButton') {
+      unlockTestQuestion.current += 1;
+    }
+
+    if (unlockTestQuestion.current > 2) {
+      unlockTestQuestion.current = 0;
+    }
+    
     setNavBarstate(newNavBarState);
   }
 
@@ -59,7 +69,7 @@ function App() {
 
     <main className='board'> 
 
-        <ShowIconHeader started={gameTypeSelected} showSummary={false} navBarstate={navBarstate}></ShowIconHeader>
+        <ShowIconHeader started={started} showSummary={false} navBarstate={navBarstate}></ShowIconHeader>
 
         {started === false &&  navBarstate === 'homeNavBarButton' ?
               <>
@@ -101,7 +111,7 @@ function App() {
     
           {navBarstate === 'instructionsNavBarButton' && unlockTestQuestion.current >= 2 ? 
             <>
-            <TestQuestion questionIndex={101} ></TestQuestion>
+            <TestQuestion questionIndex={99} ></TestQuestion>
             </>
             :null}
           

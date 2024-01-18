@@ -25,7 +25,6 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
     const [showSanctions, setShowSanctions] = useState(false);
 
     const points = useRef(0);
-    const unlockTestQuestion = useRef(0);
     const bonusPoints = 2;
     const sanctionMultiplicatorPoints = 3;
     const rightAnswerPoints = 25;

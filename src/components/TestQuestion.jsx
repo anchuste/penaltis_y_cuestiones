@@ -24,13 +24,14 @@ export const TestQuestion = ({ questionIndex }) => {
 
     useEffect(() => {
 
-      //console.log('Se renderiza el componente TestQuestion useEffect');
+      console.log('Se renderiza el componente TestQuestion useEffect');
 
       async function fetchQuestionData() {
         const response = await getQuestions();
         questions = response;
-        const indexCuestion = questions.findIndex(item => item.id_question === questionIndexSelected);
+        const indexCuestion = questions.findIndex(item => item.id_question === questionIndex);
         let questionToTestAux = questions[indexCuestion];
+        console.log('questionToTestAux', questionToTestAux);
         setQuestionToTest(questionToTestAux);
       }
   
