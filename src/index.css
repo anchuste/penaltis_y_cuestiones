@@ -57,15 +57,11 @@ body {
   padding: 0.5em 6px;
   margin: 0.7em;
   background: #6a0a6a;
-  /* border: 2px solid #eee; */
   color: #fbf8f8;
   width: 63%;
   border-radius: 8px;
   transition: 0.2s;
-  /*font-weight: bold; */
-  /* cursor: pointer; */
   border-color: #E5B8F4;
-  /* height: 50%; */
   font-size: large;
 }
 
@@ -73,6 +69,7 @@ body {
 .board button:hover {
   background: #eee;
   color: #222;
+  cursor: pointer;
 }
 
 .board .game {
@@ -244,7 +241,39 @@ ol li { list-style:none }
   cursor: pointer;
 }
 
-@media (max-width: 600px) {
+.btn_nav_bar:hover{
+  background-color: #242424;
+  box-shadow: 4px 2px 4px 0px #E5B8F4;
+  color: #f7f7f7;
+}
+
+
+/*Si es mayor que 1000px*/
+@media (min-width: 1000px) {
+
+  .board button{
+    display: grid;
+    padding: 0.4em 6px;
+    margin: 0.7em;
+    background: #6a0a6a;
+    color: #fbf8f8;
+    width: 90%;
+    border-radius: 8px;
+    transition: 0.2s;
+    border-color: #E5B8F4;
+    font-size: large;
+  }
+
+  .logo_img_home{
+    width: 85%;
+  }
+
+}
+
+
+
+/*Si es menor que 1000px*/
+@media (max-width: 1000px) {
   
   .menu-icon {
     display: block;
@@ -326,11 +355,8 @@ ol li { list-style:none }
 }
 
 .answers_style{
-  /* border: 2px solid; */
   padding: 10px;
   box-shadow: 5px 3px #E5B8F4;
-  /* border-width: 5px; */
-  /* border-style: ridge; */
   border-color: #E5B8F4;
 }
 

@@ -71,18 +71,21 @@ function App() {
 
         <ShowIconHeader started={started} showSummary={false} navBarstate={navBarstate}></ShowIconHeader>
 
-        {started === false &&  navBarstate === 'homeNavBarButton' ?
+        {navBarstate === 'homeNavBarButton' && gameTypeSelected === false && started === false?
               <>
-              <button className='board_button_start' onClick={startGame}>Partida clásica 🙍🏻‍♂️</button>
-              <button className='board_button_start' onClick={multiplayerStartGame}> Partida multijugador 🙍🏻‍♂️🙍🏼‍♀️</button>
+              <Ranking points={4} title={"Puntuaciones más altas"}></Ranking>
               </>
               :null}
 
-        {navBarstate === 'homeNavBarButton' && gameTypeSelected === false && started === false?
+        {started === false &&  navBarstate === 'homeNavBarButton' ?
               <>
-              <Ranking points={5} title={"TOP 5"}></Ranking>
+              <h2 style={{color: "papayawhip", marginTop: "5%", marginBottom: "5%", color: "#8738f4"}}> ¡COMENZAR PARTIDA! </h2>
+              <button className='board_button_start' onClick={startGame}> 1 Jugador 🙍🏻‍♂️</button>
+              <button className='board_button_start' onClick={multiplayerStartGame}> Varios jugadores 🙍🏻‍♂️🙍🏼‍♀️</button>
               </>
               :null}
+
+        
 
           {multiplayer === false ?
           <>

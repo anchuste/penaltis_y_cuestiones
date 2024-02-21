@@ -19,8 +19,9 @@ export default function RowsStockInfoTable(stocksInfo) {
                 const list = (
                 <tr key={stock.id_user_points}> 
                     <td>{index+1}</td>
-                    <td>{stock.user} </td>
                     <td>{stock.maxpoints}</td>
+                    <td>{stock.user} </td>
+                    
                 </tr>
                 );
                 return list;
