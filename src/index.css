@@ -252,12 +252,11 @@ ol li { list-style:none }
 @media (min-width: 1000px) {
 
   .board button{
-    display: grid;
     padding: 0.4em 6px;
     margin: 0.7em;
     background: #6a0a6a;
     color: #fbf8f8;
-    width: 90%;
+    width: 75%;
     border-radius: 8px;
     transition: 0.2s;
     border-color: #E5B8F4;
@@ -265,7 +264,10 @@ ol li { list-style:none }
   }
 
   .logo_img_home{
-    width: 85%;
+    margin-top: 5%;
+    margin: auto;
+    display: block;
+    width: 50%;
   }
 
 }
@@ -442,7 +444,8 @@ textarea::placeholder {
 }
 
 .ranking_table{
-  display: grid;
+  margin-top: 5%;
+  display: inline-grid;
 }
 
 

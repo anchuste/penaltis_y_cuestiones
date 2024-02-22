@@ -73,13 +73,13 @@ function App() {
 
         {navBarstate === 'homeNavBarButton' && gameTypeSelected === false && started === false?
               <>
-              <Ranking points={4} title={"Puntuaciones más altas"}></Ranking>
+              <Ranking points={5} title={"Máximas puntuaciones"}></Ranking>
               </>
               :null}
 
         {started === false &&  navBarstate === 'homeNavBarButton' ?
               <>
-              <h2 style={{color: "papayawhip", marginTop: "5%", marginBottom: "5%", color: "#8738f4"}}> ¡COMENZAR PARTIDA! </h2>
+              <h2 style={{color: "papayawhip", marginTop: "10%", marginBottom: "5%", color: "#8738f4"}}> Inicia tu partida: </h2>
               <button className='board_button_start' onClick={startGame}> 1 Jugador 🙍🏻‍♂️</button>
               <button className='board_button_start' onClick={multiplayerStartGame}> Varios jugadores 🙍🏻‍♂️🙍🏼‍♀️</button>
               </>

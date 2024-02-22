@@ -37,7 +37,7 @@ export const Ranking = ({points, title}) => {
         <div className="ranking_table">
             <h2 style={{color: "papayawhip", marginTop: "3%", marginBottom: "5%"}}>{title}</h2>
             <table className="container">
-	            <HeaderStockInfoTable></HeaderStockInfoTable>
+	            
                 <RowsStockInfoTable stocksInfo={pointsRecovered}></RowsStockInfoTable>
             </table>
             <PuffLoader
