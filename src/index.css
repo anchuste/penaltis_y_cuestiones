@@ -263,13 +263,6 @@ ol li { list-style:none }
     font-size: large;
   }
 
-  .logo_img_home{
-    margin-top: 5%;
-    margin: auto;
-    display: block;
-    width: 50%;
-  }
-
 }
 
 
@@ -315,6 +308,19 @@ ol li { list-style:none }
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 }
+
+.logo_img_home{
+  margin-top: 5%;
+  margin: auto;
+  display: block;
+  width: 50%;
+}
+
+.logo_img_home:hover{
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px #4d4152;
+}
+
 
 .border_trivial {
   border-width: 3px;
@@ -445,7 +451,12 @@ textarea::placeholder {
 
 .ranking_table{
   margin-top: 5%;
-  display: inline-grid;
+  flex: inline-grid;
+}
+
+.ranking_table_table{
+  display: inline-table;
+  width: 75%;
 }
 
 

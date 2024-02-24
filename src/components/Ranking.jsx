@@ -36,7 +36,7 @@ export const Ranking = ({points, title}) => {
     return (
         <div className="ranking_table">
             <h2 style={{color: "papayawhip", marginTop: "3%", marginBottom: "5%"}}>{title}</h2>
-            <table className="container">
+            <table className="container ranking_table_table">
 	            
                 <RowsStockInfoTable stocksInfo={pointsRecovered}></RowsStockInfoTable>
             </table>
