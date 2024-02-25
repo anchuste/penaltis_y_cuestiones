@@ -15,8 +15,17 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
       //console.log('seconds', seconds);
       currentSeconds = seconds;
 
+      if (seconds <= 5) {
+        
+        if (seconds % 2 === 0) {
+          return <h2 className='time_to_go_question_red' style={{color: "black"}}> {seconds} s. </h2>
+        }
+
+        return <h2 className='time_to_go_question_normal' style={{color: "red"}} > {seconds} s. </h2>
+      }
+      
       // Render a countdown
-      return <h2 className='time_to_go_question'> {seconds} s.  </h2>
+      return <h2 className='time_to_go_question_normal'> {seconds} s. </h2>
         
     };
 

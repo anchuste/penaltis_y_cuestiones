@@ -11,15 +11,15 @@ export const ShowIconHeader = ({ started, showSummary, navBarstate}) => {
     return (
       <>
 
-        {started &&  !showSummary && navBarstate === 'homeNavBarButton' &&  <img onClick={goToMainPage} src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
-        {!started && showSummary && navBarstate === 'homeNavBarButton' && <img onClick={goToMainPage} src={trivialLogoHor} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
+        {started &&  !showSummary && navBarstate === 'homeNavBarButton' &&  <img onClick={goToMainPage} src={trivialLogoHor} className='logo_img_home' style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
+        {!started && showSummary && navBarstate === 'homeNavBarButton' && <img onClick={goToMainPage} src={trivialLogoHor} className='logo_img_home' style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
         {!started && !showSummary && navBarstate === 'homeNavBarButton' && <img onClick={goToMainPage} src={trivialLogo} className='logo_img_home' alt='Anchus logotipo' />}
 
         {!started && !showSummary && 
                         (navBarstate === 'supportNavBarButton' ||
                         navBarstate === 'buyaCoffeeBarButton' ||
                         navBarstate === 'rankingNavBarButton') 
-                        && <img src={trivialLogo} style={{width: "40%", height: "30%"}} alt='Anchus logotipo' />}
+                        && <img src={trivialLogo} className='logo_img_home' alt='Anchus logotipo' />}
       </>
     )
   }

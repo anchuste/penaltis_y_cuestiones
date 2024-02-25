@@ -390,8 +390,23 @@ ol li { list-style:none }
   font-family: sans-serif;
 }
 
-.time_to_go_question{
+.time_to_go_question_normal{
   background-color: #FFA3FD;
+  /* color: red; */
+  font-size: x-large;
+  border-radius: 10p;
+  color: white;
+  color: black;
+  font-weight: bolder;
+  border-radius: 5px;
+  display: inline-table;
+  border-style: solid;
+  border-color: #111;
+  width: 20%;
+}
+
+.time_to_go_question_red{
+  background-color: #dc0909;
   /* color: red; */
   font-size: x-large;
   border-radius: 10p;

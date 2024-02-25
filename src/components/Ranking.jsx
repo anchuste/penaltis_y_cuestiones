@@ -34,6 +34,7 @@ export const Ranking = ({points, title}) => {
     // Esta información la recogeremos más adelante de bbdd.
     //console.log('Ranking - ', points)
     return (
+      <div style={{width: '22em'}}>
         <div className="ranking_table">
             <h2 style={{color: "papayawhip", marginTop: "3%", marginBottom: "5%"}}>{title}</h2>
             <table className="container ranking_table_table">
@@ -49,5 +50,6 @@ export const Ranking = ({points, title}) => {
                 data-testid="loader"
             />
         </div>
+      </div>
     );
 }
