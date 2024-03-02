@@ -7,6 +7,7 @@ import { MultiplayerGame } from './components/MultiplayerGame.jsx';
 import { SinglePlayerGame } from './components/SinglePlayerGame.jsx';
 import { ShowIconHeader } from './components/ShowIconHeader';
 import { SupportForm } from './components/SupportForm';
+import { HandleQuestions } from './components/HandleQuestions.jsx';
 
 
 
@@ -21,6 +22,7 @@ function App() {
   const [started, setStarted] = useState(false);
   const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
   const unlockTestQuestion = useRef(0);
+  const unlockHandleQuestions = useRef(0);
 
   const multiplayerStartGame = () => {
     setGameTypeSelected(true);
@@ -42,6 +44,18 @@ function App() {
   };
 
   const handleNavBarState = (newNavBarState) => {
+
+    console.log('newNavBarState', newNavBarState);
+    console.log('unlockTestQuestion.current', unlockTestQuestion.current);
+    console.log('unlockHandleQuestions.current', unlockHandleQuestions.current);
+
+    if (newNavBarState === 'supportNavBarButton') {
+      unlockHandleQuestions.current += 1;
+    }
+
+    if (unlockHandleQuestions.current > 5) {
+      unlockHandleQuestions.current = 0;
+    }
 
     if (newNavBarState === 'instructionsNavBarButton') {
       unlockTestQuestion.current += 1;
@@ -77,7 +91,7 @@ function App() {
               </>
               :null}
 
-        {started === false &&  navBarstate === 'homeNavBarButton' ?
+        {started === false &&  navBarstate === 'homeNavBarButton' && multiplayer !== true ?
               <>
               <h2 style={{color: "papayawhip", marginTop: "10%", marginBottom: "5%", color: "#8738f4"}}> Inicia tu partida: </h2>
               <button className='board_button_start' onClick={startGame}> 1 Jugador 🙍🏻‍♂️</button>
@@ -117,8 +131,14 @@ function App() {
             <TestQuestion questionIndex={99} ></TestQuestion>
             </>
             :null}
+
+          {navBarstate === 'supportNavBarButton' && unlockHandleQuestions.current >= 5 ?
+            <>
+            <HandleQuestions ></HandleQuestions>
+            </>
+            :null}
           
-          {navBarstate === 'supportNavBarButton' && <SupportForm></SupportForm>}
+          {navBarstate === 'supportNavBarButton' && unlockHandleQuestions.current < 5 && <SupportForm></SupportForm>}
 
     </main>
     </>

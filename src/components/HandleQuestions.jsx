@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import {getQuestions} from '../services/question-service.js'
 import {getQuestionsForMultiplayerGame} from '../common-functions/common-functions.js'
 import { PLAYERS_NUMBER_ALLOWED } from '../constants/index.js';
-import { NavBar } from './NavBar';
-import { Ranking } from './Ranking';
-import BuyACoffee from './BuyACoffee';
+import { NavBar } from './NavBar.jsx';
+import { Ranking } from './Ranking.jsx';
+import BuyACoffee from './BuyACoffee.jsx';
 
-export function MultiplayerGame() {
+export function HandleQuestions() {
 
     const [started, setStarted] = useState(false);
     const [navBarstate, setNavBarstate] = useState('homeNavBarButton');
@@ -22,9 +22,8 @@ export function MultiplayerGame() {
         <>
         <div style={{width: '22em'}}>
             <main className='board'>
-                <h2 style={{marginTop: "1.6em"}} className="title">🚧 No disponible 🚧 </h2>
-                <h2 style={{marginTop: "1.6em"}} className="title">Estamos trabajando en esta opción de juego 🛠️</h2>
-                <h2 style={{marginTop: "1.6em"}} className="title">Estará disponible pronto.</h2>
+                <h2 style={{marginTop: "1.6em"}} className="title">Menú de administrador </h2>
+                <h2 style={{marginTop: "1.6em"}} className="title">Desde aquí vamos a gestionar las preguntas del test </h2>
             </main>
         </div>    
         </>
