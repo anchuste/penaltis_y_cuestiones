@@ -10,8 +10,6 @@ import { SupportForm } from './components/SupportForm';
 import { HandleQuestions } from './components/HandleQuestions.jsx';
 
 
-
-
 function App() {
 
   console.log('Se renderiza el componente App');
@@ -53,7 +51,7 @@ function App() {
       unlockHandleQuestions.current += 1;
     }
 
-    if (unlockHandleQuestions.current > 5) {
+    if (unlockHandleQuestions.current > 3) {
       unlockHandleQuestions.current = 0;
     }
 
@@ -132,13 +130,13 @@ function App() {
             </>
             :null}
 
-          {navBarstate === 'supportNavBarButton' && unlockHandleQuestions.current >= 5 ?
+          {navBarstate === 'supportNavBarButton' && unlockHandleQuestions.current >= 3 ?
             <>
             <HandleQuestions ></HandleQuestions>
             </>
             :null}
           
-          {navBarstate === 'supportNavBarButton' && unlockHandleQuestions.current < 5 && <SupportForm></SupportForm>}
+          {navBarstate === 'supportNavBarButton' && unlockHandleQuestions.current < 3 && <SupportForm></SupportForm>}
 
     </main>
     </>
