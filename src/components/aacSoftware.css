@@ -1,0 +1,6 @@
+.questionFound:hover {
+    border-radius: 5px;
+    background-color: rgb(47, 6, 97);
+    box-shadow: 0 0 10px cornsilk;
+    cursor: pointer;
+}
