@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
-import {getAllQuestions, getQuestions} from '../services/question-service.js';
-import './aacSoftware.css';
+import React, { useEffect, useState } from "react";
+import {getAllQuestions} from '../services/question-service.js';
 import { QuestionModel } from '../model/question-model.js';
 import { setUpdateUserQuestion } from '../services/question-service.js'
+import { ToastContainer, toast } from 'react-toastify';
+import './aacSoftware.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export function HandleQuestions() {
@@ -10,17 +12,31 @@ export function HandleQuestions() {
     const [questions, setQuestion] = useState(0);
     const [questionsFound, setQuestionsFound] = useState([]);
     const [questionToUpdate, setQuestionToUpdate] = useState([]);
-
+    const [errors, setErrors] = useState('');
     const [clickUpdateQuestion, setClickUpdateQuestion] = useState(false);
     const [answers, setAnswers] = useState([]);
     const [image, setImage] = useState([]);
+
+    const setInitialMenu = () => { 
+        setClickUpdateQuestion(false);
+        setQuestionsFound([]);
+        setAnswers([]);
+        setQuestionToUpdate([]);
+        setImage([]);
+        setErrors('');
+    }
+
+    const getQuestionsNotValidated = () => {
+        //console.log('getQuestionsNotValidated -> questions', questions);
+        const found = questions.filter((element) => element.validated === 0);
+        //console.log('getQuestionsNotValidated -> found', found);
+        setQuestionsFound(found);
+    }
     
     const handleSubmmit = async (event) => {
-        
         event.preventDefault();
         const fields = Object.fromEntries(new FormData(event.target));
         searchQuestion(fields.pregunta);
-        
     }
 
     const searchQuestion = (wordToFind) => {
@@ -38,21 +54,14 @@ export function HandleQuestions() {
     }
 
     const refreshPicture = async (event) => {
-
         event.preventDefault();
-        console.log('refreshPicture -> event', event);
         const fields = Object.fromEntries(new FormData(event.target));
-        console.log('refreshPicture -> fields', fields);
-        setImage(fields.url);
-        
+        setImage(fields.url);        
     }
 
     const updateQuestion = async (event) => {
         event.preventDefault();
         const fields = Object.fromEntries(new FormData(event.target));
-        console.log('updateQuestion -> fields', fields);
-        console.log('updateQuestion -> questionToUpdate', questionToUpdate);
-        
         const question = new QuestionModel();
 
         question.id = questionToUpdate.id_question;
@@ -64,26 +73,38 @@ export function HandleQuestions() {
         question.validated = fields.pregunta_activa;
         question.correctAnswer = fields.respuesta_correcta;
 
-        console.log('updateQuestion -> question', question);
-
         try {
             let savedUserQuestion = await setUpdateUserQuestion(question);
+
             if (savedUserQuestion === true){
-              console.log('Se ha enviado el formulario');
+                setErrors('');
+                toast.success(`La pregunta con id ${questionToUpdate.id_question} ha sido actualizada. ¡Muchas gracias!`, {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    onClose: () => {setInitialMenu()}
+                  });
+                //console.log('updateQuestion() - Pregunta actualizada');
             }
             else{
-              console.log('No se ha podido actualizar la pregunta');
+                setErrors('No se ha podido actualizar la pregunta');
+                //console.log('No se ha podido actualizar la pregunta');
             }
-          } catch (error) {
-            console.error(error);
-          } finally {
-            console.log('Finalizado el método de actualizar pregunta');;
-          }
+            } catch (error) {
+                setErrors('Error al actualizar la pregunta');
+                console.error(error);
+            } finally {
+                console.log('Finalizado el método de actualizar pregunta');
+            }
     }
 
     useEffect(() => {
-        console.log('HandleQuestions -> Se ejecuta useEffect');
-
+        //console.log('HandleQuestions -> Se ejecuta useEffect');
         async function fetchQuestionData() {
             const response = await getAllQuestions();
             setQuestion(response);
@@ -105,6 +126,7 @@ export function HandleQuestions() {
                     <textarea name='pregunta' className='questions_support_form_text_area' rows={4} maxLength={200} placeholder="Pregunta a buscar" />
                     <button className='questions_support_form_button' type="submit">Buscar</button>
                 </form>
+                    <button className='questions_support_form_button' type="submit" onClick={() => getQuestionsNotValidated()} >Mostrar no validadas</button>
                     <h3 style={{marginTop: "1.6em", marginBottom: "0.8em"}}>Preguntas encontradas</h3>
                     <ul>
                         {questionsFound.map((question, index) => {
@@ -135,7 +157,9 @@ export function HandleQuestions() {
                             <textarea name='pregunta_activa' className='questions_support_form_text_area' rows={1} maxLength={1} placeholder="Pregunta activa" defaultValue={questionToUpdate.validated} />
                             <img src={image} className='question_image' alt='React Logo' />
                             <button className='questions_support_form_button' type="submit">Actualizar</button>
+                            {errors != '' && <h3 style={{color: '#e24444'}}> ❌ {errors } </h3>}
                         </form>
+                        <ToastContainer/>
 
                         {/* */}
                         <form id="refreshPictureForm" action="" onSubmit={refreshPicture}>

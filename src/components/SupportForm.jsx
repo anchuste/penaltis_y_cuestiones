@@ -16,7 +16,6 @@ export const SupportForm = () => {
 
   const [errors, setErrors] = useState('');
   const [questionSent, setQuestionSent] = useState(false);
-  const [showLoading, setshowLoading] = useState(false);
 
   const handleSubmmit = async (event) => {
 
@@ -84,7 +83,6 @@ export const SupportForm = () => {
     }
     
     try {
-      setshowLoading(true);
       let savedUserQuestion = await setSaveUserQuestion(questionUser);
       if (savedUserQuestion === true){
         setErrors('');

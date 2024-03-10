@@ -1,4 +1,3 @@
-import HeaderStockInfoTable from './HeaderStockInfoTable';
 import RowsStockInfoTable from './RowsStockInfoTable';
 import { useEffect, useState, useRef } from 'react';
 import {getTopPoints} from './../services/points-service.js'
