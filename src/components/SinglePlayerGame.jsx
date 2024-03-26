@@ -8,7 +8,7 @@ import {getQuestions} from '../services/question-service.js'
 
 export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, gameStarted}) {
 
-    console.log('Se renderiza el componente SinglePlayerGame');
+    //console.log('Se renderiza el componente SinglePlayerGame');
 
     const [questions, setQuestions] = useState();
 
@@ -35,7 +35,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
 
     useEffect(() => {
-        console.log('SinglePlayerGame -> Se ejecuta useEffect');
+        //console.log('SinglePlayerGame -> Se ejecuta useEffect');
 
         async function fetchQuestionData() {
             const response = await getQuestions();
@@ -48,7 +48,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
     const initialConfig = (data) => {
 
-        console.log('Se ejecuta initialConfig');
+        //console.log('Se ejecuta initialConfig');
         
         setQuestions(data);
 

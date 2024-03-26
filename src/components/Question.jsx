@@ -1,6 +1,7 @@
 import { Square } from './Square.jsx'
 import Countdown from 'react-countdown';
 import * as constants from './../constants/index.js'
+import { useState } from 'react';
 
 export const Question = ({ question, questionNumber, index, updateQuestion }) => {
 
@@ -8,7 +9,28 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
 
     question.answersFormatted = question.answers.split('**');
 
+    const [animationResponse, setAnimationResponse] = useState('');
+
+
     let currentSeconds = 0;
+    
+
+    const analyzeAnswer = async (idQuestion, index, currentSeconds) => {
+
+      if (index === question.correct_answer) {
+        setAnimationResponse('correct');
+      } else {
+        setAnimationResponse('incorrect');
+      }
+
+      await sleep(175);
+      setAnimationResponse('');
+      updateQuestion(idQuestion, index, currentSeconds);
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
     // Renderer callback with condition
     const renderer = ({ seconds, completed, api, props }) => {
@@ -32,8 +54,29 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
     return (
       <div>
 
-        {question.image ? 
-          <img src={question.image} className='question_image' alt='React Logo' /> : null}
+        
+          {animationResponse !== 'correct' && animationResponse !== 'incorrect' ?
+            <img src={question.image} className='question_image' alt='React Logo' />:null
+          }
+
+          
+          {animationResponse === 'correct' ?
+            <>
+            <h2 className='correct_answer' >¡CORRECTO!</h2>
+            <img src={question.image} className='question_image' alt='React Logo' />
+            </>
+            : null
+          }
+
+
+          {animationResponse === 'incorrect' ?
+            <>
+            <h2 className='incorrect_answer' >¡INCORRECTO!</h2>
+            <img src={question.image} className='question_image' alt='React Logo' />
+            </>
+            : null
+          }
+          
 
           <div>
           <h2 className='question_number' > Pregunta {questionNumber}</h2>
@@ -57,7 +100,7 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
             question.answersFormatted.map(
               (answer, index) => {
               return (
-                <li className='answers' key={index} onClick={() => updateQuestion(question.id_question, index, currentSeconds)}
+                <li className='answers' key={index} onClick={() => analyzeAnswer(question.id_question, index, currentSeconds)}
                 >
                   {answer}
                 </li>
