@@ -92,7 +92,7 @@ export function AdministratorMenuLogin() {
                 </form>
                 </>
                 :null}
-                {error ? <h2 style={{marginTop: "1.6em", marginBottom: "0.8em", color:'red', fontSize:'14px'}} className="title"> ¡Error! {errorMessage} </h2>:null}
+                {error && userAuthenticated === false ? <h2 style={{marginTop: "1.6em", marginBottom: "0.8em", color:'red', fontSize:'14px'}} className="title"> ¡Error! {errorMessage} </h2>:null}
                 {userAuthenticated === true ? <HandleQuestions></HandleQuestions>:null}
                 </>
             </main>
