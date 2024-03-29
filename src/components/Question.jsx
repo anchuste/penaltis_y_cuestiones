@@ -2,6 +2,8 @@ import { Square } from './Square.jsx'
 import Countdown from 'react-countdown';
 import * as constants from './../constants/index.js'
 import { useState } from 'react';
+import notAvailableImage from './../assets/imagen_no_disponible.png';
+
 
 export const Question = ({ question, questionNumber, index, updateQuestion }) => {
 
@@ -56,7 +58,11 @@ export const Question = ({ question, questionNumber, index, updateQuestion }) =>
 
         
           {animationResponse !== 'correct' && animationResponse !== 'incorrect' ?
-            <img src={question.image} className='question_image' alt='React Logo' />:null
+            <img src={question.image} className='question_image' alt='React Logo'
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null; // prevents looping
+              currentTarget.src= notAvailableImage;
+            }} />:null
           }
 
           

@@ -4,6 +4,7 @@ import * as constants from '../constants/index.js';
 import data from '../assets/questions/questions.json';
 import { useState, useEffect } from 'react';
 import { getQuestions } from '../services/question-service.js';
+import notAvailableImage from './../assets/imagen_no_disponible.png';
 
 export const TestQuestion = ({ questionIndex }) => {
 
@@ -60,7 +61,10 @@ export const TestQuestion = ({ questionIndex }) => {
         </div>
 
         {questionToTest != undefined && questionToTest.image ? 
-          <img src={questionToTest.image} className='question_image' alt='React Logo' /> : null}
+          <img src={questionToTest.image} className='question_image' alt='React Logo' onError={({ currentTarget }) => {
+            currentTarget.onerror = null; // prevents looping
+            currentTarget.src= notAvailableImage;
+          }} /> : null}
 
           <div>
           <h2 className='question_number' > Pregunta de test</h2>
