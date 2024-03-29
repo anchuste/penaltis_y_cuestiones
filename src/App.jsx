@@ -44,9 +44,9 @@ function App() {
 
   const handleNavBarState = (newNavBarState) => {
 
-    console.log('newNavBarState', newNavBarState);
-    console.log('unlockTestQuestion.current', unlockTestQuestion.current);
-    console.log('unlockHandleQuestions.current', unlockHandleQuestions.current);
+    //console.log('newNavBarState', newNavBarState);
+    //console.log('unlockTestQuestion.current', unlockTestQuestion.current);
+    //console.log('unlockHandleQuestions.current', unlockHandleQuestions.current);
 
     if (newNavBarState === 'supportNavBarButton') {
       unlockHandleQuestions.current += 1;
