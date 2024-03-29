@@ -8,6 +8,7 @@ import { SinglePlayerGame } from './components/SinglePlayerGame.jsx';
 import { ShowIconHeader } from './components/ShowIconHeader';
 import { SupportForm } from './components/SupportForm';
 import { HandleQuestions } from './components/HandleQuestions.jsx';
+import { AdministratorMenuLogin } from './components/AdministratorMenuLogin.jsx';
 
 
 function App() {
@@ -132,7 +133,7 @@ function App() {
 
           {navBarstate === 'supportNavBarButton' && unlockHandleQuestions.current >= 3 ?
             <>
-            <HandleQuestions ></HandleQuestions>
+            <AdministratorMenuLogin ></AdministratorMenuLogin>
             </>
             :null}
           

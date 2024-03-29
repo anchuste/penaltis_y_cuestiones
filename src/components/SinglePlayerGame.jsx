@@ -3,7 +3,6 @@ import { Question } from './Question'
 import { Summary } from './Summary';
 import { Sanctions } from './Sanctions';
 import { SanctionsSummary } from './SanctionsSummary';
-import { SupportForm } from './SupportForm';
 import {getQuestions} from '../services/question-service.js'
 
 export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, gameStarted}) {
