@@ -23,6 +23,8 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
     const [sanctions, setSanctions] = useState(0);
     const [showSanctions, setShowSanctions] = useState(false);
 
+    const [lives, setLives] = useState();
+
     const points = useRef(0);
     const bonusPoints = 2;
     const sanctionMultiplicatorPoints = 3;
@@ -52,8 +54,10 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         setQuestions(data);
 
         let QUESTIONS_NUMBER = 0;
+        let LIVES = 3;
         let initialPositions = [];
         let initialAnswers = [];
+        let initialLives = [];
         let cuestionsAskedArray = [];
         let indexQuestionInitial = 0;
         let cuestionNotAskedInitial = {};
@@ -61,6 +65,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         QUESTIONS_NUMBER = data.length;
         initialPositions = Array(QUESTIONS_NUMBER).fill(false);
         initialAnswers = Array(QUESTIONS_NUMBER).fill('notAnswered');
+        initialLives = Array(LIVES).fill(true);
     
         // get first random question
         indexQuestionInitial = Math.floor(Math.random() * QUESTIONS_NUMBER);
@@ -78,6 +83,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         setShowSummary(false);
         setSanctions(0);
         setShowSanctions(false);
+        setLives(initialLives);
         points.current = 0;
     }
   
@@ -112,6 +118,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         // get current true position: marcamos la siguiente posición
         const currentTruePosition = positions.findIndex((position) => position === true);
         
+        
         const newPositions = Array(questions.length).fill(false);
         newPositions[currentTruePosition+1] = true;
         setPositions(newPositions);
@@ -128,9 +135,9 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         let resultAnswer;
         
         if (indexAnswer === answer) {
-        resultAnswer = 'correct';
+            resultAnswer = 'correct';
         } else {
-        resultAnswer = 'incorrect';
+            resultAnswer = 'incorrect';
         }
 
         let answersCopy = [...answers];
@@ -138,21 +145,33 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         setAnswers(answersCopy);
 
         let currentSanctions = sanctions;
+        let currentLives = lives;
 
         // Extraer preguntas no realizadas
         let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id_question));
 
         // Si la respuesta es incorrecta, sumamos una sanción
         if (resultAnswer === 'incorrect') {
-        currentSanctions = currentSanctions + 1;
-        // Restamos puntos por sanción
-        points.current = points.current - (rightAnswerPoints * sanctionMultiplicatorPoints);
-        setSanctions(currentSanctions);
-        if (currentSanctions > 0 && currentSanctions < 3) {
-            setShowSanctions(true);
-        }
+            currentSanctions = currentSanctions + 1;
+
+            for (let i = 0; i < currentLives.length; i++) {
+                if (currentLives[i] === true) {
+                    currentLives[i] = false;
+                    break;
+                }
+            }
+
+            console.log('currentLives: ', currentLives);
+            setLives(currentLives);
+
+            // Restamos puntos por sanción
+            points.current = points.current - (rightAnswerPoints * sanctionMultiplicatorPoints);
+            setSanctions(currentSanctions);
+            if (currentSanctions > 0 && currentSanctions < 3) {
+                setShowSanctions(true);
+            }
         }else{
-        points.current = points.current + rightAnswerPoints + calculateSecondsPoints(seconds);
+            points.current = points.current + rightAnswerPoints + calculateSecondsPoints(seconds);
         }
 
         // No hay más cuestiones o hemos respondido a todas las preguntas o hemos tenido más de dos sanciones,
@@ -188,9 +207,9 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
     
         <main className='board'>
             
-            {gameStarted && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length} question={cuestionNotAsked} updateQuestion={updateQuestion} />}
-            {gameStarted && showQuestion && !showSanctions ? <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}
-            {gameStarted && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}
+            {gameStarted && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length} question={cuestionNotAsked} updateQuestion={updateQuestion} lives={lives}  />}
+            {/*{gameStarted && showQuestion && !showSanctions ? <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}*/}
+            {/*{gameStarted && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}*/}
             {showSummary && <Summary totalQuestionsNumber={questions.length} answers={answers} points={points.current} resetGame={resetGame}></Summary>}
             {showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
             
