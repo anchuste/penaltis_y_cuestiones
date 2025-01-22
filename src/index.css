@@ -90,6 +90,10 @@ body {
   border-color: #E5B8F4;
 }
 
+.answers:hover {
+  background-color: #8a0f8a;
+}
+
 .turn {
   display: flex;
   justify-content: center;
@@ -489,32 +493,79 @@ textarea::placeholder {
   width: 75%;
 }
 
+@keyframes correctAnswerAnimation {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(10deg);
+    opacity: 1;
+  }
+}
+
 .correct_answer{
   color: #242424;
-    background-color: #00c725;
-    font-size: 28px;
-    border-radius: 10px;
-    margin-top: 15px;
-    margin-left: 115px;
-    padding: 20px;
-    position: absolute;
-    align-items: center;
-    z-index: 3;
-    -webkit-transform: rotate(10deg);
+  background-color: #00c725;
+  font-size: 28px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-left: 115px;
+  padding: 20px;
+  position: absolute;
+  align-items: center;
+  z-index: 3;
+  transform: rotate(10deg);
+  animation: correctAnswerAnimation 0.35s ease-out forwards;
+}
+
+@keyframes errorShakeAnimation {
+  0% {
+    transform: translateX(0) rotate(-10deg);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-10deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(-10deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-10deg);
+  }
+  100% {
+    transform: translateX(0) rotate(-10deg);
+  }
+}
+
+@keyframes errorFadeAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .incorrect_answer{
   color: #242424;
-    background-color: red;
-    font-size: 28px;
-    border-radius: 10px;
-    margin-top: 15px;
-    margin-left: 115px;
-    padding: 20px;
-    position: absolute;
-    align-items: center;
-    z-index: 3;
-    -webkit-transform: rotate(-10deg);
+  background-color: red;
+  font-size: 28px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-left: 115px;
+  padding: 20px;
+  position: absolute;
+  align-items: center;
+  z-index: 3;
+  transform: rotate(-10deg);
+  animation: errorFadeAnimation 0.25s ease-out, errorShakeAnimation 0.25s ease-in-out;
 }
 
 

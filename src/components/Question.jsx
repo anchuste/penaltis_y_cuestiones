@@ -1,14 +1,9 @@
-import { Square } from './Square.jsx'
 import Countdown from 'react-countdown';
 import * as constants from './../constants/index.js'
 import { useState } from 'react';
 import notAvailableImage from './../assets/imagen_no_disponible.png';
 import PuffLoader from "react-spinners/PuffLoader";
 import soccerFilled from '../assets/football.png';
-import soccerEmpty from '../assets/empty_football - copia.png';
-
-
-
 
 
 export const Question = ({ question, questionNumber, index, updateQuestion, lives }) => {
@@ -37,6 +32,9 @@ export const Question = ({ question, questionNumber, index, updateQuestion, live
     };
 
     let currentSeconds = 0;
+
+    const deaths = lives.filter(live => live === false).length;
+
     
     const analyzeAnswer = async (idQuestion, index, currentSeconds) => {
 
@@ -46,7 +44,7 @@ export const Question = ({ question, questionNumber, index, updateQuestion, live
         setAnimationResponse('incorrect');
       }
 
-      await sleep(175);
+      await sleep(250);
       setAnimationResponse('');
       setShowLoading(true);
       updateQuestion(idQuestion, index, currentSeconds);
@@ -167,7 +165,7 @@ export const Question = ({ question, questionNumber, index, updateQuestion, live
           {/*<h5 style={{marginTop: "8px"}}>Autor de la pregunta: {question.author}</h5>*/}
 
           <div>
-            <h3 className='aciertos' > Aciertos: {questionNumber - 1}</h3>
+            <h3 className='aciertos' > Aciertos: {(questionNumber - 1)-deaths}</h3>
           </div>
 
           
