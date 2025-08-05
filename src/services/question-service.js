@@ -1,10 +1,10 @@
 
 //const getTop10pointsURL = 'https://3a4s6i7sdlnrbgzsqkpcwsn4he0kunkc.lambda-url.eu-west-1.on.aws/';
-const getAllQuestionsURL = 'https://soft-shape-e688.albertoanchuste.workers.dev/api/question/all';
-const getAllAllQuestionsURL = 'https://soft-shape-e688.albertoanchuste.workers.dev/api/question/questionsAll';
-const setUserQuestionURL = 'https://soft-shape-e688.albertoanchuste.workers.dev/api/question/saveUserQuestion';
-const setUpdateQuestionURL = 'https://soft-shape-e688.albertoanchuste.workers.dev/api/question/updateUserQuestion';
-const getQuestionLastIdURL = 'https://soft-shape-e688.albertoanchuste.workers.dev/api/question/lastId';
+const getAllQuestionsURL = 'https://soft-shape-e688.project-utils.workers.dev/api/question/all';
+const getAllAllQuestionsURL = 'https://soft-shape-e688.project-utils.workers.dev/api/question/questionsAll';
+const setUserQuestionURL = 'https://soft-shape-e688.project-utils.workers.dev/api/question/saveUserQuestion';
+const setUpdateQuestionURL = 'https://soft-shape-e688.project-utils.workers.dev/api/question/updateUserQuestion';
+const getQuestionLastIdURL = 'https://soft-shape-e688.project-utils.workers.dev/api/question/lastId';
 
 export const getQuestions = () => {
 
@@ -69,7 +69,7 @@ export const setSaveUserQuestion = (question) => {
                     'Access-Control-Max-Age': '86400',
                     'Content-Type': 'application/json',
                     'Connection': 'keep-alive',
-                    'Host': 'soft-shape-e688.albertoanchuste.workers.dev'
+                    'Host': 'soft-shape-e688.project-utils.workers.dev'
                 }
             })
             .then(function(response){
@@ -104,7 +104,7 @@ export const setUpdateUserQuestion = (question) => {
                 'Access-Control-Max-Age': '86400',
                 'Content-Type': 'application/json',
                 'Connection': 'keep-alive',
-                'Host': 'soft-shape-e688.albertoanchuste.workers.dev'
+                'Host': 'soft-shape-e688.project-utils.workers.dev'
             }
         })
         .then(function(response){

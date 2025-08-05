@@ -1,5 +1,5 @@
 
-const saveGameURL = 'https://soft-shape-e688.albertoanchuste.workers.dev/api/game/save';
+const saveGameURL = 'https://soft-shape-e688.project-utils.workers.dev/api/game/save';
 
 export const saveGame = (game) => {
 
