@@ -154,7 +154,16 @@ export const Question = ({ question, questionNumber, index, updateQuestion, live
             question.answersFormatted.map(
               (answer, index) => {
               return (
-                <li className='answers' key={index} onClick={() => analyzeAnswer(question.id_question, index, currentSeconds)}
+                <li 
+                  className='answers' 
+                  key={`${question.id_question}-${index}`}
+                  onClick={() => analyzeAnswer(question.id_question, index, currentSeconds)}
+                  style={{
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation',
+                    WebkitUserSelect: 'none',
+                    userSelect: 'none'
+                  }}
                 >
                   {answer}
                 </li>
