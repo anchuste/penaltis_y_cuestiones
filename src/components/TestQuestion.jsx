@@ -1,7 +1,6 @@
 import { Square } from './Square.jsx'
 import Countdown from 'react-countdown';
 import * as constants from '../constants/index.js';
-import data from '../assets/questions/questions.json';
 import { useState, useEffect } from 'react';
 import { getQuestions } from '../services/question-service.js';
 import notAvailableImage from './../assets/imagen_no_disponible.png';

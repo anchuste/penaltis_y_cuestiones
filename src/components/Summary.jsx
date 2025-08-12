@@ -101,7 +101,6 @@ export const Summary = ({ answers, totalQuestionsNumber, points, resetGame }) =>
             </>
              :null}
             
-            <h2 className='points_accumulated'>📊 Puntuación: {points} </h2>
             <h2 className="border_trivial">Respuestas acertadas ✅: {correctAnswers}</h2>
             <h2 className="border_trivial">Respuestas falladas ❌: {incorrectAnswers}</h2>
             <h2 className="border_trivial"> Juego completado al 🎮: {rightPorcentage.toFixed()} % </h2>
@@ -115,7 +114,7 @@ export const Summary = ({ answers, totalQuestionsNumber, points, resetGame }) =>
             src={imagenEntrenador}></img>
             </>
             
-            <SaveRecord points={points} resetGame={resetGame}></SaveRecord>
+            <SaveRecord points={correctAnswers} resetGame={resetGame}></SaveRecord>
 
             
             

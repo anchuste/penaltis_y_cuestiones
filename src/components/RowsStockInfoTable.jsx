@@ -14,6 +14,14 @@ export default function RowsStockInfoTable(stocksInfo) {
     //console.log('example: ', stocksInfoDestruct[0].user);
     //console.log('stocksInfoDestruct: ', stocksInfoDestruct)
     return (
+            <>
+            <thead>
+                <tr>
+                    <th>Pos.</th>
+                    <th>Aciertos</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
             <tbody>
                 {stocksInfoDestruct.map((stock, index) => {
 
@@ -33,5 +41,6 @@ export default function RowsStockInfoTable(stocksInfo) {
                 return list;
             })}
           </tbody>
+          </>
     );
 }
