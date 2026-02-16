@@ -8,20 +8,11 @@ import soccerFilled from '../assets/football.png';
 
 export const Question = ({ question, questionNumber, index, updateQuestion, lives }) => {
 
-    console.log('************ Component Question loaded');
-
-    console.log('questionNumber', questionNumber);
-
-    console.log('lives', lives);
     
-
     question.answersFormatted = question.answers.split('**');
 
     const [animationResponse, setAnimationResponse] = useState('');
     const [showLoading, setShowLoading] = useState(true);
-
-    console.log('animationResponse', animationResponse);
-    console.log('showLoading', showLoading);
 
     // Loader CSS properties
     const CSSProperties = {
@@ -174,7 +165,7 @@ export const Question = ({ question, questionNumber, index, updateQuestion, live
           {/*<h5 style={{marginTop: "8px"}}>Autor de la pregunta: {question.author}</h5>*/}
 
           <div>
-            <h3 className='aciertos' > Aciertos: {(questionNumber - 1)-deaths}</h3>
+            <h3 className='aciertos' > Aciertos: {(questionNumber)-deaths}</h3>
           </div>
 
           

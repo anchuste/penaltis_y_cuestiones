@@ -7,7 +7,6 @@ import { MultiplayerGame } from './components/MultiplayerGame.jsx';
 import { SinglePlayerGame } from './components/SinglePlayerGame.jsx';
 import { ShowIconHeader } from './components/ShowIconHeader';
 import { SupportForm } from './components/SupportForm';
-import { HandleQuestions } from './components/HandleQuestions.jsx';
 import { AdministratorMenuLogin } from './components/AdministratorMenuLogin.jsx';
 
 

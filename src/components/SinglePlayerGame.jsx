@@ -9,20 +9,17 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
     //console.log('Se renderiza el componente SinglePlayerGame');
 
+    const [totalQuestionsAnswered, setTotalQuestionsAnswered] = useState(0);
     const [questions, setQuestions] = useState();
-
-    const [positions, setPositions] = useState([]);
     const [cuestionsAsked, setCuestionsAsked] = useState();
     const [cuestionNotAsked, setCuestionNotAsked] = useState();
     const [answers, setAnswers] = useState();
     const [reloadQuestions, setReloadQuestions] = useState(false);
-
     const [showQuestion, setShowQuestion] = useState(true);
     const [started, setStarted] = useState(false);
     const [showSummary, setShowSummary] = useState(false);
     const [sanctions, setSanctions] = useState(0);
     const [showSanctions, setShowSanctions] = useState(false);
-
     const [lives, setLives] = useState();
 
     const points = useRef(0);
@@ -40,7 +37,11 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
         async function fetchQuestionData() {
             const response = await getQuestions();
-            initialConfig(response);
+            // Clona desde el índice 0 hasta el 5 (sin incluir el 5)
+            // TODO - Probando aplicativo. Cuando se termine, pasarle toda la info (response) al initialConfig.
+            const clonaPrimeros5 = response.slice(0, 5);
+            console.log("response getQuestions: ", clonaPrimeros5);
+            initialConfig(clonaPrimeros5);
         }
 
         fetchQuestionData();
@@ -55,7 +56,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
         let QUESTIONS_NUMBER = 0;
         let LIVES = 3;
-        let initialPositions = [];
+        
         let initialAnswers = [];
         let initialLives = [];
         let cuestionsAskedArray = [];
@@ -63,19 +64,16 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         let cuestionNotAskedInitial = {};
 
         QUESTIONS_NUMBER = data.length;
-        initialPositions = Array(QUESTIONS_NUMBER).fill(false);
+        console.log("QUESTIONS NUMBER: " + QUESTIONS_NUMBER);
         initialAnswers = Array(QUESTIONS_NUMBER).fill('notAnswered');
         initialLives = Array(LIVES).fill(true);
     
-        // get first random question
+        // get first random question index
         indexQuestionInitial = Math.floor(Math.random() * QUESTIONS_NUMBER);
         cuestionNotAskedInitial = data[indexQuestionInitial];
-        cuestionsAskedArray.push(cuestionNotAskedInitial.id);
+        //cuestionsAskedArray.push(cuestionNotAskedInitial.id);
 
         // set initial position
-        initialPositions[0] = true;
-
-        setPositions(initialPositions);
         setCuestionNotAsked(cuestionNotAskedInitial);
         setCuestionsAsked(cuestionsAskedArray);
         setAnswers(initialAnswers);
@@ -115,14 +113,8 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
     const updateQuestion = (indexQuestion, indexAnswer, seconds) => {
 
-        // get current true position: marcamos la siguiente posición
-        const currentTruePosition = positions.findIndex((position) => position === true);
-        
-        
-        const newPositions = Array(questions.length).fill(false);
-        newPositions[currentTruePosition+1] = true;
-        setPositions(newPositions);
-    
+        // Se actualiza el número de preguntas contestadas
+        setTotalQuestionsAnswered(prev => prev + 1);
 
         // Añadimos la pregunta a las preguntas realizadas
         let cuestionsAskedCopy = [...cuestionsAsked];
@@ -141,7 +133,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         }
 
         let answersCopy = [...answers];
-        answersCopy[currentTruePosition] = resultAnswer;
+        answersCopy[totalQuestionsAnswered] = resultAnswer;
         setAnswers(answersCopy);
 
         let currentSanctions = sanctions;
@@ -161,7 +153,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
                 }
             }
 
-            console.log('currentLives: ', currentLives);
+            //console.log('currentLives: ', currentLives);
             setLives(currentLives);
 
             // Restamos puntos por sanción
@@ -176,6 +168,8 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
         // No hay más cuestiones o hemos respondido a todas las preguntas o hemos tenido más de dos sanciones,
         // el juego termina.
+        
+
         if (
         questionsNotAsked.length === 0 ||
         cuestionsAskedCopy.length === questions.length ||
@@ -191,6 +185,10 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         
         let questionNotAsked = questionsNotAsked[Math.floor(Math.random() * questionsNotAsked.length)];
         setCuestionNotAsked(questionNotAsked);
+
+        console.log("questionsNotAsked", questionsNotAsked.length);
+        console.log("questions", questions.length);
+        console.log("cuestionsAskedCopy", cuestionsAskedCopy.length);
 
         
     };
