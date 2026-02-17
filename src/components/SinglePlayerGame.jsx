@@ -7,9 +7,9 @@ import {getQuestions} from '../services/question-service.js'
 
 export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, gameStarted}) {
 
-    //console.log('Se renderiza el componente SinglePlayerGame');
+    console.log('Se renderiza el componente SinglePlayerGame');
 
-    const [totalQuestionsAnswered, setTotalQuestionsAnswered] = useState(0);
+    //const [totalQuestionsAnswered, setTotalQuestionsAnswered] = useState(0);
     const [questions, setQuestions] = useState();
     const [cuestionsAsked, setCuestionsAsked] = useState();
     const [cuestionNotAsked, setCuestionNotAsked] = useState();
@@ -23,6 +23,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
     const [lives, setLives] = useState();
 
     const points = useRef(0);
+    const totalQuestionsAnswered = useRef(0);
     const bonusPoints = 2;
     const sanctionMultiplicatorPoints = 3;
     const rightAnswerPoints = 25;
@@ -111,17 +112,8 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         return secondsToGo * bonusPoints
     }
 
-    const updateQuestion = (indexQuestion, indexAnswer, seconds) => {
-
-        // Se actualiza el número de preguntas contestadas
-        setTotalQuestionsAnswered(prev => prev + 1);
-
-        // Añadimos la pregunta a las preguntas realizadas
-        let cuestionsAskedCopy = [...cuestionsAsked];
-        cuestionsAskedCopy.push(indexQuestion);
-        setCuestionsAsked(cuestionsAskedCopy);
+    const checkIfAnswerIsRight = (indexQuestion, indexAnswer)  => {
         
-        // Check if the response answered is right (comparing answer value with correctAnswer)
         const answerCorrect = questions.findIndex(item => item.id_question === indexQuestion);
         let answer = questions[answerCorrect].correct_answer;
         let resultAnswer;
@@ -132,63 +124,113 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
             resultAnswer = 'incorrect';
         }
 
-        let answersCopy = [...answers];
-        answersCopy[totalQuestionsAnswered] = resultAnswer;
-        setAnswers(answersCopy);
+        return resultAnswer;
 
+    }
+
+
+    const addSanction = () => {
         let currentSanctions = sanctions;
+        currentSanctions = currentSanctions + 1;
+        setSanctions(currentSanctions);
+    }
+
+    const checkShowSanctions = () => {
+        let currentSanctions = sanctions;
+
+        if (currentSanctions > 0 && currentSanctions < 3){
+            return true;
+        }
+
+        return false;
+    }
+
+    const restOneLive = () => {
+
         let currentLives = lives;
 
-        // Extraer preguntas no realizadas
-        let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id_question));
-
-        // Si la respuesta es incorrecta, sumamos una sanción
-        if (resultAnswer === 'incorrect') {
-            currentSanctions = currentSanctions + 1;
-
-            for (let i = 0; i < currentLives.length; i++) {
+        for (let i = 0; i < currentLives.length; i++) {
                 if (currentLives[i] === true) {
                     currentLives[i] = false;
                     break;
-                }
             }
+        }
 
-            //console.log('currentLives: ', currentLives);
-            setLives(currentLives);
+        setLives(currentLives);
 
-            // Restamos puntos por sanción
-            points.current = points.current - (rightAnswerPoints * sanctionMultiplicatorPoints);
-            setSanctions(currentSanctions);
-            if (currentSanctions > 0 && currentSanctions < 3) {
+    }
+
+    const isTheEndOfGame = () => {
+
+        let currentSanctions = sanctions;
+
+        if (totalQuestionsAnswered.current === questions.length || currentSanctions > 2 ) {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    const updateQuestion = (indexQuestion, indexAnswer, seconds) => {
+
+        // Se actualiza el número de preguntas contestadas
+        totalQuestionsAnswered.current = totalQuestionsAnswered.current + 1;
+        console.log("totalQuestionsAnswered", totalQuestionsAnswered);
+        
+        // Añadimos la pregunta a las preguntas realizadas
+        let cuestionsAskedCopy = [...cuestionsAsked];
+        cuestionsAskedCopy.push(indexQuestion);
+        setCuestionsAsked(cuestionsAskedCopy);
+        
+        // Check if the response answered is right (comparing answer value with correctAnswer)
+        let resultAnswer = checkIfAnswerIsRight(indexQuestion, indexAnswer);
+        let answersCopy = [...answers];
+        answersCopy[totalQuestionsAnswered.current] = resultAnswer;
+        setAnswers(answersCopy);
+
+        // Si la respuesta es incorrecta, sumamos una sanción
+        if (resultAnswer === 'incorrect') {
+
+            addSanction();
+
+            restOneLive();
+
+            if (checkShowSanctions){
                 setShowSanctions(true);
-            }
-        }else{
-            points.current = points.current + rightAnswerPoints + calculateSecondsPoints(seconds);
+            }   
         }
 
         // No hay más cuestiones o hemos respondido a todas las preguntas o hemos tenido más de dos sanciones,
         // el juego termina.
         
+        
+        let endOfGame = isTheEndOfGame();
 
-        if (
-        questionsNotAsked.length === 0 ||
-        cuestionsAskedCopy.length === questions.length ||
-        currentSanctions > 2
-        ) {
-        setShowQuestion(false);
-        setShowSummary(true);
-        setStarted(false);
-        //setReloadQuestions(true);
+        if (endOfGame){
+            setShowQuestion(false);
+            setShowSummary(true);
+            setStarted(false);
+            return
+            //setReloadQuestions(true);
         }
-
         
-        
-        let questionNotAsked = questionsNotAsked[Math.floor(Math.random() * questionsNotAsked.length)];
-        setCuestionNotAsked(questionNotAsked);
+        // Extraer array de preguntas no realizadas
 
-        console.log("questionsNotAsked", questionsNotAsked.length);
-        console.log("questions", questions.length);
-        console.log("cuestionsAskedCopy", cuestionsAskedCopy.length);
+        let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id_question));
+        
+        if (questionsNotAsked.length > 0)
+        {
+            let questionNotAsked = questionsNotAsked[Math.floor(Math.random() * questionsNotAsked.length)];
+            setCuestionNotAsked(questionNotAsked);
+        }
+        
+
+
+
+        //console.log("questionsNotAsked", questionsNotAsked.length);
+        //console.log("questions", questions.length);
+        //console.log("cuestionsAskedCopy", cuestionsAskedCopy.length);
 
         
     };
