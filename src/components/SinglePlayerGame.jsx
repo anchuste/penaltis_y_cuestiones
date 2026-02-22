@@ -9,7 +9,6 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
     console.log('Se renderiza el componente SinglePlayerGame');
 
-    //const [totalQuestionsAnswered, setTotalQuestionsAnswered] = useState(0);
     const [questions, setQuestions] = useState();
     const [cuestionsAsked, setCuestionsAsked] = useState();
     const [cuestionNotAsked, setCuestionNotAsked] = useState();
@@ -18,11 +17,12 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
     const [showQuestion, setShowQuestion] = useState(true);
     const [started, setStarted] = useState(false);
     const [showSummary, setShowSummary] = useState(false);
-    const [sanctions, setSanctions] = useState(0);
+    //const [sanctions, setSanctions] = useState(0);
     const [showSanctions, setShowSanctions] = useState(false);
     const [lives, setLives] = useState();
 
     const points = useRef(0);
+    const sanctions = useRef(0);
     const totalQuestionsAnswered = useRef(0);
     const bonusPoints = 2;
     const sanctionMultiplicatorPoints = 3;
@@ -80,7 +80,6 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         setAnswers(initialAnswers);
         setShowQuestion(true);
         setShowSummary(false);
-        setSanctions(0);
         setShowSanctions(false);
         setLives(initialLives);
         points.current = 0;
@@ -130,15 +129,13 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
 
     const addSanction = () => {
-        let currentSanctions = sanctions;
-        currentSanctions = currentSanctions + 1;
-        setSanctions(currentSanctions);
+        sanctions.current = sanctions.current + 1;
     }
 
     const checkShowSanctions = () => {
         let currentSanctions = sanctions;
 
-        if (currentSanctions > 0 && currentSanctions < 3){
+        if (sanctions.current > 0 && sanctions.current < 3){
             return true;
         }
 
@@ -162,9 +159,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
     const isTheEndOfGame = () => {
 
-        let currentSanctions = sanctions;
-
-        if (totalQuestionsAnswered.current === questions.length || currentSanctions > 2 ) {
+        if (totalQuestionsAnswered.current === questions.length || sanctions.current > 2 ) {
             return true;
         }
 
@@ -202,21 +197,18 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         }
 
         // No hay más cuestiones o hemos respondido a todas las preguntas o hemos tenido más de dos sanciones,
-        // el juego termina.
-        
-        
+        // el juego termina.      
         let endOfGame = isTheEndOfGame();
 
         if (endOfGame){
             setShowQuestion(false);
             setShowSummary(true);
             setStarted(false);
-            return
+            return;
             //setReloadQuestions(true);
         }
         
         // Extraer array de preguntas no realizadas
-
         let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id_question));
         
         if (questionsNotAsked.length > 0)
@@ -251,7 +243,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
             {/*{gameStarted && showQuestion && !showSanctions ? <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}*/}
             {/*{gameStarted && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}*/}
             {showSummary && <Summary totalQuestionsNumber={questions.length} answers={answers} points={points.current} resetGame={resetGame}></Summary>}
-            {showSanctions && <SanctionsSummary SanctionsNumber={sanctions}></SanctionsSummary>}
+            {showSanctions && <SanctionsSummary SanctionsNumber={sanctions.current}></SanctionsSummary>}
             
             {showSanctions ?
               <button className='btn' onClick={resumeGame}>Entendido señor colegiado. ¡Pulse para continuar!</button>
