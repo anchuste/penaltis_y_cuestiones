@@ -27,9 +27,7 @@ export function HandleQuestions() {
     }
 
     const getQuestionsNotValidated = () => {
-        //console.log('getQuestionsNotValidated -> questions', questions);
         const found = questions.filter((element) => element.validated === 0);
-        //console.log('getQuestionsNotValidated -> found', found);
         setQuestionsFound(found);
     }
     
@@ -89,11 +87,9 @@ export function HandleQuestions() {
                     theme: "dark",
                     onClose: () => {setInitialMenu()}
                   });
-                //console.log('updateQuestion() - Pregunta actualizada');
             }
             else{
                 setErrors('No se ha podido actualizar la pregunta');
-                //console.log('No se ha podido actualizar la pregunta');
             }
             } catch (error) {
                 setErrors('Error al actualizar la pregunta');
@@ -104,7 +100,6 @@ export function HandleQuestions() {
     }
 
     useEffect(() => {
-        //console.log('HandleQuestions -> Se ejecuta useEffect');
         async function fetchQuestionData() {
             const response = await getAllQuestions();
             setQuestion(response);

@@ -10,9 +10,6 @@ export default function RowsStockInfoTable(stocksInfo) {
         )
     }
 
-    //console.log('stocksInfoDestruct: ', stocksInfoDestruct);
-    //console.log('example: ', stocksInfoDestruct[0].user);
-    //console.log('stocksInfoDestruct: ', stocksInfoDestruct)
     return (
             <>
             <thead>

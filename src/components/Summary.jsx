@@ -20,7 +20,7 @@ export const Summary = ({ answers, totalQuestionsNumber, points, resetGame }) =>
     if (rightPorcentage === 100) {
         fraseEncabezado = '¡Eres un auténtico míster! ';
         entrenador = 'Pep Guardiola';
-        imagenEntrenador = 'https://upload.wikimedia.org/wikipedia/commons/b/be/Pep_2017_%28cropped%29.jpg';
+        imagenEntrenador = 'https://mediacdn.mancity.com/-/media/images/home/news/team-news/2015-16-season/july/pep12.ashx?width=1136';
     }else if (rightPorcentage >= 90 && rightPorcentage < 100) {
         fraseEncabezado = '¡Estás cerca de convertirte en el mejor! De momento tienes que conformarte con ser el segundo entrenador de un gran club. 🥈';
         entrenador = 'José Mourinho';
@@ -36,7 +36,7 @@ export const Summary = ({ answers, totalQuestionsNumber, points, resetGame }) =>
     }else if (rightPorcentage >= 30 && rightPorcentage < 50) {
         fraseEncabezado = 'Necesitas más rodaje de partidos. ¡Sigue practicando!';
         entrenador = 'Fernando Vázquez';
-        imagenEntrenador = 'https://cope-cdnmed.agilecontent.com/resources/jpg/5/6/1577718797065.jpg';
+        imagenEntrenador = 'https://www.grupotortuga.com/wp-content/uploads/2014/03/sin-tc3adtulo.png';
     }else if (rightPorcentage >= 15 && rightPorcentage < 50) {
         fraseEncabezado = 'El fútbol no es lo tuyo. Dedícate a otra cosa. 🤦‍♂️';
         entrenador = 'Miguel Ángel Lotina';
@@ -108,7 +108,7 @@ export const Summary = ({ answers, totalQuestionsNumber, points, resetGame }) =>
             
 
             <>
-            <h3 style={{marginTop:'10px'}}>¡Eres comparable a {entrenador}!</h3>
+            <h3 style={{marginTop:'10px'}}>Tus conocimientos futbolísticos son equiparables a: ¡{entrenador}!</h3>
             <h3></h3>
             <img style={{width: "290px", height: "190px", marginTop:"10px", borderStyle: "solid", borderRadius: "10%", borderColor: "black"}}
             src={imagenEntrenador}></img>

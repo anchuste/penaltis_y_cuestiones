@@ -34,18 +34,9 @@ function App() {
 
   const handleNumberPlayers = (numberPlayers) => {
     let numberPlayersSelected = numberPlayers.target.innerHTML;
-    /*
-    let questions = await getQuestions(numberPlayers);
-    console.log('questions', questions);
-    let questionsForMultiGame = getQuestionsForMultiplayerGame(questions, PLAYERS_NUMBER_ALLOWED, numberPlayersSelected);
-    console.log('questionsForMultiGame', questionsForMultiGame);*/
   };
 
   const handleNavBarState = (newNavBarState) => {
-
-    //console.log('newNavBarState', newNavBarState);
-    //console.log('unlockTestQuestion.current', unlockTestQuestion.current);
-    //console.log('unlockHandleQuestions.current', unlockHandleQuestions.current);
 
     if (newNavBarState === 'supportNavBarButton') {
       unlockHandleQuestions.current += 1;

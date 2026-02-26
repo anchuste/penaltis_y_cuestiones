@@ -18,8 +18,6 @@ export const Ranking = ({points, title}) => {
 
     useEffect(() => {
 
-        //console.log("Se ejecuta el useEffect!!!")
-
         setshowLoading(true);
         async function fetchData() {
           const response = await getTopPoints(points);

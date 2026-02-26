@@ -47,7 +47,7 @@ export const Question = ({ question, questionNumber, index, updateQuestion, live
 
     // Renderer callback with condition
     const renderer = ({ seconds, completed, api, props }) => {
-      //console.log('seconds', seconds);
+      
       currentSeconds = seconds;
 
       if (seconds <= 5) {

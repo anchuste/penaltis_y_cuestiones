@@ -34,14 +34,12 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
 
     useEffect(() => {
-        //console.log('SinglePlayerGame -> Se ejecuta useEffect');
 
         async function fetchQuestionData() {
             const response = await getQuestions();
             // Clona desde el índice 0 hasta el 5 (sin incluir el 5)
             // TODO - Probando aplicativo. Cuando se termine, pasarle toda la info (response) al initialConfig.
             const clonaPrimeros5 = response.slice(0, 5);
-            console.log("response getQuestions: ", clonaPrimeros5);
             initialConfig(clonaPrimeros5);
         }
 
@@ -50,8 +48,6 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
     }, [reloadQuestions]);
 
     const initialConfig = (data) => {
-
-        //console.log('Se ejecuta initialConfig');
         
         setQuestions(data);
 
@@ -65,7 +61,6 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         let cuestionNotAskedInitial = {};
 
         QUESTIONS_NUMBER = data.length;
-        console.log("QUESTIONS NUMBER: " + QUESTIONS_NUMBER);
         initialAnswers = Array(QUESTIONS_NUMBER).fill('notAnswered');
         initialLives = Array(LIVES).fill(true);
     
@@ -171,7 +166,6 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
         // Se actualiza el número de preguntas contestadas
         totalQuestionsAnswered.current = totalQuestionsAnswered.current + 1;
-        console.log("totalQuestionsAnswered", totalQuestionsAnswered);
         
         // Añadimos la pregunta a las preguntas realizadas
         let cuestionsAskedCopy = [...cuestionsAsked];
@@ -204,6 +198,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
             setShowQuestion(false);
             setShowSummary(true);
             setStarted(false);
+            setShowSanctions(false);
             return;
             //setReloadQuestions(true);
         }
@@ -216,14 +211,6 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
             let questionNotAsked = questionsNotAsked[Math.floor(Math.random() * questionsNotAsked.length)];
             setCuestionNotAsked(questionNotAsked);
         }
-        
-
-
-
-        //console.log("questionsNotAsked", questionsNotAsked.length);
-        //console.log("questions", questions.length);
-        //console.log("cuestionsAskedCopy", cuestionsAskedCopy.length);
-
         
     };
 
