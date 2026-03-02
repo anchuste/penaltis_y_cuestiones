@@ -286,12 +286,15 @@ ol li { list-style:none }
     height: calc(100vh - 60px);
     transition: all 0.05s ease-in;
     overflow: hidden;
+    transform: translateX(100%);
+    transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-elements.active {
     
     width: 100%;
     background-color: #242424;
+    transform: translateX(0);
   }
 
   .nav-elements ul {
