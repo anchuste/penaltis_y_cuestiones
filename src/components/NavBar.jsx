@@ -21,9 +21,11 @@ export const NavBar = ({handleNavBarState}) => {
       <div className="container">
         <div className="logo">
         </div>
-        <div className="menu-icon" onClick={handleShowNavbar}>
-          <img src={Hamburger} style={{width: "10%", height: "10%"}} alt="React Logo" />
-        </div>
+        <div className={`menu-icon ${showNavbar && 'open'}`} id="menuIcon" onClick={handleShowNavbar}>
+          <span className="bar bar1"></span>
+          <span className="bar bar2"></span>
+          <span className="bar bar3"></span>
+      </div>
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
             <li>

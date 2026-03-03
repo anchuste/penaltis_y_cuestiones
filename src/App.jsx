@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { NavBar } from './components/NavBar';
 import { Ranking } from './components/Ranking';
 import BuyACoffee from './components/BuyACoffee';
+import {About} from './components/About';
 import { TestQuestion } from './components/TestQuestion';
 import { MultiplayerGame } from './components/MultiplayerGame.jsx';
 import { SinglePlayerGame } from './components/SinglePlayerGame.jsx';
@@ -112,6 +113,12 @@ function App() {
           {navBarstate === 'buyaCoffeeBarButton' ?
             <>
             <BuyACoffee></BuyACoffee>
+            </>
+            :null}
+          
+          {navBarstate === 'infoNavBarButton' ?
+            <>
+            <About></About>
             </>
             :null}
     
