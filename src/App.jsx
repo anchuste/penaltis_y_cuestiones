@@ -33,10 +33,6 @@ function App() {
     setMultiplayer(false);
   }
 
-  const handleNumberPlayers = (numberPlayers) => {
-    let numberPlayersSelected = numberPlayers.target.innerHTML;
-  };
-
   const handleNavBarState = (newNavBarState) => {
 
     if (newNavBarState === 'supportNavBarButton') {

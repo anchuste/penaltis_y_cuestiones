@@ -152,13 +152,45 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
     }
 
-    const isTheEndOfGame = () => {
+    // Comprueba si es el final del juego. Esto se da si el número de respuestas respondidas es igual al número de preguntas que hay.
+    // O si existen más de 2 sanciones.
+    const checkEndOfGame = () => {
 
         if (totalQuestionsAnswered.current === questions.length || sanctions.current > 2 ) {
-            return true;
+            setShowQuestion(false);
+            setShowSummary(true);
+            setStarted(false);
+            setShowSanctions(false);
         }
+    }
 
-        return false;
+    // Añadimos la pregunta a las preguntas realizadas
+    const addQuestionToDoneQuestions = (indexDoneQuestion) => {
+        // Añadimos la pregunta a las preguntas realizadas
+        let cuestionsAskedCopy = [...cuestionsAsked];
+        cuestionsAskedCopy.push(indexDoneQuestion);
+        setCuestionsAsked(cuestionsAskedCopy);
+
+        return cuestionsAskedCopy;
+    }
+
+    // Añadimos la pregunta a las preguntas realizadas
+    const getQuestionsNotAsked = (cuestionsAskedCopy) => {
+        
+        // Extraer array de preguntas no realizadas
+        let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id_question));
+        
+        return questionsNotAsked;
+    }
+
+    // Establecemos la siguiente cuestión a realizar
+    const setNextCuestionToAsk = (questionsNotAsked) => {
+        
+        if (questionsNotAsked.length > 0)
+        {
+            let questionNotAsked = questionsNotAsked[Math.floor(Math.random() * questionsNotAsked.length)];
+            setCuestionNotAsked(questionNotAsked);
+        }
     }
 
 
@@ -167,10 +199,14 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         // Se actualiza el número de preguntas contestadas
         totalQuestionsAnswered.current = totalQuestionsAnswered.current + 1;
         
-        // Añadimos la pregunta a las preguntas realizadas
-        let cuestionsAskedCopy = [...cuestionsAsked];
-        cuestionsAskedCopy.push(indexQuestion);
-        setCuestionsAsked(cuestionsAskedCopy);
+        // Se añade la cuestión que se acaba de preguntar al array de preguntas hechas
+        let cuestionsAskedCopy = addQuestionToDoneQuestions(indexQuestion);
+
+        // Extraer array de preguntas no realizadas
+        let questionsNotAsked = getQuestionsNotAsked(cuestionsAskedCopy);
+
+        // Se establece la siguiente pregunta
+        setNextCuestionToAsk(questionsNotAsked);
         
         // Check if the response answered is right (comparing answer value with correctAnswer)
         let resultAnswer = checkIfAnswerIsRight(indexQuestion, indexAnswer);
@@ -185,32 +221,14 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
             restOneLive();
 
-            if (checkShowSanctions){
+            if (checkShowSanctions()){
                 setShowSanctions(true);
             }   
         }
 
-        // No hay más cuestiones o hemos respondido a todas las preguntas o hemos tenido más de dos sanciones,
-        // el juego termina.      
-        let endOfGame = isTheEndOfGame();
-
-        if (endOfGame){
-            setShowQuestion(false);
-            setShowSummary(true);
-            setStarted(false);
-            setShowSanctions(false);
-            return;
-            //setReloadQuestions(true);
-        }
+        // Comprobamos y finalizamos si es el final del juego. 
+        checkEndOfGame();
         
-        // Extraer array de preguntas no realizadas
-        let questionsNotAsked = questions.filter((question) => !cuestionsAskedCopy.includes(question.id_question));
-        
-        if (questionsNotAsked.length > 0)
-        {
-            let questionNotAsked = questionsNotAsked[Math.floor(Math.random() * questionsNotAsked.length)];
-            setCuestionNotAsked(questionNotAsked);
-        }
         
     };
 
