@@ -59,6 +59,7 @@ function App() {
   }
 
   return (
+
     <>    
 
     {gameTypeSelected === false && started === false ?
@@ -87,13 +88,13 @@ function App() {
 
         
 
-          {multiplayer === false ?
+          {multiplayer === false && started === true? 
           <>
           <SinglePlayerGame singlePlayerStartGame={singlePlayerStartGame} multiplayerStartGame={multiplayerStartGame} gameStarted={started}>  </SinglePlayerGame>
           </>
           : null}
 
-          {multiplayer === true ?
+          {multiplayer === true && started === true ?
           <>
           <MultiplayerGame>  </MultiplayerGame>
           </>

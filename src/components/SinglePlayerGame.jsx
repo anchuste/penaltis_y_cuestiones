@@ -7,7 +7,7 @@ import {getQuestions} from '../services/question-service.js'
 
 export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, gameStarted}) {
 
-    console.log('Se renderiza el componente SinglePlayerGame');
+    console.log('Se renderiza el componente SinglePlayerGame: ' + gameStarted);
 
     const [questions, setQuestions] = useState();
     const [cuestionsAsked, setCuestionsAsked] = useState();
@@ -35,11 +35,15 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
     useEffect(() => {
 
+        console.log('componente SinglePlayerGame, use effect!!');
+
         async function fetchQuestionData() {
+
             const response = await getQuestions();
+            console.log('componente SinglePlayerGame, use effect - fetchQuestionData');
             // Clona desde el índice 0 hasta el 5 (sin incluir el 5)
             // TODO - Probando aplicativo. Cuando se termine, pasarle toda la info (response) al initialConfig.
-            const clonaPrimeros5 = response.slice(0, 5);
+            const clonaPrimeros5 = response.slice(5, 10);
             initialConfig(clonaPrimeros5);
         }
 
@@ -48,9 +52,12 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
     }, [reloadQuestions]);
 
     const initialConfig = (data) => {
+
+        console.log("Se ejecuta initialConfig!!");
         
         setQuestions(data);
 
+        console.log("Se ejecuta initialConfig 2 parte!!");
         let QUESTIONS_NUMBER = 0;
         let LIVES = 3;
         
@@ -78,11 +85,8 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         setShowSanctions(false);
         setLives(initialLives);
         points.current = 0;
-    }
-  
-    const startGame = () => {
-        resetGame(true);
-        //singlePlayerStartGame();
+        sanctions.current = 0;
+        totalQuestionsAnswered.current = 0;
     }
 
     const resumeGame = () => {
@@ -91,15 +95,15 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
     const resetGame = (event) => {
 
-        //setStarted(true);
+        // Este reloadQuestions hace que se ejecute el useEffect donde se cargan
+        // las preguntas y se inicializa el juego initialConfig().
         
-        if (event !== true) {
-            if (reloadQuestions === true) {
-                setReloadQuestions(false);
-            }else{
-                setReloadQuestions(true);
-            }            
-        }
+        if (reloadQuestions === true) {
+            setReloadQuestions(false);
+        }else{
+            setReloadQuestions(true);
+        }            
+        
     }
 
     const calculateSecondsPoints = (secondsToGo) => {
@@ -156,6 +160,8 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
     // O si existen más de 2 sanciones.
     const checkEndOfGame = () => {
 
+        console.log("check end of game - totalQuestionsAnswered.current: " + totalQuestionsAnswered.current);
+
         if (totalQuestionsAnswered.current === questions.length || sanctions.current > 2 ) {
             setShowQuestion(false);
             setShowSummary(true);
@@ -196,6 +202,8 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
 
     const updateQuestion = (indexQuestion, indexAnswer, seconds) => {
 
+
+
         // Se actualiza el número de preguntas contestadas
         totalQuestionsAnswered.current = totalQuestionsAnswered.current + 1;
         
@@ -232,9 +240,7 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
         
     };
 
-    if (gameStarted === true) {
-        startGame();
-    }
+    
 
     //const [numberPlayers, setNumberPlayersState] = useState(1);
     //const [showButton, setShowButton] = useState(false);
@@ -244,14 +250,14 @@ export function SinglePlayerGame({multiplayerStartGame, singlePlayerStartGame, g
     
         <main className='board'>
             
-            {gameStarted && showQuestion && !showSanctions && <Question questionNumber={cuestionsAsked.length} question={cuestionNotAsked} updateQuestion={updateQuestion} lives={lives}  />}
+            {gameStarted && showQuestion && !showSanctions && cuestionsAsked !== undefined && <Question questionNumber={cuestionsAsked.length} question={cuestionNotAsked} updateQuestion={updateQuestion} lives={lives}  />}
             {/*{gameStarted && showQuestion && !showSanctions ? <h2 className='points_accumulated'>📊 Puntuación: {points.current} </h2>:null}*/}
             {/*{gameStarted && !showSanctions && <Sanctions SanctionsNumber={sanctions} />}*/}
             {showSummary && <Summary totalQuestionsNumber={questions.length} answers={answers} points={points.current} resetGame={resetGame}></Summary>}
-            {showSanctions && <SanctionsSummary SanctionsNumber={sanctions.current}></SanctionsSummary>}
+            {showSanctions && <SanctionsSummary SanctionsNumber={sanctions.current} Lives={lives}></SanctionsSummary>}
             
             {showSanctions ?
-              <button className='btn' onClick={resumeGame}>Entendido señor colegiado. ¡Pulse para continuar!</button>
+              <button className='btn' onClick={resumeGame}>Continuar partida</button>
               :null}
 
         </main>
