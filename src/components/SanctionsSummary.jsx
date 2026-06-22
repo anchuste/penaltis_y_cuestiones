@@ -1,6 +1,6 @@
-import yellowCard from '../assets/yellow-card.png'
 import redCard from '../assets/red-card.png'
 import incorrectAnswerImage from '../assets/pregunta_fallada.png'
+import { LiveCounter } from './LiveCounter.jsx';
 
 export function SanctionsSummary({SanctionsNumber, Lives}){
 
@@ -26,7 +26,7 @@ export function SanctionsSummary({SanctionsNumber, Lives}){
             <>
             <h2 style={{marginBottom: "5%", marginTop: "5%"}}>¡HAS FALLADO LA PREGUNTA!</h2>
             <img src={incorrectAnswerImage} style={{width: "280px", height: "180px"}}></img>
-            <h3 style={{marginTop: "5%"}}>¡Te quedan {currentLives} vidas!</h3>
+            <LiveCounter Lives={Lives} ></LiveCounter>
             </>
             :null}
 
@@ -34,7 +34,7 @@ export function SanctionsSummary({SanctionsNumber, Lives}){
             <>
             <h2 style={{marginBottom: "5%", marginTop: "5%"}}>¡SEGUNDA PREGUNTA FALLADA!</h2>
             <img src={incorrectAnswerImage} style={{width: "280px", height: "180px"}}></img>
-            <h3 style={{marginTop: "5%"}}>¡Te queda {currentLives} vida!</h3>
+            <LiveCounter Lives={Lives} ></LiveCounter>
             <h3 style={{marginTop: "5%"}}>¡Si fallas otra más, la partida se acaba!</h3>
             </>
             :null}

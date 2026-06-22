@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Question } from './Question'
 import { Summary } from './Summary';
-import { Sanctions } from './Sanctions';
+
 import { SanctionsSummary } from './SanctionsSummary';
 import {getQuestions} from '../services/question-service.js'
 

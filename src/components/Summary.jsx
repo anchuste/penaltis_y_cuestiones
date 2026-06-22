@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import yellowCard from '../assets/yellow-card.png'
 import redCard from '../assets/red-card.png'
 import { SaveRecord } from './SaveRecord';
 
@@ -68,7 +67,7 @@ export const Summary = ({ answers, totalQuestionsNumber, points, resetGame }) =>
             </h1>
             <h2 style={{marginBottom: "10px", color: "red"}}>¡HAS TENIDO 1 SANCIÓN!</h2>
             <h2 style={{marginBottom: "30px"}}>
-            <img src={yellowCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
+            
             </h2>
             </>
                 
@@ -81,8 +80,8 @@ export const Summary = ({ answers, totalQuestionsNumber, points, resetGame }) =>
             </h1>
             <h2 style={{marginBottom: "10px", color: "red"}}>¡HAS TENIDO 2 SANCIONES!</h2>
             <h2 style={{marginBottom: "30px"}}>
-            <img src={yellowCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
-            <img src={yellowCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
+
+            
             </h2>
             </>
              :null}
@@ -94,8 +93,6 @@ export const Summary = ({ answers, totalQuestionsNumber, points, resetGame }) =>
             </h1>
             <h2 style={{marginBottom: "10px", color: "red"}}>¡HAS SIDO EXPULSADO!</h2>
             <h2 style={{marginBottom: "30px"}}>
-            <img src={yellowCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
-            <img src={yellowCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
             <img src={redCard} style={{width: "70px", height: "40px", verticalAlign: "middle"}}></img> 
             </h2>
             </>
