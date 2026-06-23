@@ -126,7 +126,11 @@ export const Question = ({ question, questionNumber, index, updateQuestion, live
           <Countdown
               date={Date.now() + constants.TIME_TO_GO_QUESTIONS}
               renderer={renderer}
-              onComplete={(event, api) => console.log('event api', api)}
+              onComplete={(event, api) => {
+                //console.log('event api', api)
+                updateQuestion(question.id_question, index, currentSeconds);
+              }
+              }
               key={question.id_question}
           />
           </div>
